@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import architectData from "../data/architects.json";
+import data from "../data/data.json";
 import ArchitectContact from "./ArchitectContact";
 
 const StyledFooter = styled.footer`
@@ -15,16 +15,8 @@ const ContactRow = styled.div`
   gap: 2rem;
 `;
 
-export interface ArchitectState {
-  architect: {
-    firstName: string;
-    lastName: string;
-    mail: string;
-    phone: string;
-  };
-}
-
 const Footer = () => {
+  const architectData = data.architects;
   return (
     <StyledFooter>
       <div>

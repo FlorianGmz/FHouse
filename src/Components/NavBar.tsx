@@ -10,7 +10,7 @@ const StyledNavBar = styled.div`
 const NavBar = () => {
   return (
     <StyledNavBar>
-      <NavLink to={"/projects"}>Projects</NavLink>
+      <NavLink to={"projects"}>Projects</NavLink>
       <NavLink to={"/models"}>Models</NavLink>
     </StyledNavBar>
   );

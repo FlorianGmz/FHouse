@@ -1,9 +1,9 @@
-import data from "../data/projects.json";
+import data from "../data/data.json";
 
 const HomeDiaporama = () => {
   return (
     <div>
-      <img src={data[0].image} alt="" />
+      <img src={data.projects[0].image} alt="" />
     </div>
   );
 };

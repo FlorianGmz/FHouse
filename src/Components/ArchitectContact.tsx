@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ArchitectState } from "./Footer";
+import { architectState } from "../@types/types";
 
 const StyledContact = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ const StyledContact = styled.div`
   align-items: flex-end;
 `;
 
-const ArchitectContact: React.FC<ArchitectState> = ({ architect }) => {
+const ArchitectContact: React.FC<architectState> = ({ architect }) => {
   const { firstName, lastName, mail, phone } = architect;
   return (
     <StyledContact>
