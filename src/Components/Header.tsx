@@ -1,10 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  padding: 2rem 5rem;
+  padding: 3.5rem 5rem;
+  background-color: cyan;
 `;
 
 export const Header = () => {
