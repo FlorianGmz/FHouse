@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { projectState } from "../@types/types";
+import { Link } from "react-router-dom";
 
-const StyledCard = styled.div`
+const StyledCard = styled(Link)`
   display: flex;
   flex-direction: column;
   height: 80rem;
@@ -9,9 +10,9 @@ const StyledCard = styled.div`
 `;
 
 const ProjectCard: React.FC<projectState> = ({ project }) => {
-  const { image, name } = project;
+  const { image, name, id } = project;
   return (
-    <StyledCard>
+    <StyledCard to={`projects/${id}`}>
       <img src={image} alt="home" />
       <p>{name}</p>
     </StyledCard>

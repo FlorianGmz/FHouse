@@ -11,13 +11,15 @@ const StyledProjectsContainer = styled.div`
 `;
 
 const Projects = () => {
-  const { projects, textIntro } = data;
+  const { projects, pageTitle } = data;
+  const projectTitle = pageTitle.projects;
+
   return (
     <>
-      <IntroductionText text={textIntro.projects} />
+      <IntroductionText text={projectTitle} />
       <StyledProjectsContainer>
         {projects.map((project) => (
-          <ProjectCard project={project} />
+          <ProjectCard key={project.id} project={project} />
         ))}
       </StyledProjectsContainer>
     </>

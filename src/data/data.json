@@ -1,13 +1,23 @@
 {
-  "textIntro": {
+  "pageTitle": {
     "home": "Classy,\nmodern\nconscious homes.",
     "projects": "At home,\nwith\nnature."
+  },
+  "homeText": {
+    "intro": "Great homes begin\nwith great\nrelationships.",
+    "text": "Throughout the design process,\nwe collaborate with each client to gain an\nunderstanding of their unique needs –\ndefining the success of each building."
   },
   "architects": [
     {
       "firstName": "Florian",
       "lastName": "Gomez",
       "mail": "floriangomez@flhouse.com",
+      "phone": "+33 123456789"
+    },
+    {
+      "firstName": "Fanny",
+      "lastName": "Lisle",
+      "mail": "fannylisle@flhouse.com",
       "phone": "+33 123456789"
     },
     {

@@ -1,9 +1,14 @@
+import styled from "styled-components";
 import data from "../data/data.json";
+
+const StyledImg = styled.img`
+  padding: 15rem;
+`;
 
 const HomeDiaporama = () => {
   return (
     <div>
-      <img src={data.projects[0].image} alt="" />
+      <StyledImg src={data.projects[0].image} alt="" />
     </div>
   );
 };

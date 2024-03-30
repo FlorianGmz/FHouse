@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { textState } from "../@types/types";
 
-const StyledIntroductionText = styled.div`
+const StyledIntroductionText = styled.h2`
   padding: 13rem 5rem 1.2rem;
   text-align: left;
   font-weight: 800;
