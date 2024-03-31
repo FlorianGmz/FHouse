@@ -2,6 +2,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import data from "../data/data.json";
 import { projectState } from "../@types/types";
+import styled from "styled-components";
+
+const ProjectTitle = styled.h1`
+  letter-spacing: 0.3rem;
+  padding-left: 15rem;
+`;
 
 const Project = () => {
   const { id } = useParams<{ id: string }>();
@@ -10,7 +16,7 @@ const Project = () => {
     {
       id: 0,
       name: "",
-      localisation: "",
+      city: "",
       surface: 0,
       description: "",
       image: "",
@@ -26,8 +32,12 @@ const Project = () => {
     }
   }, [allProjects, id]);
 
-  const { name, localisation, surface, description, image } = currentProject;
-  return <div>Project</div>;
+  const { name, city, surface, description, image } = currentProject;
+  return (
+    <div>
+      <ProjectTitle>{name}</ProjectTitle>
+    </div>
+  );
 };
 
 export default Project;

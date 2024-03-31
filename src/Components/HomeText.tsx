@@ -8,7 +8,7 @@ const StyledTitle = styled.h3`
   font-size: x-large;
 `;
 
-const StyledText = styled.p`
+const StyledText = styled.h4`
   padding: 0rem 15rem 12rem;
   line-height: 3rem;
 `;

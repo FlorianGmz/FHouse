@@ -16,7 +16,7 @@ export interface projectState {
     id: number;
     name: string;
     surface: number;
-    localisation: string;
+    city: string;
     image: string;
     description: string;
     image: string;

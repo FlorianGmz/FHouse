@@ -31,7 +31,7 @@
     {
       "id": 1,
       "name": "Jefferson",
-      "localisation": "Cassis",
+      "city": "Cassis",
       "surface": 300,
       "description": "Welcome to our luxurious modern villa nestled in the stunning region of Cassis, France. Offering an unparalleled experience of opulence and sophistication, this exquisite property epitomizes the pinnacle of luxury living. Set against the backdrop of Cassis's breathtaking natural beauty, our villa combines sleek contemporary design with the finest craftsmanship and amenities. Every detail has been meticulously curated to provide an ambiance of elegance and comfort. As you step into the grand foyer, you're greeted by soaring ceilings and an abundance of natural light cascading through expansive windows, framing panoramic views of the Mediterranean Sea and the picturesque landscape of Cassis. Designed for the most discerning clientele, our villa boasts spacious living areas adorned with exquisite furnishings and bespoke finishes. The gourmet kitchen, equipped with state-of-the-art appliances, is a haven for culinary enthusiasts, while the lavish bedrooms and spa-like bathrooms offer a sanctuary of relaxation and indulgence. Outside, the allure continues with impeccably landscaped gardens, a sparkling infinity pool, and multiple al fresco dining and entertaining areas, perfect for enjoying the Mediterranean climate in style. Whether you seek tranquility amidst nature or excitement exploring the charms of Cassis and its surroundings, our villa provides the ultimate retreat for those accustomed to the finest things in life. Experience the epitome of luxury living at our modern villa in Cassis, where every moment is infused with unparalleled beauty, sophistication, and refinement. Your dream of a luxurious lifestyle awaits.",
       "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -39,7 +39,7 @@
     {
       "id": 2,
       "name": "Cosmopolite",
-      "localisation": "Cannes",
+      "city": "Cannes",
       "surface": 400,
       "description": "Perched on a hilltop overlooking the azure waters of the Mediterranean, Villa Cosmopolite offers an unrivaled retreat in the heart of Cannes. This architectural masterpiece seamlessly blends modern luxury with timeless elegance, providing the ultimate sanctuary for discerning travelers. With spacious living areas, panoramic terraces, and a private infinity pool, every moment spent here is imbued with tranquility and sophistication. Indulge in the epitome of Mediterranean living at Villa Cosmopolite.",
       "image": "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -47,7 +47,7 @@
     {
       "id": 3,
       "name": "L'Élégante",
-      "localisation": "Nice",
+      "city": "Nice",
       "surface": 350,
       "description": "Experience unparalleled luxury at Villa L'Élégance, where sophistication meets serenity. Nestled amidst lush gardens overlooking the Mediterranean Sea, this exquisite villa boasts opulent interiors, expansive outdoor spaces, and state-of-the-art amenities. From the sleek modern design to the breathtaking sea views, every aspect of Villa L'Élégance is designed to enchant and inspire. Indulge in the ultimate Mediterranean escape at Villa L'Élégance.",
       "image": "https://images.unsplash.com/photo-1502005097973-6a7082348e28?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -55,7 +55,7 @@
     {
       "id": 4,
       "name": "Villa Paradis",
-      "localisation": "Toulon",
+      "city": "Toulon",
       "surface": 320,
       "description": "Discover paradise at Villa Paradis, where luxury and tranquility converge. Set amidst lush Mediterranean gardens, this stunning villa offers a serene oasis away from the hustle and bustle of everyday life. With its stylish interiors, panoramic views, and private pool, Villa Paradis is the perfect retreat for those seeking a peaceful getaway in Monaco.",
       "image": "https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -63,7 +63,7 @@
     {
       "id": 5,
       "name": "Villa Mirabelle",
-      "localisation": "Saint-Jean-Cap-Ferrat",
+      "city": "Saint-Jean-Cap-Ferrat",
       "surface": 380,
       "description": "Escape to Villa Mirabelle, where luxury meets nature in perfect harmony. Surrounded by verdant landscapes and breathtaking sea views, this elegant villa offers a tranquil retreat for the discerning traveler. With its spacious interiors, lush gardens, and infinity pool, Villa Mirabelle is a haven of relaxation and indulgence.",
       "image": "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -71,7 +71,7 @@
     {
       "id": 6,
       "name": "Villa Sérénité",
-      "localisation": "Marseille",
+      "city": "Marseille",
       "surface": 420,
       "description": "Embrace the essence of serenity at Villa Sérénité, a luxurious retreat in the heart of Marseille. Nestled amidst fragrant gardens and overlooking the Mediterranean Sea, this exquisite villa offers the perfect blend of elegance and tranquility. With its stylish interiors, panoramic terraces, and infinity pool, Villa Sérénité is a haven for relaxation and indulgence.",
       "image": "https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -79,7 +79,7 @@
     {
       "id": 7,
       "name": "Belle Vue",
-      "localisation": "Cassis",
+      "city": "Cassis",
       "surface": 350,
       "description": "Indulge in the ultimate Mediterranean experience at Villa Belle Vue, located in the charming town of Cassis. Offering breathtaking views of the azure waters and rugged cliffs, this luxurious villa boasts modern amenities, elegant interiors, and spacious outdoor living areas. Whether you're relaxing by the infinity pool or enjoying alfresco dining on the terrace, Villa Belle Vue promises an unforgettable stay in the South of France.",
       "image": "https://images.unsplash.com/photo-1595243643203-06ba168495ea?q=80&w=1635&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -87,7 +87,7 @@
     {
       "id": 8,
       "name": "L'Azure",
-      "localisation": "Antibes",
+      "city": "Antibes",
       "surface": 210,
       "description": "Escape to the luxurious Villa Azur, located in the picturesque town of Antibes. Nestled amidst lush gardens and overlooking the sparkling Mediterranean Sea, this exquisite villa offers the perfect blend of elegance and tranquility. With its spacious interiors, private pool, and panoramic views, Villa Azur is a haven for relaxation and indulgence. Experience the epitome of luxury living on the French Riviera at Villa Azur.",
       "image": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -95,7 +95,7 @@
     {
       "id": 9,
       "name": "Villa Palatiale",
-      "localisation": "Saint-Paul-de-Vence",
+      "city": "Saint-Paul-de-Vence",
       "surface": 450,
       "description": "Experience the height of luxury at Villa Palatiale, nestled in the charming town of Saint-Paul-de-Vence. Surrounded by lush gardens and boasting panoramic views of the Mediterranean Sea, this exquisite villa offers an unparalleled retreat for discerning travelers. With its elegant interiors, spacious outdoor living areas, and infinity pool, Villa Palatiale is the epitome of sophistication and relaxation.",
       "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

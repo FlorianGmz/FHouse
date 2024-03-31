@@ -12,7 +12,7 @@ const StyledCard = styled(Link)`
 const ProjectCard: React.FC<projectState> = ({ project }) => {
   const { image, name, id } = project;
   return (
-    <StyledCard to={`projects/${id}`}>
+    <StyledCard to={`/projects/${id}`}>
       <img src={image} alt="home" />
       <p>{name}</p>
     </StyledCard>
