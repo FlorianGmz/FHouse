@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import data from "../data/data.json";
+import data from "../../data/data.json";
 
 const StyledTitle = styled.h3`
   padding: 12rem 15rem 3rem;

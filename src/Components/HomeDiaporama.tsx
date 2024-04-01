@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import data from "../data/data.json";
+import data from "../../data/data.json";
 
 const StyledImg = styled.img`
   padding: 15rem;

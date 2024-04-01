@@ -1,6 +1,6 @@
 import HomeDiaporama from "./HomeDiaporama";
 import IntroductionText from "./IntroductionText";
-import data from "../data/data.json";
+import data from "../../data/data.json";
 import NavBar from "./NavBar";
 import HomeText from "./HomeText";
 
