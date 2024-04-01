@@ -7,10 +7,29 @@ const StyledHeader = styled.header`
   background-color: cyan;
 `;
 
+const Logo = styled.div`
+  display: flex;
+`;
+
+const HeaderFElement = styled.div``;
+const HeaderHElement = styled.div``;
+
 export const Header = () => {
   return (
     <StyledHeader>
-      <p>INITIAL</p>
+      <Logo>
+        <HeaderFElement>
+          F<span>A</span>
+          <span>R</span>
+          <span>O</span>
+        </HeaderFElement>
+        <HeaderHElement>
+          h<span>o</span>
+          <span>u</span>
+          <span>s</span>
+          <span>e</span>
+        </HeaderHElement>
+      </Logo>
       <p>MENU-ICONS</p>
     </StyledHeader>
   );
