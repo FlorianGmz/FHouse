@@ -8,6 +8,11 @@ const StyledFooter = styled.footer`
   justify-content: space-between;
   padding: 10rem 5rem;
   background-color: yellow;
+  color: black;
+  z-index: 1 !important;
+  position: fixed !important;
+  bottom: 0;
+  width: 100%;
 `;
 
 const ContactRow = styled.div`

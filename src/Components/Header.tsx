@@ -15,7 +15,6 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 3.5rem 5rem;
-  ${(props) => props.navOpen}
 `;
 
 const NavLogo = styled.div`
@@ -77,7 +76,7 @@ const Icon = styled.div`
 `;
 
 const StyledNav = styled.nav`
-  display: ${(props) => (props.navOpen ? "inherit" : "none")};
+  display: ${(props) => (props.navOpen ? "block" : "none")};
   animation: 3s ease-out 1s;
 `;
 const NavList = styled.ul`
@@ -94,15 +93,33 @@ const NavList = styled.ul`
   height: 100vh;
   width: 100vw;
   animation: forwards 1s;
-  transition: ease-in 0.3s;
 `;
 
 const StyledNavLink = styled(Link)`
-  font-size: large;
+  font-size: 5rem;
+  transition: transform 0.3s ease-out;
+  display: inline-block;
   color: white;
-  transition: transform 0.3s ease;
   &:hover {
     transform: translateX(-2rem);
+    /* font-size: 10rem; */
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 1px;
+    background: white;
+    transform: translateY(-50%);
+    width: 0;
+    top: 50%;
+    margin-top: 10px;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-backface-visibility: hidden;
   }
 `;
 
