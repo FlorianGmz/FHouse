@@ -1,23 +1,67 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledHeader = styled.header`
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 3.5rem 5rem;
   background-color: cyan;
 `;
 
-const Logo = styled.div`
+const NavLogo = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 const HeaderFElement = styled.div``;
 const HeaderHElement = styled.div``;
 
+const NavIcon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  width: 50px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 10;
+`;
+
+const Icon = styled.div`
+  ${(props?) =>
+    props.as === "top" &&
+    css`
+      width: 5rem;
+      height: 0.5rem;
+      background-color: black;
+      border-radius: 0.5rem;
+      transition: ease-in 0.3s;
+      ${NavIcon}:hover & {
+        width: 3rem;
+        transition: ease-out 0.3s;
+      }
+    `}
+  ${(props?) =>
+    props.as === "bottom" &&
+    css`
+      width: 3rem;
+      height: 0.5rem;
+      background-color: black;
+      border-radius: 0.5rem;
+      transition: ease-in 0.3s;
+      ${NavIcon}:hover & {
+        width: 5rem;
+        transition: ease-out 0.3s;
+      }
+    `}
+  ${(props) => props.click && css``}
+`;
+
 export const Header = () => {
   return (
     <StyledHeader>
-      <Logo>
+      <NavLogo>
         <HeaderFElement>
           F<span>A</span>
           <span>R</span>
@@ -29,8 +73,11 @@ export const Header = () => {
           <span>s</span>
           <span>e</span>
         </HeaderHElement>
-      </Logo>
-      <p>MENU-ICONS</p>
+      </NavLogo>
+      <NavIcon>
+        <Icon as="top"></Icon>
+        <Icon as="bottom"></Icon>
+      </NavIcon>
     </StyledHeader>
   );
 };
