@@ -1,10 +1,29 @@
 import { useState } from "react";
 import styled, { css } from "styled-components";
+import { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
+const backgroundFadeIn = keyframes`
+  from{
+    background-color: transparent;
+    color:black;
+  }
+  to{
+    background-color:#101010ee ;
+    color: white;
+  }
+`;
+
+const letterFadeIn = keyframes`
+  from {
+    color: transparent;
+  }
+  to {
+    color: white;
+  }
+`;
+
 const StyledHeader = styled.header`
-  background-color: ${(props) => (props.navOpen ? "#101010ee" : "transparent")};
-  color: ${(props) => (props.navOpen ? "white" : "black")};
   position: fixed;
   top: 0;
   left: 0;
@@ -15,6 +34,9 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 3.5rem 9rem;
+  &.clicked {
+    animation: 1s ${backgroundFadeIn} ease-in-out forwards;
+  }
 `;
 
 const NavLogo = styled.div`
@@ -22,8 +44,28 @@ const NavLogo = styled.div`
   cursor: pointer;
 `;
 
-const HeaderFElement = styled.div``;
-const HeaderHElement = styled.div``;
+const HeaderFElement = styled.div`
+  color: black;
+  &.clicked {
+    animation: 1s ${letterFadeIn} ease-in-out forwards;
+  }
+`;
+
+const HeaderHElement = styled.div`
+  &.clicked {
+    animation: 1s ${letterFadeIn} ease-in-out forwards;
+  }
+`;
+
+const StyledLogoLetter = styled.span`
+  display: none;
+  transition: ease-in 1s;
+
+  &.clicked {
+    animation: 1s ${letterFadeIn} ease-in-out forwards;
+    display: inline-block;
+  }
+`;
 
 const NavIcon = styled.div`
   display: flex;
@@ -51,7 +93,7 @@ const Icon = styled.div`
       }
       &.clicked {
         width: 3rem;
-        transform: rotate(45deg) translateX(0rem) translateY(1rem);
+        transform: rotate(45deg) translate(0rem, 1rem);
         /* transition: ease-out 0.5s; */
       }
     `}
@@ -69,7 +111,7 @@ const Icon = styled.div`
       }
       &.clicked {
         width: 3rem;
-        transform: rotate(-45deg) translateX(-0.25rem) translateY(-1rem);
+        transform: rotate(-45deg) translate(-0.25rem, -1rem);
         transition: ease-out 0.5s;
       }
     `}
@@ -90,10 +132,12 @@ const NavList = styled.ul`
   align-items: flex-end */
   text-align: right;
   padding: 20rem 10rem;
-  background-color: ${(props) => (props.navOpen ? "#101010ee" : "white")};
   height: 100vh;
   width: 100vw;
   animation: forwards 1s;
+  &.clicked {
+    animation: 1s ${backgroundFadeIn} ease-in-out forwards;
+  }
 `;
 
 const StyledNavLink = styled(Link)`
@@ -124,18 +168,34 @@ export const Header = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);
   return (
     <>
-      <StyledHeader navOpen={navIsOpen}>
+      <StyledHeader className={navIsOpen ? "clicked" : ""}>
         <NavLogo>
-          <HeaderFElement>
-            F<span>A</span>
-            <span>R</span>
-            <span>O</span>
+          <HeaderFElement className={navIsOpen ? "clicked" : ""}>
+            F
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              A
+            </StyledLogoLetter>
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              R
+            </StyledLogoLetter>
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              O
+            </StyledLogoLetter>
           </HeaderFElement>
-          <HeaderHElement>
-            h<span>o</span>
-            <span>u</span>
-            <span>s</span>
-            <span>e</span>
+          <HeaderHElement className={navIsOpen ? "clicked" : ""}>
+            h
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              o
+            </StyledLogoLetter>
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              u
+            </StyledLogoLetter>
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              s
+            </StyledLogoLetter>
+            <StyledLogoLetter className={navIsOpen ? "clicked" : ""}>
+              e
+            </StyledLogoLetter>
           </HeaderHElement>
         </NavLogo>
         <NavIcon onClick={() => setNavIsOpen((open) => !open)}>
@@ -152,7 +212,7 @@ export const Header = () => {
         </NavIcon>
       </StyledHeader>
       <StyledNav navOpen={navIsOpen}>
-        <NavList navOpen={navIsOpen}>
+        <NavList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
           <li>
             <StyledNavLink to="/projects">
               Projects
