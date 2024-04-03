@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3.5rem 5rem;
+  padding: 3.5rem 9rem;
 `;
 
 const NavLogo = styled.div`
@@ -85,10 +85,11 @@ const NavList = styled.ul`
   position: fixed;
   top: 100px;
   left: 0;
-  display: flex;
+  /*   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  padding: 20rem 6rem;
+  align-items: flex-end */
+  text-align: right;
+  padding: 20rem 10rem;
   background-color: ${(props) => (props.navOpen ? "#101010ee" : "white")};
   height: 100vh;
   width: 100vw;
@@ -97,29 +98,25 @@ const NavList = styled.ul`
 
 const StyledNavLink = styled(Link)`
   font-size: 5rem;
-  transition: transform 0.3s ease-out;
-  display: inline-block;
+  transition: transform 0.5s ease-out;
+  display: list-item;
   color: white;
   &:hover {
     transform: translateX(-2rem);
-    /* font-size: 10rem; */
   }
-  &::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    height: 1px;
-    background: white;
-    transform: translateY(-50%);
-    width: 0;
-    top: 50%;
-    margin-top: 10px;
-    -o-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    -webkit-backface-visibility: hidden;
+`;
+
+const NavLinkCursor = styled.span`
+  width: 0;
+  height: 1px;
+  position: absolute;
+  right: -12rem;
+  top: 50%;
+  background-color: white;
+  transition: transform 0.3s ease-out;
+  ${StyledNavLink}:hover & {
+    width: 9rem;
+    transition: ease-out 0.5s;
   }
 `;
 
@@ -157,16 +154,28 @@ export const Header = () => {
       <StyledNav navOpen={navIsOpen}>
         <NavList navOpen={navIsOpen}>
           <li>
-            <StyledNavLink to="/projects">Projects</StyledNavLink>
+            <StyledNavLink to="/projects">
+              Projects
+              <NavLinkCursor />
+            </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">Process</StyledNavLink>
+            <StyledNavLink to="/projects">
+              Process
+              <NavLinkCursor />
+            </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">About</StyledNavLink>
+            <StyledNavLink to="/projects">
+              About
+              <NavLinkCursor />
+            </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">Contact</StyledNavLink>
+            <StyledNavLink to="/projects">
+              Contact
+              <NavLinkCursor />
+            </StyledNavLink>
           </li>
         </NavList>
       </StyledNav>
