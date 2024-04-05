@@ -26,9 +26,11 @@ const logoFadeIn = keyframes`
 const letterFadeIn = keyframes`
   from {
     opacity: 0;
+    display:none;
   }
   to {
-    color: 1;
+    opacity: 1;
+    display:inline-block;
   }
 `;
 
@@ -43,7 +45,6 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 9rem;
-  transition: ease-in-out 1s;
   &.clicked {
     animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
   }
@@ -51,15 +52,19 @@ const StyledHeader = styled.header`
 
 const NavLogo = styled.div`
   display: flex;
+  width: auto;
   cursor: pointer;
+  transition: ease-in-out 0.5s;
 `;
 
 const StyledFLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
   color: black;
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.5s;
+  width: 2rem;
   &.clicked {
+    width: 13rem;
     color: white;
     animation: 1s ${logoFadeIn} ease-out;
   }
@@ -69,7 +74,7 @@ const StyledHLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
   color: black;
-  transition: ease-in-out 1s;
+  transition: ease-in-out 0.5s;
   /* transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); */
   &.clicked {
     color: white;
@@ -81,13 +86,11 @@ const StyledLogoLetter = styled.span`
   text-decoration: none;
   font-size: 4rem;
   display: none;
-
+  transition: 4s;
   &.clicked {
-    display: inline-block;
-    transition: 1s;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     ${(props?) =>
-      props?.as === "A" &&
+      props.as === "A" &&
       css`
         animation: 1s ${letterFadeIn} ease-in-out forwards;
       `}
@@ -105,21 +108,25 @@ const StyledLogoLetter = styled.span`
       props.as === "o" &&
       css`
         animation: 6s ${letterFadeIn} ease-in-out forwards;
+        display: inline-block;
       `}
     ${(props?) =>
       props.as === "u" &&
       css`
         animation: 7s ${letterFadeIn} ease-in-out;
+        display: inline-block;
       `}
     ${(props?) =>
       props.as === "s" &&
       css`
         animation: 8s ${letterFadeIn} ease-in-out;
+        display: inline-block;
       `}
     ${(props?) =>
       props.as === "e" &&
       css`
         animation: 9s ${letterFadeIn} ease-in-out forwards;
+        display: inline-block;
       `}
   }
 `;
