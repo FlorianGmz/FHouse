@@ -6,11 +6,18 @@ import { Link } from "react-router-dom";
 const backgroundFadeIn = keyframes`
   from{
     background-color: transparent;
-    color:black;
   }
   to{
     background-color:#101010ee ;
-    color: white;
+  }
+`;
+
+const backgroundFadeOut = keyframes`
+  from{
+    background-color: #101010ee;
+  }
+  to{
+    background-color: transparent ;
   }
 `;
 
@@ -20,6 +27,15 @@ const logoFadeIn = keyframes`
   }
   to {
     color: white;
+  }
+`;
+
+const logoFadeOut = keyframes`
+  from {
+    color: white;
+  }
+  to {
+    color: transparent;
   }
 `;
 
@@ -33,7 +49,19 @@ const letterFadeIn = keyframes`
     opacity: 1;
     color:white;
   }
-`;
+  `;
+
+const letterFadeOut = keyframes`
+  from {
+    opacity: 1;
+    color:white;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    color:transparent;
+  }
+  `;
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -85,6 +113,16 @@ const StyledHLogo = styled.div`
   }
 `;
 
+const animationTimings = {
+  A: 1,
+  R: 1.5,
+  O: 2,
+  o: 2.5,
+  u: 2.75,
+  s: 3,
+  e: 3.25,
+};
+
 const StyledLogoLetter = styled.span`
   text-decoration: none;
   color: transparent;
@@ -92,44 +130,59 @@ const StyledLogoLetter = styled.span`
   visibility: hidden;
   transition: 4s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+
   &.clicked {
-    ${(props?) =>
-      props.as === "A" &&
-      css`
-        animation: 0.5s linear 1s normal ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "R" &&
-      css`
-        animation: 0.5s linear 1.25s ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "O" &&
-      css`
-        animation: 0.5s linear 1.5s ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "o" &&
-      css`
-        animation: 0.5s linear 1s ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "u" &&
-      css`
-        animation: 0.5s linear 1s ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "s" &&
-      css`
-        animation: 0.5s linear 1s ${letterFadeIn} forwards;
-      `}
-    ${(props?) =>
-      props.as === "e" &&
-      css`
-        animation: 0.5s linear 1s ${letterFadeIn} forwards;
-      `}
+    animation: 0.5s linear forwards;
+    animation-delay: ${({ as }) => `${animationTimings[as]}s`};
+    animation-name: ${({ as }) => (as ? letterFadeIn : "none")};
   }
 `;
+
+// const StyledLogoLetter = styled.span`
+//   text-decoration: none;
+//   color: transparent;
+//   font-size: 4rem;
+//   visibility: hidden;
+//   transition: 4s;
+//   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+//   &.clicked {
+//     ${(props?) =>
+//       props.as === "A" &&
+//       css`
+//         animation: 0.5s ease-in-out 1s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "R" &&
+//       css`
+//         animation: 0.5s linear 1.25s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "O" &&
+//       css`
+//         animation: 0.5s linear 1.5s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "o" &&
+//       css`
+//         animation: 0.5s linear 2s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "u" &&
+//       css`
+//         animation: 0.5s linear 2.5s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "s" &&
+//       css`
+//         animation: 0.5s linear 3s ${letterFadeIn} forwards;
+//       `}
+//     ${(props?) =>
+//       props.as === "e" &&
+//       css`
+//         animation: 0.5s linear 3.5s ${letterFadeIn} forwards;
+//       `}
+//   }
+// `;
 
 const NavIcon = styled.div`
   display: flex;
