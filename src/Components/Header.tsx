@@ -26,11 +26,12 @@ const logoFadeIn = keyframes`
 const letterFadeIn = keyframes`
   from {
     opacity: 0;
-    display:none;
+    color:transparent;
   }
   to {
+    visibility: visible ;
     opacity: 1;
-    display:inline-block;
+    color:white;
   }
 `;
 
@@ -52,20 +53,22 @@ const StyledHeader = styled.header`
 
 const NavLogo = styled.div`
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: auto;
   cursor: pointer;
-  transition: ease-in-out 0.5s;
 `;
 
 const StyledFLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
   color: black;
-  transition: ease-in-out 0.5s;
+  transition: 1.5s;
   width: 2rem;
   &.clicked {
     width: 13rem;
     color: white;
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
   }
 `;
@@ -74,8 +77,8 @@ const StyledHLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
   color: black;
-  transition: ease-in-out 0.5s;
-  /* transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1); */
+  // transition: 1.5s;
+  // transition: ease-in-out 0.5s;
   &.clicked {
     color: white;
     animation: 1s ${logoFadeIn} ease-out;
@@ -84,49 +87,46 @@ const StyledHLogo = styled.div`
 
 const StyledLogoLetter = styled.span`
   text-decoration: none;
+  color: transparent;
   font-size: 4rem;
-  display: none;
+  visibility: hidden;
   transition: 4s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   &.clicked {
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     ${(props?) =>
       props.as === "A" &&
       css`
-        animation: 1s ${letterFadeIn} ease-in-out forwards;
+        animation: 0.5s linear 1s normal ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "R" &&
       css`
-        animation: 2s ${letterFadeIn} ease-in-out forwards;
+        animation: 0.5s linear 1.25s ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "O" &&
       css`
-        animation: 3s ${letterFadeIn} ease-in-out forwards;
+        animation: 0.5s linear 1.5s ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "o" &&
       css`
-        animation: 6s ${letterFadeIn} ease-in-out forwards;
-        display: inline-block;
+        animation: 0.5s linear 1s ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "u" &&
       css`
-        animation: 7s ${letterFadeIn} ease-in-out;
-        display: inline-block;
+        animation: 0.5s linear 1s ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "s" &&
       css`
-        animation: 8s ${letterFadeIn} ease-in-out;
-        display: inline-block;
+        animation: 0.5s linear 1s ${letterFadeIn} forwards;
       `}
     ${(props?) =>
       props.as === "e" &&
       css`
-        animation: 9s ${letterFadeIn} ease-in-out forwards;
-        display: inline-block;
+        animation: 0.5s linear 1s ${letterFadeIn} forwards;
       `}
   }
 `;
