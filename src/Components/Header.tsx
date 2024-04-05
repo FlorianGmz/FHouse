@@ -138,52 +138,6 @@ const StyledLogoLetter = styled.span`
   }
 `;
 
-// const StyledLogoLetter = styled.span`
-//   text-decoration: none;
-//   color: transparent;
-//   font-size: 4rem;
-//   visibility: hidden;
-//   transition: 4s;
-//   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-//   &.clicked {
-//     ${(props?) =>
-//       props.as === "A" &&
-//       css`
-//         animation: 0.5s ease-in-out 1s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "R" &&
-//       css`
-//         animation: 0.5s linear 1.25s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "O" &&
-//       css`
-//         animation: 0.5s linear 1.5s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "o" &&
-//       css`
-//         animation: 0.5s linear 2s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "u" &&
-//       css`
-//         animation: 0.5s linear 2.5s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "s" &&
-//       css`
-//         animation: 0.5s linear 3s ${letterFadeIn} forwards;
-//       `}
-//     ${(props?) =>
-//       props.as === "e" &&
-//       css`
-//         animation: 0.5s linear 3.5s ${letterFadeIn} forwards;
-//       `}
-//   }
-// `;
-
 const NavIcon = styled.div`
   display: flex;
   flex-direction: column;
