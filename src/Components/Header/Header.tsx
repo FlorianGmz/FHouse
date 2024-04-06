@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled, { css } from "styled-components";
 import { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
+import Logo from "./NavLogo";
 
 const backgroundFadeIn = keyframes`
   from{
@@ -21,48 +22,6 @@ const backgroundFadeOut = keyframes`
   }
 `;
 
-const logoFadeIn = keyframes`
-  from {
-    color: transparent;
-  }
-  to {
-    color: white;
-  }
-`;
-
-const logoFadeOut = keyframes`
-  from {
-    color: white;
-  }
-  to {
-    color: transparent;
-  }
-`;
-
-const letterFadeIn = keyframes`
-  from {
-    opacity: 0;
-    color:transparent;
-  }
-  to {
-    visibility: visible ;
-    opacity: 1;
-    color:white;
-  }
-  `;
-
-const letterFadeOut = keyframes`
-  from {
-    opacity: 1;
-    color:white;
-    visibility: visible;
-  }
-  to {
-    opacity: 0;
-    color:transparent;
-  }
-  `;
-
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
@@ -74,67 +33,9 @@ const StyledHeader = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 0 9rem;
+  animation: 0.5s ${backgroundFadeOut} ease-in-out forwards;
   &.clicked {
     animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
-  }
-`;
-
-const NavLogo = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: auto;
-  cursor: pointer;
-`;
-
-const StyledFLogo = styled.div`
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
-  color: black;
-  transition: 1.5s;
-  width: 2rem;
-  &.clicked {
-    width: 13rem;
-    color: white;
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    animation: 1s ${logoFadeIn} ease-out;
-  }
-`;
-
-const StyledHLogo = styled.div`
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
-  color: black;
-  // transition: 1.5s;
-  // transition: ease-in-out 0.5s;
-  &.clicked {
-    color: white;
-    animation: 1s ${logoFadeIn} ease-out;
-  }
-`;
-
-const animationTimings = {
-  A: 1,
-  R: 1.5,
-  O: 2,
-  o: 2.5,
-  u: 2.75,
-  s: 3,
-  e: 3.25,
-};
-
-const StyledLogoLetter = styled.span`
-  text-decoration: none;
-  color: transparent;
-  font-size: 4rem;
-  visibility: hidden;
-  transition: 4s;
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-
-  &.clicked {
-    animation: 0.5s linear forwards;
-    animation-delay: ${({ as }) => `${animationTimings[as]}s`};
-    animation-name: ${({ as }) => (as ? letterFadeIn : "none")};
   }
 `;
 
@@ -190,10 +91,8 @@ const Icon = styled.div`
 
 const StyledNav = styled.nav`
   display: ${(props) => (props.navOpen ? "block" : "none")};
-  animation: 3s ease-out 1s;
 `;
 const NavList = styled.ul`
-  animation: 3s ease-in 1s;
   z-index: 50;
   position: fixed;
   top: 150px;
@@ -205,7 +104,7 @@ const NavList = styled.ul`
   padding: 30rem 10rem;
   height: 100vh;
   width: 100vw;
-  animation: forwards 1s;
+  animation: 0.5s ${backgroundFadeOut} ease-in-out forwards;
   &.clicked {
     animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
   }
@@ -240,35 +139,7 @@ export const Header = () => {
   return (
     <>
       <StyledHeader className={navIsOpen ? "clicked" : ""}>
-        <NavLogo>
-          <StyledFLogo className={navIsOpen ? "clicked" : ""}>
-            F
-            <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
-              A
-            </StyledLogoLetter>
-            <StyledLogoLetter as="R" className={navIsOpen ? "clicked" : ""}>
-              R
-            </StyledLogoLetter>
-            <StyledLogoLetter as="O" className={navIsOpen ? "clicked" : ""}>
-              O
-            </StyledLogoLetter>
-          </StyledFLogo>
-          <StyledHLogo className={navIsOpen ? "clicked" : ""}>
-            h
-            <StyledLogoLetter as="o" className={navIsOpen ? "clicked" : ""}>
-              o
-            </StyledLogoLetter>
-            <StyledLogoLetter as="u" className={navIsOpen ? "clicked" : ""}>
-              u
-            </StyledLogoLetter>
-            <StyledLogoLetter as="s" className={navIsOpen ? "clicked" : ""}>
-              s
-            </StyledLogoLetter>
-            <StyledLogoLetter as="e" className={navIsOpen ? "clicked" : ""}>
-              e
-            </StyledLogoLetter>
-          </StyledHLogo>
-        </NavLogo>
+        <Logo navIsOpen={navIsOpen} />
         <NavIcon onClick={() => setNavIsOpen((open) => !open)}>
           <Icon
             className={navIsOpen ? "clicked" : ""}
@@ -285,25 +156,25 @@ export const Header = () => {
       <StyledNav navOpen={navIsOpen}>
         <NavList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
           <li>
-            <StyledNavLink to="/projects">
+            <StyledNavLink as="projects" to="/projects">
               Projects
               <NavLinkCursor />
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">
+            <StyledNavLink as="process" to="/process">
               Process
               <NavLinkCursor />
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">
+            <StyledNavLink as="about" to="/about">
               About
               <NavLinkCursor />
             </StyledNavLink>
           </li>
           <li>
-            <StyledNavLink to="/projects">
+            <StyledNavLink as="contact" to="/contact">
               Contact
               <NavLinkCursor />
             </StyledNavLink>
