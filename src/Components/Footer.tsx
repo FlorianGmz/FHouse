@@ -30,7 +30,7 @@ const Footer = () => {
       </div>
       <ContactRow>
         {architectData.map((architect) => (
-          <ArchitectContact architect={architect} />
+          <ArchitectContact key={architect.id} architect={architect} />
         ))}
       </ContactRow>
     </StyledFooter>

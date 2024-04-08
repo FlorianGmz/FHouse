@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const logoFadeIn = keyframes`
@@ -103,35 +104,37 @@ const StyledLogoLetter = styled.span`
 
 const NavLogo = ({ navIsOpen }) => {
   return (
-    <Logo>
-      <StyledFLogo className={navIsOpen ? "clicked" : ""}>
-        F
-        <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
-          A
-        </StyledLogoLetter>
-        <StyledLogoLetter as="R" className={navIsOpen ? "clicked" : ""}>
-          R
-        </StyledLogoLetter>
-        <StyledLogoLetter as="O" className={navIsOpen ? "clicked" : ""}>
-          O
-        </StyledLogoLetter>
-      </StyledFLogo>
-      <StyledHLogo className={navIsOpen ? "clicked" : ""}>
-        h
-        <StyledLogoLetter as="o" className={navIsOpen ? "clicked" : ""}>
-          o
-        </StyledLogoLetter>
-        <StyledLogoLetter as="u" className={navIsOpen ? "clicked" : ""}>
-          u
-        </StyledLogoLetter>
-        <StyledLogoLetter as="s" className={navIsOpen ? "clicked" : ""}>
-          s
-        </StyledLogoLetter>
-        <StyledLogoLetter as="e" className={navIsOpen ? "clicked" : ""}>
-          e
-        </StyledLogoLetter>
-      </StyledHLogo>
-    </Logo>
+    <Link to={"/"}>
+      <Logo>
+        <StyledFLogo className={navIsOpen ? "clicked" : ""}>
+          F
+          <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
+            A
+          </StyledLogoLetter>
+          <StyledLogoLetter as="R" className={navIsOpen ? "clicked" : ""}>
+            R
+          </StyledLogoLetter>
+          <StyledLogoLetter as="O" className={navIsOpen ? "clicked" : ""}>
+            O
+          </StyledLogoLetter>
+        </StyledFLogo>
+        <StyledHLogo className={navIsOpen ? "clicked" : ""}>
+          h
+          <StyledLogoLetter as="o" className={navIsOpen ? "clicked" : ""}>
+            o
+          </StyledLogoLetter>
+          <StyledLogoLetter as="u" className={navIsOpen ? "clicked" : ""}>
+            u
+          </StyledLogoLetter>
+          <StyledLogoLetter as="s" className={navIsOpen ? "clicked" : ""}>
+            s
+          </StyledLogoLetter>
+          <StyledLogoLetter as="e" className={navIsOpen ? "clicked" : ""}>
+            e
+          </StyledLogoLetter>
+        </StyledHLogo>
+      </Logo>
+    </Link>
   );
 };
 
