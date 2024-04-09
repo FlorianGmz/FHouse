@@ -3,6 +3,7 @@ import IntroductionText from "./IntroductionText";
 import data from "../../data/data.json";
 import NavBar from "./NavBar";
 import HomeText from "./HomeText";
+import Caroussel from "./Caroussel";
 
 const Home = () => {
   const homeIntroduction = data.pageTitle.home;
@@ -14,7 +15,7 @@ const Home = () => {
       <HomeDiaporama />
       <HomeText />
       <h4>Select Projects</h4>
-      <h1>CAROUSSEL</h1>
+      <Caroussel />
       <NavBar position="bottom" />
     </div>
   );

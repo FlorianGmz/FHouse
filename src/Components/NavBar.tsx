@@ -13,6 +13,7 @@ const StyledNavBar = styled.div`
     justify-content: center;
     gap: 15rem;
     letter-spacing: 0.5rem;
+    margin: 5rem;
   }
 `;
 

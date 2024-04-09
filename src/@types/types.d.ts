@@ -19,6 +19,5 @@ export interface projectState {
     city: string;
     image: string;
     description: string;
-    image: string;
   };
 }
