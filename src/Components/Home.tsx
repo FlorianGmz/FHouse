@@ -10,12 +10,12 @@ const Home = () => {
   return (
     <div>
       <IntroductionText text={homeIntroduction} />
-      <NavBar />
+      <NavBar position="top" />
       <HomeDiaporama />
       <HomeText />
       <h4>Select Projects</h4>
       <h1>CAROUSSEL</h1>
-      <NavBar />
+      <NavBar position="bottom" />
     </div>
   );
 };
