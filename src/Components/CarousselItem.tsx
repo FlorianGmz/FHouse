@@ -1,10 +1,14 @@
 import React from "react";
 import { projectState } from "../@types/types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const ItemDiv = styled.div`
+const ItemDiv = styled(Link)`
   width: 30rem;
   height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
 
 const StyledImg = styled.img`
@@ -15,9 +19,9 @@ const StyledImg = styled.img`
 `;
 
 const CarousselItem: React.FC<projectState> = ({ project }) => {
-  const { image, name } = project;
+  const { image, name, id } = project;
   return (
-    <ItemDiv>
+    <ItemDiv to={`projects/${id}`}>
       <StyledImg src={image} />
       <p>{name}</p>
     </ItemDiv>

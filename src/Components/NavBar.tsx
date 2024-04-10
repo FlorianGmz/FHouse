@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const StyledNavBar = styled.div`
   display: flex;
@@ -14,6 +14,11 @@ const StyledNavBar = styled.div`
     gap: 15rem;
     letter-spacing: 0.5rem;
     margin: 5rem;
+  }
+  &.right {
+    gap: 4rem;
+    padding: 0rem 9rem 2.5rem;
+    letter-spacing: 0.3rem;
   }
 `;
 

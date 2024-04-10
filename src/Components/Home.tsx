@@ -14,7 +14,6 @@ const Home = () => {
       <NavBar position="top" />
       <HomeDiaporama />
       <HomeText />
-      <h4>Select Projects</h4>
       <Caroussel />
       <NavBar position="bottom" />
     </div>

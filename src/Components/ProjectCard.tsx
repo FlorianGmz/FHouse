@@ -2,20 +2,35 @@ import styled from "styled-components";
 import { projectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
-const StyledCard = styled(Link)`
+const CardContainer = styled(Link)`
+  width: 40rem;
+  height: 70rem;
   display: flex;
   flex-direction: column;
-  height: 80rem;
-  width: 40rem;
+  justify-content: center;
+`;
+
+const CardImg = styled.img`
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+`;
+
+const CardName = styled.p`
+  padding: 3rem 0rem;
+  letter-spacing: 0.2rem;
+  font-size: x-large;
+  font-weight: 300;
 `;
 
 const ProjectCard: React.FC<projectState> = ({ project }) => {
   const { image, name, id } = project;
   return (
-    <StyledCard to={`/projects/${id}`}>
-      <img src={image} alt="home" />
-      <p>{name}</p>
-    </StyledCard>
+    <CardContainer to={`/projects/${id}`}>
+      <CardImg src={image} alt="home" />
+      <CardName>{name}</CardName>
+    </CardContainer>
   );
 };
 
