@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import NavLogo from "./NavLogo";
-import NavMenuIcon from "./NavIcon";
+import NavIcon from "./NavIcon";
 import NavList from "./NavList";
 
 const backgroundFadeIn = keyframes`
@@ -45,9 +45,9 @@ const Header = () => {
     <>
       <StyledHeader className={navIsOpen ? "clicked" : ""}>
         <NavLogo navIsOpen={navIsOpen} />
-        <NavMenuIcon isOpen={navIsOpen} setIsOpen={setNavIsOpen} />
+        <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </StyledHeader>
-      <NavList navIsOpen={navIsOpen} setIsOpen={setNavIsOpen} />
+      <NavList navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
     </>
   );
 };

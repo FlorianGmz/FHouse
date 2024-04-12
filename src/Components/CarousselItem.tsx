@@ -14,7 +14,7 @@ const ItemDiv = styled(Link)`
 const StyledImg = styled.img`
   width: 100%;
   height: 80%;
-  object-fit: cover; /* Étirer l'image pour remplir le conteneur tout en préservant les proportions */
+  object-fit: cover;
   object-position: center;
 `;
 

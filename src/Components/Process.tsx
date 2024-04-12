@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import data from "../../data/data.json";
 
 const ProcessTitle = styled.h2`
-  padding: 300px 90px 150px;
+  width: 60vw;
+  padding: 550px 90px 430px;
   font-size: 6rem;
 `;
 
-const ProcessTableContent = styled.div`
+const ProcessTableContent = styled.section`
   padding: 0 90px;
-  position: sticky;
+  position: absolute;
   top: 85vh;
+  &.fixed {
+    position: fixed;
+    top: 150px;
+  }
 `;
 const ProcessTableItem = styled.div`
+  text-transform: capitalize;
   opacity: 0.2;
-  font-size: 4rem;
-  line-height: 8rem;
+  font-size: large;
+  letter-spacing: 0.1rem;
+  line-height: 3.5rem;
   cursor: pointer;
   transition: 0.5s;
 
@@ -23,38 +31,94 @@ const ProcessTableItem = styled.div`
   }
 `;
 
+const ProcessItemSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin: auto;
+  padding-right: 9rem;
+`;
+
+const ProcessItem = styled.div`
+  width: 65vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+const ProcessImage = styled.img`
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center;
+`;
+
+const ProcessText = styled.p`
+  width: 100%;
+  height: 50%;
+  padding: 8rem 10rem;
+  font-size: 3rem;
+  font-weight: lighter;
+  line-height: 5rem;
+`;
+
 const Process = () => {
-  const [currentIdentifier, setCurrentIdentifier] = useState("item");
+  const [tableFixed, setTableFixed] = useState(false);
+
+  const processData = data.process;
+
+  const processTitles = processData
+    .map((process) => process.title)
+    .map((title) => title.replace(/-/g, " "));
+
+  const [currentIdentifier, setCurrentIdentifier] = useState(
+    processData[0].title
+  );
 
   const handleClick = (identifier: string) => {
     setCurrentIdentifier(identifier);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      if (scrollTop > 1000) {
+        setTableFixed(true);
+      } else {
+        setTableFixed(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div>
-        <ProcessTitle>BIG TITLE</ProcessTitle>
+        <ProcessTitle>An efficient journey from start to finish.</ProcessTitle>
       </div>
-      <ProcessTableContent>
-        <ProcessTableItem
-          className={currentIdentifier === "item" ? "item current" : "item"}
-          onClick={() => handleClick("item")}
-        >
-          Item
-        </ProcessTableItem>
-        <ProcessTableItem
-          className={currentIdentifier === "site" ? "site current" : "site"}
-          onClick={() => handleClick("site")}
-        >
-          Site
-        </ProcessTableItem>
-        <ProcessTableItem
-          className={currentIdentifier === "test" ? "test current" : "test"}
-          onClick={() => handleClick("test")}
-        >
-          Test
-        </ProcessTableItem>
+      <ProcessTableContent className={tableFixed ? "fixed" : ""}>
+        {processTitles.map((title) => (
+          <ProcessTableItem
+            className={
+              currentIdentifier === title ? `${title} current` : `${title}`
+            }
+            onClick={() => handleClick(title)}
+          >
+            {title}
+          </ProcessTableItem>
+        ))}
       </ProcessTableContent>
+      <ProcessItemSection>
+        {processData.map((process) => (
+          <ProcessItem>
+            <ProcessImage src={process.image} />
+            <ProcessText>{process.text}</ProcessText>
+          </ProcessItem>
+        ))}
+      </ProcessItemSection>
     </>
   );
 };

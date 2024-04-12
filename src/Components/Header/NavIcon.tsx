@@ -7,6 +7,7 @@ const NavIconDiv = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  padding-right: 1.5rem;
   gap: 1rem;
   width: 50px;
   height: 15px;
@@ -55,13 +56,13 @@ const Icon = styled.div`
 
 interface NavMenuIconProps {
   isOpen: boolean;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setIsOpen }) => {
+const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
   return (
     <>
-      <NavIconDiv onClick={() => setIsOpen((open) => !open)}>
+      <NavIconDiv onClick={() => setNavIsOpen((open) => !open)}>
         <Icon
           className={isOpen ? "clicked" : ""}
           as="top"
