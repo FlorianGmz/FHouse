@@ -98,9 +98,7 @@ const Process = () => {
 
   return (
     <>
-      <div>
-        <ProcessTitle>{introductionText}</ProcessTitle>
-      </div>
+      <ProcessTitle>{introductionText}</ProcessTitle>
       <ProcessTableContent className={tableFixed ? "fixed" : ""}>
         {processTitles.map((title) => (
           <ProcessTableItem

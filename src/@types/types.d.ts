@@ -39,6 +39,6 @@ export interface aboutState {
   secondText: string;
   thirdText: string;
   conclusionText: string;
-  diaporamaImage: string[];
+  slideshow: string[];
   mainImage: string;
 }
