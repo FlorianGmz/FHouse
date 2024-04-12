@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import data from "../../data/data.json";
+import { processState } from "../@types/types";
 
-const ProcessTitle = styled.h2`
+export const ProcessTitle = styled.h2`
   width: 60vw;
   padding: 550px 90px 430px;
   font-size: 6rem;
@@ -65,14 +66,15 @@ const ProcessText = styled.p`
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
 
-  const processData = data.process;
+  const processData: processState = data.process;
+  const { introduction: introductionText, item: processItem } = processData;
 
-  const processTitles = processData
+  const processTitles = processItem
     .map((process) => process.title)
     .map((title) => title.replace(/-/g, " "));
 
   const [currentIdentifier, setCurrentIdentifier] = useState(
-    processData[0].title
+    processItem[0].title
   );
 
   const handleClick = (identifier: string) => {
@@ -97,7 +99,7 @@ const Process = () => {
   return (
     <>
       <div>
-        <ProcessTitle>An efficient journey from start to finish.</ProcessTitle>
+        <ProcessTitle>{introductionText}</ProcessTitle>
       </div>
       <ProcessTableContent className={tableFixed ? "fixed" : ""}>
         {processTitles.map((title) => (
@@ -112,8 +114,8 @@ const Process = () => {
         ))}
       </ProcessTableContent>
       <ProcessItemSection>
-        {processData.map((process) => (
-          <ProcessItem>
+        {processItem.map((process) => (
+          <ProcessItem key={process.id}>
             <ProcessImage src={process.image} />
             <ProcessText>{process.text}</ProcessText>
           </ProcessItem>

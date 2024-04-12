@@ -35,13 +35,13 @@ interface ListItemProps {
 const ListItem: React.FC<ListItemProps> = ({ to, setNavIsOpen, children }) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(`${to}`);
-    setNavIsOpen((open) => !open);
-  };
+  // const handleClick = () => {
+  //   navigate(to);
+  //   setNavIsOpen((open) => !open);
+  // };
   return (
     <li>
-      <StyledNavLink onClick={handleClick}>
+      <StyledNavLink to={to}>
         {children}
         <NavLinkCursor />
       </StyledNavLink>
