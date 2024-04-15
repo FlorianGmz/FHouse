@@ -41,4 +41,5 @@ export interface aboutState {
   conclusionText: string;
   slideshow: string[];
   mainImage: string;
+  finalImage: string;
 }

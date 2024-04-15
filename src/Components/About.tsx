@@ -25,6 +25,11 @@ const StyledImg = styled.img`
     object-fit: cover;
     object-position: center;
   }
+  &.final {
+    width: 100vw;
+    height: 100vh;
+    padding-bottom: 2rem;
+  }
 `;
 
 const MainSection = styled.div`
@@ -53,11 +58,10 @@ const Text = styled.p`
     font-size: 3rem;
     width: 110rem;
     padding: 20rem;
-    padding: ;
     margin-left: 30rem;
   }
   &.conclusion {
-    padding: 20rem;
+    padding: 0rem 20rem 20rem 20rem;
     font-size: 5rem;
   }
 `;
@@ -82,11 +86,13 @@ const About = () => {
     conclusionText,
     slideshow,
     mainImage,
+    finalImage,
   } = aboutData;
 
   return (
     <>
       <IntroductionText page="about">{introductionText}</IntroductionText>
+      <img></img>
       <SlideshowSection>
         <Fade {...slideProperties}>
           {slideshow.map((slide) => (
@@ -104,6 +110,7 @@ const About = () => {
         <StyledImg className="main" src={mainImage} />
         <Text className="third">{thirdText}</Text>
         <Text className="conclusion">{conclusionText}</Text>
+        <StyledImg className="final" src={finalImage} />
       </MainSection>
     </>
   );

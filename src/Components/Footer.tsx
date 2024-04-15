@@ -7,8 +7,8 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   padding: 10rem 5rem;
-  background-color: yellow;
-  color: black;
+  background-color: black;
+  color: white;
   z-index: 1 !important;
   position: fixed !important;
   bottom: 0;

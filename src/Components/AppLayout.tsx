@@ -8,7 +8,7 @@ const StyledMainContainer = styled.main`
   z-index: 2;
   background: white;
   overflow: hidden;
-  margin-bottom: 580px;
+  margin-bottom: 270px;
   display: inline-block;
   width: 100%;
 `;
