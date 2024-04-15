@@ -5,7 +5,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Projects from "./Components/Projects";
 import Project from "./Components/Project";
 import Process from "./Components/Process";
-import About from "./Components/About";
+import About from "./Components/AboutPage/About";
+import Contact from "./Components/ContactPage/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="projects/:id" element={<Project />} />
           <Route path="process" element={<Process />} />
           <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>

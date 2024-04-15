@@ -14,7 +14,7 @@ const ArchitectContact: React.FC<architectState> = ({ architect }) => {
       <p>
         {firstName} {lastName}
       </p>
-      <p>{mail}</p>
+      <p style={{ textDecoration: "underline" }}>{mail}</p>
       <p>{phone}</p>
     </StyledContact>
   );

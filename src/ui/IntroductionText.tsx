@@ -11,6 +11,11 @@ const pages = {
     padding: 500px 90px 490px;
     font-size: 6rem;
   `,
+  contact: css`
+    width: 50vw;
+    padding: 350px 90px 10px;
+    font-size: 7rem;
+  `,
 };
 
 const IntroductionText = styled.h2`
