@@ -1,16 +1,29 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { architectState } from "../@types/types";
 
 const StyledContact = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  ${(props?) =>
+    props.page === "contact" &&
+    css`
+      align-items: flex-start;
+    `}
 `;
 
-const ArchitectContact: React.FC<architectState> = ({ architect }) => {
+interface ArchitectContactProps {
+  architect: architectState["architect"];
+  page: string;
+}
+
+const ArchitectContact: React.FC<ArchitectContactProps> = ({
+  architect,
+  page,
+}) => {
   const { firstName, lastName, mail, phone } = architect;
   return (
-    <StyledContact>
+    <StyledContact page={page}>
       <p>
         {firstName} {lastName}
       </p>

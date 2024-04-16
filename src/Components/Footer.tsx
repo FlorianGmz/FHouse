@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
-import ArchitectContact from "./ArchitectContact";
+import ContactRow from "./ContactRow";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -15,24 +14,14 @@ const StyledFooter = styled.footer`
   width: 100%;
 `;
 
-const ContactRow = styled.div`
-  display: flex;
-  gap: 2rem;
-`;
-
 const Footer = () => {
-  const architectData = data.architects;
   return (
     <StyledFooter>
       <div>
         <div>Logo</div>
         <span>Slogan</span>
       </div>
-      <ContactRow>
-        {architectData.map((architect) => (
-          <ArchitectContact key={architect.id} architect={architect} />
-        ))}
-      </ContactRow>
+      <ContactRow />
     </StyledFooter>
   );
 };
