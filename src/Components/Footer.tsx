@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ContactRow from "./ContactRow";
+import { useLocation } from "react-router-dom";
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -15,13 +16,15 @@ const StyledFooter = styled.footer`
 `;
 
 const Footer = () => {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
   return (
     <StyledFooter>
       <div>
         <div>Logo</div>
         <span>Slogan</span>
       </div>
-      <ContactRow />
+      {!isContactPage && <ContactRow page="*" />}
     </StyledFooter>
   );
 };

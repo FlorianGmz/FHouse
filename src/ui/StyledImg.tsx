@@ -19,6 +19,7 @@ const pages = {
     margin-bottom: 2rem;
   `,
   contact: css`
+    background-color: black;
     width: 80vw;
     height: 100vh;
     float: right;

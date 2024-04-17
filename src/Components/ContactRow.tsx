@@ -13,6 +13,7 @@ const Row = styled.div`
       float: right;
       margin-top: 200px;
       margin-bottom: 80px;
+      background-color: black;
     `}
 `;
 

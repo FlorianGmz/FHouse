@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavIconDiv = styled.div`
   display: flex;
@@ -60,9 +60,14 @@ interface NavMenuIconProps {
 }
 
 const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
   return (
     <>
-      <NavIconDiv onClick={() => setNavIsOpen((open) => !open)}>
+      <NavIconDiv
+        className={isContactPage ? "contact-page" : ""}
+        onClick={() => setNavIsOpen((open) => !open)}
+      >
         <Icon
           className={isOpen ? "clicked" : ""}
           as="top"

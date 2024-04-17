@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
 const logoFadeIn = keyframes`
@@ -43,16 +43,19 @@ const letterFadeOut = keyframes`
   }
   `;
 const Logo = styled.div`
+  color: black;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: auto;
   cursor: pointer;
+  &.contact-page {
+    color: white;
+  }
 `;
 const StyledFLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
-  color: black;
   transition: 1s;
   width: 2rem;
   /* animation: 1s ${logoFadeOut} ease-out; */
@@ -67,7 +70,6 @@ const StyledFLogo = styled.div`
 const StyledHLogo = styled.div`
   font-size: 4rem;
   letter-spacing: 0.3rem;
-  color: black;
   transition: 1s;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
@@ -103,9 +105,11 @@ const StyledLogoLetter = styled.span`
 `;
 
 const NavLogo = ({ navIsOpen }) => {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
   return (
     <Link to={"/"}>
-      <Logo>
+      <Logo className={isContactPage ? "contact-page" : ""}>
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F
           <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>

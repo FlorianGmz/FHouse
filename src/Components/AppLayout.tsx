@@ -1,6 +1,6 @@
 import Header from "./Header/Header";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledMainContainer = styled.main`
@@ -15,16 +15,15 @@ const StyledMainContainer = styled.main`
     background-color: black;
   }
 `;
-console.log(window.location.pathname);
+
 const AppLayout = () => {
-  const [];
-  const currentPathname = window.location.pathname;
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
+
   return (
     <div>
       <Header />
-      <StyledMainContainer
-        className={currentPathname === "/contact" ? "contact-page" : ""}
-      >
+      <StyledMainContainer className={isContactPage ? "contact-page" : ""}>
         <Outlet />
       </StyledMainContainer>
       <Footer />
