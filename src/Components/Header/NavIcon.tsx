@@ -18,7 +18,17 @@ const Icon = styled.div`
   ${(props?) =>
     props.as === "top" &&
     css`
-      background-color: ${(props) => (props.navOpen ? "white" : "black")};
+      background-color: ${
+        (props) =>
+          props.currentPathname === "/contact"
+            ? "white"
+            : props.navOpen
+            ? "white"
+            : "black"
+        /*       props.navOpen && props.currentPathname === "/contact"
+          ? "white"
+      : "white"} */
+      };
       width: 5rem;
       height: 0.5rem;
       border-radius: 0.5rem;
@@ -37,7 +47,17 @@ const Icon = styled.div`
   ${(props?) =>
     props.as === "bottom" &&
     css`
-      background-color: ${(props) => (props.navOpen ? "white" : "black")};
+      background-color: ${
+        (props) =>
+          props.currentPathname === "/contact"
+            ? "white"
+            : props.navOpen
+            ? "white"
+            : "black"
+        /*       props.navOpen && props.currentPathname === "/contact"
+          ? "white"
+      : "white"} */
+      };
       width: 3rem;
       height: 0.5rem;
       border-radius: 0.5rem;
@@ -61,21 +81,20 @@ interface NavMenuIconProps {
 
 const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
   const location = useLocation();
-  const isContactPage = location.pathname === "/contact";
+  const currentPathname = location.pathname;
   return (
     <>
-      <NavIconDiv
-        className={isContactPage ? "contact-page" : ""}
-        onClick={() => setNavIsOpen((open) => !open)}
-      >
+      <NavIconDiv onClick={() => setNavIsOpen((open) => !open)}>
         <Icon
           className={isOpen ? "clicked" : ""}
           as="top"
+          currentPathname={currentPathname}
           navOpen={isOpen}
         ></Icon>
         <Icon
           className={isOpen ? "clicked" : ""}
           as="bottom"
+          currentPathname={currentPathname}
           navOpen={isOpen}
         ></Icon>
       </NavIconDiv>
