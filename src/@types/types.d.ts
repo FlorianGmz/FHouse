@@ -50,3 +50,9 @@ export interface aboutState {
   mainImage: string;
   finalImage: string;
 }
+
+export interface contactState {
+  introduction: string;
+  location: string;
+  mainImage: string;
+}

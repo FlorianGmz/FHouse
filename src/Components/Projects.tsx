@@ -21,8 +21,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const Projects = () => {
-  const projectsData: projectsState = useLoaderData();
-  const { introduction, items } = projectsData;
+  const { introduction, items } = useLoaderData() as projectsState;
 
   return (
     <>
@@ -38,8 +37,10 @@ const Projects = () => {
     </>
   );
 };
+
 export async function loader() {
   const projectsData = await getProjects();
   return projectsData;
 }
+
 export default Projects;

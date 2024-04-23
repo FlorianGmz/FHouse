@@ -67,8 +67,7 @@ const ProcessText = styled.p`
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
 
-  const processData: processState = useLoaderData();
-  const { introduction, items } = processData;
+  const { introduction, items } = useLoaderData() as processState;
 
   const processTitles = items
     .map((process) => process.title)

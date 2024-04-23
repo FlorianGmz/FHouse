@@ -12,7 +12,9 @@ import Projects, { loader as projectsLoader } from "./Components/Projects";
 import Project from "./Components/Project";
 import Process, { loader as processLoader } from "./Components/Process";
 import About, { loader as aboutLoader } from "./Components/AboutPage/About";
-import Contact from "./Components/ContactPage/Contact";
+import Contact, {
+  loader as contactLoader,
+} from "./Components/ContactPage/Contact";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,7 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+        loader: contactLoader,
       },
     ],
   },
