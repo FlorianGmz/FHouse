@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import data from "../../data/data.json";
 import IntroductionText from "./IntroductionText";
 import ProjectCard from "./ProjectCard";
 import NavBar from "./NavBar";
+import { getProjects } from "../services/apiFaliHouse";
+import { useLoaderData } from "react-router-dom";
+import { projectState, projectsState } from "../@types/types";
 
 const ProjectsHeader = styled.div`
   display: flex;
@@ -19,22 +21,25 @@ const ProjectsContainer = styled.div`
 `;
 
 const Projects = () => {
-  const { projects, pageTitle } = data;
-  const projectTitle = pageTitle.projects;
+  const projectsData: projectsState = useLoaderData();
+  const { introduction, items } = projectsData;
 
   return (
     <>
       <ProjectsHeader>
-        <IntroductionText text={projectTitle} />
+        <IntroductionText text={introduction} />
         <NavBar position="right" />
       </ProjectsHeader>
       <ProjectsContainer>
-        {projects.map((project) => (
+        {items.map((project: projectState["project"]) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </ProjectsContainer>
     </>
   );
 };
-
+export async function loader() {
+  const projectsData = await getProjects();
+  return projectsData;
+}
 export default Projects;

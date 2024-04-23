@@ -1,9 +1,12 @@
 import "react-slideshow-image/dist/styles.css";
-import data from "../../../data/data.json";
+// import data from "../../../data/data.json";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";
 import Slideshow from "../Slideshow";
+import { getAbout } from "../../services/apiFaliHouse";
+import { useLoaderData } from "react-router-dom";
+import { aboutState } from "../../@types/types";
 
 const MainSection = styled.div`
   /* padding: 0 90px; */
@@ -40,8 +43,9 @@ const Text = styled.p`
 `;
 
 const About = () => {
+  const aboutData: aboutState = useLoaderData();
   const {
-    introductionText,
+    introduction,
     firstText,
     secondText,
     thirdText,
@@ -49,11 +53,11 @@ const About = () => {
     slideshow,
     mainImage,
     finalImage,
-  } = data.about;
+  } = aboutData;
 
   return (
     <>
-      <IntroductionText page="about">{introductionText}</IntroductionText>
+      <IntroductionText page="about">{introduction}</IntroductionText>
       <Slideshow slideshow={slideshow} />
       <MainSection>
         <TextDiv>
@@ -68,5 +72,10 @@ const About = () => {
     </>
   );
 };
+
+export async function loader() {
+  const aboutData = await getAbout();
+  return aboutData;
+}
 
 export default About;

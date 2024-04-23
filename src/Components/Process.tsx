@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import data from "../../data/data.json";
 import { processState } from "../@types/types";
+import { getProcess } from "../services/apiFaliHouse";
+import { useLoaderData } from "react-router-dom";
 
 export const ProcessTitle = styled.h2`
   width: 60vw;
@@ -66,16 +67,14 @@ const ProcessText = styled.p`
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
 
-  const processData: processState = data.process;
-  const { introduction: introductionText, item: processItem } = processData;
+  const processData: processState = useLoaderData();
+  const { introduction, items } = processData;
 
-  const processTitles = processItem
+  const processTitles = items
     .map((process) => process.title)
     .map((title) => title.replace(/-/g, " "));
 
-  const [currentIdentifier, setCurrentIdentifier] = useState(
-    processItem[0].title
-  );
+  const [currentIdentifier, setCurrentIdentifier] = useState(items[0].title);
 
   const handleClick = (identifier: string) => {
     setCurrentIdentifier(identifier);
@@ -98,7 +97,7 @@ const Process = () => {
 
   return (
     <>
-      <ProcessTitle>{introductionText}</ProcessTitle>
+      <ProcessTitle>{introduction}</ProcessTitle>
       <ProcessTableContent className={tableFixed ? "fixed" : ""}>
         {processTitles.map((title) => (
           <ProcessTableItem
@@ -112,7 +111,7 @@ const Process = () => {
         ))}
       </ProcessTableContent>
       <ProcessItemSection>
-        {processItem.map((process) => (
+        {items.map((process) => (
           <ProcessItem key={process.id}>
             <ProcessImage src={process.image} />
             <ProcessText>{process.text}</ProcessText>
@@ -122,5 +121,10 @@ const Process = () => {
     </>
   );
 };
+
+export async function loader() {
+  const processData = await getProcess();
+  return processData;
+}
 
 export default Process;

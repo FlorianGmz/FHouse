@@ -11,6 +11,11 @@ export interface architectState {
   };
 }
 
+export interface projectsState {
+  introduction: string;
+  items: projectState["project"][];
+}
+
 export interface projectState {
   project: {
     id: number;
@@ -22,19 +27,21 @@ export interface projectState {
   };
 }
 
-interface itemState {
-  id: number;
-  title: string;
-  image: string;
-  text: string;
-}
 export interface processState {
   introduction: string;
-  item: itemState[];
+  items: processItemsState["item"][];
+}
+interface processItemState {
+  item: {
+    id: number;
+    title: string;
+    image: string;
+    text: string;
+  };
 }
 
 export interface aboutState {
-  introductionText: string;
+  introduction: string;
   firstText: string;
   secondText: string;
   thirdText: string;
