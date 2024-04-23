@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import data from "../../data/data.json";
 import CarousselItem from "./CarousselItem";
 import styled from "styled-components";
+import { projectsState } from "../@types/types";
 
 const CarousselContainer = styled.div`
   padding: 0 9rem;
@@ -13,7 +14,7 @@ const CarousselTitle = styled.h4`
   font-size: x-large;
 `;
 
-const Caroussel = () => {
+const Caroussel: React.FC<projectsState> = ({ items }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -22,13 +23,11 @@ const Caroussel = () => {
     slidesToScroll: 1,
   };
 
-  const projects = data.projects;
-
   return (
     <CarousselContainer>
       <CarousselTitle>Select Projects</CarousselTitle>
       <Slider {...settings}>
-        {projects.map((project) => (
+        {items.map((project) => (
           <CarousselItem project={project} />
         ))}
       </Slider>

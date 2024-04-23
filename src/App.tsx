@@ -1,12 +1,6 @@
-import {
-  BrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Components/AppLayout";
-import Home from "./Components/Home";
+import Home, { loader as homeLoader } from "./Components/Home";
 import GlobalStyles from "./styles/GlobalStyles";
 import Projects, { loader as projectsLoader } from "./Components/Projects";
 import Project from "./Components/Project";
@@ -23,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: homeLoader,
       },
       {
         path: "projects",

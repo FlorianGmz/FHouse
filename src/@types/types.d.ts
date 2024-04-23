@@ -1,7 +1,9 @@
-export interface textState {
-  text: string;
+export interface homeState {
+  introduction: string;
+  firstText: string;
+  secondText: string;
+  slideshow: string;
 }
-
 export interface architectState {
   architect: {
     firstName: string;
