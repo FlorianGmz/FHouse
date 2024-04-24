@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 const StyledNavBar = styled.div`
   display: flex;
-  gap: 2rem;
   &.top {
     gap: 4rem;
     padding: 0rem 9rem;
@@ -35,7 +34,6 @@ const NavBar: React.FC<NavBarProps> = ({ position }) => {
   return (
     <StyledNavBar className={position}>
       <StyledNavLink to="projects">Projects</StyledNavLink>
-      <StyledNavLink to="models">Models</StyledNavLink>
     </StyledNavBar>
   );
 };

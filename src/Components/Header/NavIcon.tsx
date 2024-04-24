@@ -8,9 +8,9 @@ const NavIconDiv = styled.div`
   align-items: flex-end;
   justify-content: center;
   padding-right: 1.5rem;
-  gap: 1rem;
-  width: 50px;
-  height: 15px;
+  gap: 0.75rem;
+  width: 100px;
+  height: 100%;
   cursor: pointer;
 `;
 
@@ -29,18 +29,18 @@ const Icon = styled.div`
           ? "white"
       : "white"} */
       };
-      width: 5rem;
-      height: 0.5rem;
-      border-radius: 0.5rem;
+      width: 3rem;
+      height: 0.2rem;
+      border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: 3rem;
+        width: ${(props) => (props.navOpen ? "2rem" : "1.5rem")};
         transition: ease-out 0.3s;
       }
 
       &.clicked {
-        width: 3rem;
-        transform: rotate(45deg) translate(0rem, 1rem);
+        width: 2rem;
+        transform: rotate(45deg) translate(0.25rem, 0rem);
         /* transition: ease-out 0.5s; */
       }
     `}
@@ -58,17 +58,17 @@ const Icon = styled.div`
           ? "white"
       : "white"} */
       };
-      width: 3rem;
-      height: 0.5rem;
-      border-radius: 0.5rem;
+      width: 1.5rem;
+      height: 0.2rem;
+      border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${(props) => (props.navOpen ? "3rem" : "5rem")};
+        width: ${(props) => (props.navOpen ? "2rem" : "3rem")};
         transition: ease-out 0.3s;
       }
       &.clicked {
-        width: 3rem;
-        transform: rotate(-45deg) translate(-0.25rem, -1rem);
+        width: 2rem;
+        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
         transition: ease-out 0.5s;
       }
     `}

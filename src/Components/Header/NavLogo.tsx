@@ -44,23 +44,23 @@ const letterFadeOut = keyframes`
   `;
 const Logo = styled.div`
   color: black;
+  font-size: 3rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: auto;
+  width: 100%;
   cursor: pointer;
   &.contact-page {
     color: white;
   }
 `;
 const StyledFLogo = styled.div`
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
   transition: 1s;
-  width: 2rem;
+  width: 1.5rem;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
-    width: 13rem;
+    width: 7.5rem;
     color: white;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
@@ -68,8 +68,7 @@ const StyledFLogo = styled.div`
 `;
 
 const StyledHLogo = styled.div`
-  font-size: 4rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.1rem;
   transition: 1s;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
@@ -91,7 +90,7 @@ const animationTimings = {
 const StyledLogoLetter = styled.span`
   text-decoration: none;
   color: transparent;
-  font-size: 4rem;
+  font-size: 3rem;
   visibility: hidden;
   transition: 4s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);

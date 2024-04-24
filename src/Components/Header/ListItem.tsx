@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 
 const StyledNavLink = styled(Link)`
-  font-size: 6.5rem;
+  font-size: 4rem;
   transition: transform 0.5s ease-out;
   display: list-item;
   color: white;
@@ -16,12 +16,12 @@ const NavLinkCursor = styled.span`
   width: 0;
   height: 1px;
   position: absolute;
-  right: -12rem;
+  right: -132px;
   top: 50%;
   background-color: white;
   transition: transform 0.3s ease-out;
   ${StyledNavLink}:hover & {
-    width: 9rem;
+    width: 100px;
     transition: ease-out 0.5s;
   }
 `;
