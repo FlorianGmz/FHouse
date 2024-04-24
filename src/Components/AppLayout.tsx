@@ -2,6 +2,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer";
 import { Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { useEffect } from "react";
 
 const StyledMainContainer = styled.main`
   position: relative;
@@ -20,6 +21,9 @@ const AppLayout = () => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   return (
     <div>
       <Header />
