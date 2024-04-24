@@ -1,11 +1,9 @@
-import HomeDiaporama from "./HomeDiaporama";
 import IntroductionText from "./IntroductionText";
 import NavBar from "./NavBar";
-import HomeText from "./HomeText";
 import Caroussel from "./Caroussel";
 import { getHome, getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
-import { homeDataState, homeState } from "../@types/types";
+import { homeDataState } from "../@types/types";
 import styled from "styled-components";
 import Slideshow from "./Slideshow";
 
