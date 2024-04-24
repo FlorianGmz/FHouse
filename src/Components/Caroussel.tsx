@@ -1,7 +1,6 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import data from "../../data/data.json";
 import CarousselItem from "./CarousselItem";
 import styled from "styled-components";
 import { projectsState } from "../@types/types";
@@ -13,8 +12,11 @@ const CarousselContainer = styled.div`
 const CarousselTitle = styled.h4`
   font-size: x-large;
 `;
+interface CarousselProps {
+  items: projectsState["items"];
+}
 
-const Caroussel: React.FC<projectsState> = ({ items }) => {
+const Caroussel = ({ items }: CarousselProps) => {
   const settings = {
     dots: true,
     infinite: true,

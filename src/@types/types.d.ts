@@ -1,8 +1,12 @@
+export interface homeDataState {
+  homeData: homeState;
+  projectsData: projectsState;
+}
 export interface homeState {
   introduction: string;
   firstText: string;
   secondText: string;
-  slideshow: string;
+  slideshow: string[];
 }
 export interface architectState {
   architect: {
