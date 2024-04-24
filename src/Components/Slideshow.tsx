@@ -26,7 +26,7 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
       <Fade {...slideProperties}>
         {slideshow.map((slide) => (
           <SlideDiv>
-            <StyledImg page="slideshow" src={slide} />
+            <StyledImg key={slide} page="slideshow" src={slide} />
           </SlideDiv>
         ))}
       </Fade>

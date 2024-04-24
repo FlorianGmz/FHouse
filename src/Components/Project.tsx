@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import data from "../../data/data.json";
-import { projectState } from "../@types/types";
+import { projectState, projectsState } from "../@types/types";
 import styled from "styled-components";
 
 const StyledProjectTitle = styled.div`
@@ -23,8 +22,8 @@ const ProjectImage = styled.img`
 `;
 
 const Project = () => {
+  const projects = useLoaderData() as projectsState;
   const { id } = useParams<{ id: string }>();
-  const allProjects = data.projects;
   const [currentProject, setCurrentProject] = useState<projectState["project"]>(
     {
       id: 0,
@@ -37,13 +36,13 @@ const Project = () => {
   );
 
   useEffect(() => {
-    const foundProject = allProjects.find(
+    const foundProject = projects.items.find(
       (project) => Number(project.id) === Number(id)
     );
     if (foundProject) {
       setCurrentProject(foundProject);
     }
-  }, [allProjects, id]);
+  }, [projects, id]);
 
   const { name, city, surface, description, image } = currentProject;
   return (

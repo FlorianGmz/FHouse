@@ -30,7 +30,7 @@ const Caroussel = ({ items }: CarousselProps) => {
       <CarousselTitle>Select Projects</CarousselTitle>
       <Slider {...settings}>
         {items.map((project) => (
-          <CarousselItem project={project} />
+          <CarousselItem key={project.id} project={project} />
         ))}
       </Slider>
     </CarousselContainer>

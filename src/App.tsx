@@ -27,6 +27,7 @@ const router = createBrowserRouter([
       {
         path: "projects/:id",
         element: <Project />,
+        loader: projectsLoader,
       },
       {
         path: "process",
