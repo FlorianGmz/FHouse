@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { textState } from "../@types/types";
 
 const StyledIntroductionText = styled.h2`
   color: black;
@@ -8,7 +7,12 @@ const StyledIntroductionText = styled.h2`
   font-weight: 400;
   font-size: 4.5rem;
 `;
-const IntroductionText: React.FC<textState> = ({ text }) => {
+
+interface IntroductionTextProps {
+  text: string;
+}
+
+const IntroductionText: React.FC<IntroductionTextProps> = ({ text }) => {
   return (
     <StyledIntroductionText>
       <pre>{text}</pre>
