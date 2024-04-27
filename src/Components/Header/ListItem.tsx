@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 
 const StyledNavLink = styled(Link)`
@@ -28,20 +28,13 @@ const NavLinkCursor = styled.span`
 
 interface ListItemProps {
   to: string;
-  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ to, setNavIsOpen, children }) => {
-  const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate(to);
-  //   setNavIsOpen((open) => !open);
-  // };
+const ListItem: React.FC<ListItemProps> = ({ to, children }) => {
   return (
     <li>
-      <StyledNavLink to={to}>
+      <StyledNavLink reloadDocument to={to}>
         {children}
         <NavLinkCursor />
       </StyledNavLink>

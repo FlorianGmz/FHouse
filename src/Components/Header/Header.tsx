@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
   left: 0;
   z-index: 20;
   width: 100vw;
-  height: 150px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,7 +25,7 @@ const Header = () => {
         <NavLogo navIsOpen={navIsOpen} />
         <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </StyledHeader>
-      <NavList navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
+      <NavList navIsOpen={navIsOpen} />
     </>
   );
 };

@@ -56,6 +56,7 @@ const Logo = styled.div`
 `;
 const StyledFLogo = styled.div`
   letter-spacing: 0.2rem;
+  font-weight: 500;
   transition: 1s;
   width: 1.5rem;
   /* animation: 1s ${logoFadeOut} ease-out; */
@@ -107,7 +108,7 @@ const NavLogo = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
   return (
-    <Link to={"/"}>
+    <Link reloadDocument to={"/"}>
       <Logo className={isContactPage ? "contact-page" : ""}>
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F

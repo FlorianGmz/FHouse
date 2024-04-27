@@ -45,25 +45,16 @@ const StyledList = styled.ul`
 
 interface NavListProps {
   navIsOpen: boolean;
-  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavList: React.FC<NavListProps> = ({ navIsOpen, setNavIsOpen }) => {
+const NavList: React.FC<NavListProps> = ({ navIsOpen }) => {
   return (
     <StyledNavList navOpen={navIsOpen}>
       <StyledList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/projects">
-          Projects
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/process">
-          Process
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/about">
-          About
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/contact">
-          Contact
-        </ListItem>
+        <ListItem to="/projects">Projects</ListItem>
+        <ListItem to="/process">Process</ListItem>
+        <ListItem to="/about">About</ListItem>
+        <ListItem to="/contact">Contact</ListItem>
       </StyledList>
     </StyledNavList>
   );
