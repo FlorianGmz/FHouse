@@ -3,11 +3,13 @@ import styled from "styled-components";
 
 const StyledNavBar = styled.div`
   display: flex;
-  gap: 2rem;
+  font-size: 1.3rem;
   &.top {
     gap: 4rem;
-    padding: 0rem 9rem;
-    letter-spacing: 0.3rem;
+    padding: 0px 100px;
+    margin-bottom: 400px;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
   }
   &.bottom {
     justify-content: center;
@@ -25,6 +27,11 @@ const StyledNavBar = styled.div`
 const StyledNavLink = styled(NavLink)`
   border-bottom: solid black 1px;
   padding: 0.5rem 0rem;
+  transition: ease-in-out 0.5s;
+  &:hover {
+    transition: ease-in-out 0.5s;
+    border: none;
+  }
 `;
 
 interface NavBarProps {
@@ -35,7 +42,6 @@ const NavBar: React.FC<NavBarProps> = ({ position }) => {
   return (
     <StyledNavBar className={position}>
       <StyledNavLink to="projects">Projects</StyledNavLink>
-      <StyledNavLink to="models">Models</StyledNavLink>
     </StyledNavBar>
   );
 };

@@ -1,42 +1,20 @@
 import { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import NavLogo from "./NavLogo";
 import NavIcon from "./NavIcon";
 import NavList from "./NavList";
-
-const backgroundFadeIn = keyframes`
-  from{
-    background-color: transparent;
-  }
-  to{
-    background-color:#101010ee ;
-  }
-`;
-
-const backgroundFadeOut = keyframes`
-  from{
-    background-color: #101010ee;
-  }
-  to{
-    background-color: transparent ;
-  }
-`;
 
 const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 20;
   width: 100vw;
-  height: 150px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 9rem;
-  animation: 0.5s ${backgroundFadeOut} ease-in-out forwards;
-  &.clicked {
-    animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
-  }
+  padding: 0 100px;
 `;
 
 const Header = () => {
@@ -47,7 +25,7 @@ const Header = () => {
         <NavLogo navIsOpen={navIsOpen} />
         <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </StyledHeader>
-      <NavList navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
+      <NavList navIsOpen={navIsOpen} />
     </>
   );
 };

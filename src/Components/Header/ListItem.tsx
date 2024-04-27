@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from "react";
 
 const StyledNavLink = styled(Link)`
-  font-size: 6.5rem;
+  font-size: 4rem;
   transition: transform 0.5s ease-out;
   display: list-item;
   color: white;
@@ -16,32 +16,25 @@ const NavLinkCursor = styled.span`
   width: 0;
   height: 1px;
   position: absolute;
-  right: -12rem;
+  right: -132px;
   top: 50%;
   background-color: white;
   transition: transform 0.3s ease-out;
   ${StyledNavLink}:hover & {
-    width: 9rem;
+    width: 100px;
     transition: ease-out 0.5s;
   }
 `;
 
 interface ListItemProps {
   to: string;
-  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ to, setNavIsOpen, children }) => {
-  const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   navigate(to);
-  //   setNavIsOpen((open) => !open);
-  // };
+const ListItem: React.FC<ListItemProps> = ({ to, children }) => {
   return (
     <li>
-      <StyledNavLink to={to}>
+      <StyledNavLink reloadDocument to={to}>
         {children}
         <NavLinkCursor />
       </StyledNavLink>

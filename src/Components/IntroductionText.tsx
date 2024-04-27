@@ -2,12 +2,11 @@ import styled from "styled-components";
 import { textState } from "../@types/types";
 
 const StyledIntroductionText = styled.h2`
-  padding: 30rem 9rem 0rem;
+  color: black;
+  padding: 30rem 100px 50px;
   text-align: left;
-  font-weight: 800;
-  font-size: 8rem;
-  /* line-height: 1rem; */
-  letter-spacing: 0.2rem;
+  font-weight: 400;
+  font-size: 4.5rem;
 `;
 const IntroductionText: React.FC<textState> = ({ text }) => {
   return (

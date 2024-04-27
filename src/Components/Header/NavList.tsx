@@ -25,15 +25,16 @@ const StyledNavList = styled.nav`
 `;
 
 const StyledList = styled.ul`
-  z-index: 50;
+  z-index: 10;
   position: fixed;
-  top: 150px;
+  top: 0;
   left: 0;
-  /*   display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: flex-end */
-  text-align: right;
-  padding: 30rem 10rem;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.5rem;
+  padding: 0rem 100px;
   height: 100vh;
   width: 100vw;
   animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
@@ -44,25 +45,16 @@ const StyledList = styled.ul`
 
 interface NavListProps {
   navIsOpen: boolean;
-  setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavList: React.FC<NavListProps> = ({ navIsOpen, setNavIsOpen }) => {
+const NavList: React.FC<NavListProps> = ({ navIsOpen }) => {
   return (
     <StyledNavList navOpen={navIsOpen}>
       <StyledList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/projects">
-          Projects
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/process">
-          Process
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/about">
-          About
-        </ListItem>
-        <ListItem setNavIsOpen={setNavIsOpen} to="/contact">
-          Contact
-        </ListItem>
+        <ListItem to="/projects">Projects</ListItem>
+        <ListItem to="/process">Process</ListItem>
+        <ListItem to="/about">About</ListItem>
+        <ListItem to="/contact">Contact</ListItem>
       </StyledList>
     </StyledNavList>
   );
