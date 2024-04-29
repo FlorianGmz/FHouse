@@ -27,14 +27,15 @@ const Home = () => {
   const data = useLoaderData() as homeDataState;
   const { introduction, firstText, secondText, slideshow } = data.homeData;
   const projects = data.projectsData.items;
-
   return (
     <div>
       <IntroductionText text={introduction} />
       <NavBar position="top" />
       <Slideshow slideshow={slideshow} />
-      <StyledTitle>{firstText}</StyledTitle>
-      <StyledText>{secondText}</StyledText>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <StyledTitle>{firstText}</StyledTitle>
+        <StyledText>{secondText}</StyledText>
+      </div>
       <Caroussel items={projects} />
       <NavBar position="bottom" />
     </div>
