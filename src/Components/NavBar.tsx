@@ -6,8 +6,7 @@ const StyledNavBar = styled.div`
   font-size: 1.3rem;
   &.top {
     gap: 4rem;
-    padding: 0px 100px;
-    margin-bottom: 400px;
+    padding: 0px 100px 4rem;
     letter-spacing: 0.1rem;
     font-weight: 500;
   }
@@ -15,7 +14,7 @@ const StyledNavBar = styled.div`
     justify-content: center;
     gap: 15rem;
     letter-spacing: 0.5rem;
-    margin: 5rem;
+    margin: 200px auto;
   }
   &.right {
     gap: 4rem;

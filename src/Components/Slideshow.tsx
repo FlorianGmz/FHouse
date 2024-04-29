@@ -4,7 +4,11 @@ import styled from "styled-components";
 import StyledImg from "../ui/StyledImg";
 
 const SlideDiv = styled.div`
-  text-align: right;
+  width: 80vw;
+  height: 90vh;
+  float: right;
+  position: relative;
+  overflow: hidden;
 `;
 
 interface SlideShowProps {

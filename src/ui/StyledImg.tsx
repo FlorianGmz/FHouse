@@ -1,11 +1,22 @@
 import styled, { css } from "styled-components";
+import { keyframes } from "styled-components";
+
+const translateAnimation = keyframes` 
+from {
+    transform: translateX(0); 
+  }
+to {
+    transform: translateX(-50px); 
+  }`;
 
 const pages = {
   slideshow: css`
-    width: 80vw;
-    height: 90vh;
+    width: 120%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
+    /* transition: transform 0.5s ease; */
+    animation: ${translateAnimation} 5.5s linear infinite;
   `,
   aboutMain: css`
     width: 80vw;
