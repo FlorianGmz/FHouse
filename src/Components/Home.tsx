@@ -8,15 +8,19 @@ import styled from "styled-components";
 import Slideshow from "./Slideshow";
 
 const StyledTitle = styled.h3`
-  padding: 12rem 15rem 3rem;
-  line-height: 4rem;
-  letter-spacing: 0.5rem;
-  font-size: x-large;
+  width: 1200px;
+  padding: 13rem 20vw 3rem;
+  line-height: 5rem;
+  font-size: 3.5rem;
+  font-weight: 400;
 `;
 
 const StyledText = styled.h4`
-  padding: 0rem 15rem 12rem;
+  width: 1200px;
+  padding: 0rem 20vw 13rem;
   line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 `;
 
 const Home = () => {
