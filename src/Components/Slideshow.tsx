@@ -6,7 +6,8 @@ import StyledImg from "../ui/StyledImg";
 const SlideDiv = styled.div`
   width: 80vw;
   height: 90vh;
-  float: right;
+  margin-left: 20vw;
+  background-color: red;
   position: relative;
   overflow: hidden;
 `;
@@ -19,6 +20,7 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
   const slideProperties = {
     duration: 5000,
     autoplay: true,
+    pauseOnHover: false,
     transitionDuration: 1000,
     arrows: false,
     infinite: true,

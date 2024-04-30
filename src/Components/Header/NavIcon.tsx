@@ -19,7 +19,7 @@ const Icon = styled.div`
     props.as === "top" &&
     css`
       background-color: ${
-        (props) =>
+        (props?) =>
           props.currentPathname === "/contact"
             ? "white"
             : props.navOpen

@@ -6,17 +6,17 @@ from {
     transform: translateX(0); 
   }
 to {
-    transform: translateX(-50px); 
+    transform: translateX(50px); 
   }`;
 
 const pages = {
   slideshow: css`
-    width: 120%;
+    width: 150%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     /* transition: transform 0.5s ease; */
-    animation: ${translateAnimation} 5.5s linear infinite;
+    animation: ${translateAnimation} 5500ms linear infinite;
   `,
   aboutMain: css`
     width: 80vw;
@@ -37,8 +37,8 @@ const pages = {
   `,
 };
 
-const StyledImg = styled.img`
-  ${(props) => pages[props.page]}
+const StyledImg = styled.img<{ page?: string }>`
+  ${(props?) => pages[props?.page]}
 `;
 
 export default StyledImg;
