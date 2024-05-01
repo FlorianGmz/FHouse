@@ -8,7 +8,7 @@ import IntroductionText from "../ui/IntroductionText";
 const ProcessTableContent = styled.section`
   padding: 0 90px;
   position: absolute;
-  top: 85vh;
+  top: 825px;
   &.fixed {
     position: fixed;
     top: 150px;
@@ -18,8 +18,8 @@ const ProcessTableItem = styled.div`
   text-transform: capitalize;
   opacity: 0.2;
   font-size: large;
-  letter-spacing: 0.1rem;
-  line-height: 3.5rem;
+
+  line-height: 2rem;
   cursor: pointer;
   transition: 0.5s;
 
@@ -77,7 +77,7 @@ const Process = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > 1000) {
+      if (scrollTop > 675) {
         setTableFixed(true);
       } else {
         setTableFixed(false);

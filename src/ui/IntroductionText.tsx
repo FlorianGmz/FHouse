@@ -10,8 +10,9 @@ const pages = {
   `,
   process: css`
     width: 60vw;
-    padding: 550px 90px 430px;
-    font-size: 6rem;
+    padding: 400px 100px 50px;
+    font-weight: 400;
+    font-size: 4rem;
   `,
   about: css`
     width: 50vw;
