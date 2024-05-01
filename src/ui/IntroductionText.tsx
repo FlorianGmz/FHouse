@@ -18,7 +18,7 @@ const pages = {
   `,
 };
 
-const IntroductionText = styled.h2`
+const IntroductionText = styled.h2<{ page?: string }>`
   ${(props) => pages[props.page]}
 `;
 

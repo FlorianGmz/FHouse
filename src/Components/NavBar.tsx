@@ -24,7 +24,7 @@ const StyledNavBar = styled.div`
 `;
 
 const StyledNavLink = styled(NavLink)`
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.25s;
 
   ${StyledNavBar}:hover & {
     transform: translateY(-30px);

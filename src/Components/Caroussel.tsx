@@ -7,6 +7,7 @@ import { projectsState } from "../@types/types";
 
 const CarousselContainer = styled.div`
   padding: 0 0 0 100px;
+  overflow: visible;
 `;
 
 const CarousselTitle = styled.h4`
@@ -26,7 +27,7 @@ const Caroussel = ({ items }: CarousselProps) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    swipeToSlide: true,
+    swipe: true,
   };
 
   return (
