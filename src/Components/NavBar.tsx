@@ -2,34 +2,44 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNavBar = styled.div`
+  width: max-content;
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   font-size: 1.3rem;
+  letter-spacing: 0.5rem;
   &.top {
-    gap: 4rem;
-    padding: 0px 100px 4rem;
-    letter-spacing: 0.1rem;
-    font-weight: 500;
+    margin: 0px 100px 4rem;
   }
   &.bottom {
-    justify-content: center;
-    gap: 15rem;
-    letter-spacing: 0.5rem;
-    margin: 200px auto;
+    margin: 100px auto 100px;
   }
   &.right {
-    gap: 4rem;
     padding: 0rem 9rem 2.5rem;
     letter-spacing: 0.3rem;
   }
 `;
 
 const StyledNavLink = styled(NavLink)`
-  border-bottom: solid black 1px;
-  padding: 0.5rem 0rem;
   transition: ease-in-out 0.5s;
-  &:hover {
-    transition: ease-in-out 0.5s;
-    border: none;
+  ${StyledNavBar}:hover & {
+    transform: translateY(-50px);
+  }
+  &.hidden {
+    display: none;
+  }
+`;
+
+const StyledUnderline = styled.span`
+  background-color: black;
+  height: 1px;
+  width: 100%;
+  margin: 10px 0 0;
+  display: inline-block;
+  left: 0;
+  transition: linear 0.25s;
+  ${StyledNavBar}:hover & {
+    width: 0;
   }
 `;
 
@@ -41,6 +51,10 @@ const NavBar: React.FC<NavBarProps> = ({ position }) => {
   return (
     <StyledNavBar className={position}>
       <StyledNavLink to="projects">Projects</StyledNavLink>
+      <StyledNavLink className="hidden" to="projects">
+        Projects
+      </StyledNavLink>
+      <StyledUnderline />
     </StyledNavBar>
   );
 };
