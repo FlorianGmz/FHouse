@@ -1,6 +1,13 @@
 import styled, { css } from "styled-components";
 
 const pages = {
+  home: css`
+    color: black;
+    padding: 400px 100px 50px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 4rem;
+  `,
   process: css`
     width: 60vw;
     padding: 550px 90px 430px;

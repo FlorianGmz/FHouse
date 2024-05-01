@@ -1,4 +1,3 @@
-import IntroductionText from "./IntroductionText";
 import NavBar from "./NavBar";
 import Caroussel from "./Caroussel";
 import { getHome, getProjects } from "../services/apiFaliHouse";
@@ -6,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import { homeDataState } from "../@types/types";
 import styled from "styled-components";
 import Slideshow from "./Slideshow";
+import IntroductionText from "../ui/IntroductionText";
 
 const StyledTitle = styled.h3`
   width: 1200px;
@@ -28,17 +28,28 @@ const Home = () => {
   const { introduction, firstText, secondText, slideshow } = data.homeData;
   const projects = data.projectsData.items;
   return (
-    <div>
-      <IntroductionText text={introduction} />
-      <NavBar position="top" />
-      <Slideshow slideshow={slideshow} />
+    <>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <IntroductionText page="home">
+          <pre>{introduction}</pre>
+        </IntroductionText>
+        <NavBar position="top" />
+      </div>
+      <div
+        data-aos="zoom-in-left"
+        data-aos-duration="1000"
+        data-aos-delay="250"
+        data-aos-offset="-500"
+      >
+        <Slideshow slideshow={slideshow} />
+      </div>
       <div data-aos="fade-up" data-aos-duration="1000">
         <StyledTitle>{firstText}</StyledTitle>
         <StyledText>{secondText}</StyledText>
       </div>
       <Caroussel items={projects} />
       <NavBar position="bottom" />
-    </div>
+    </>
   );
 };
 

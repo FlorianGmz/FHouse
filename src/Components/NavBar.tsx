@@ -9,8 +9,8 @@ const StyledNavBar = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 1.3rem;
-  letter-spacing: 0.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
   &.top {
     margin: 0px 100px 4rem;
   }
@@ -34,7 +34,7 @@ const StyledNavLink = styled(NavLink)`
     opacity: 1;
     ${StyledNavBar}:hover & {
       opacity: 1;
-      transform: translateY(-30px);
+      transform: translateY(-25px);
     }
   }
 `;

@@ -3,12 +3,7 @@ import styled from "styled-components";
 import { processState } from "../@types/types";
 import { getProcess } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
-
-export const ProcessTitle = styled.h2`
-  width: 60vw;
-  padding: 550px 90px 430px;
-  font-size: 6rem;
-`;
+import IntroductionText from "../ui/IntroductionText";
 
 const ProcessTableContent = styled.section`
   padding: 0 90px;
@@ -96,7 +91,11 @@ const Process = () => {
 
   return (
     <>
-      <ProcessTitle>{introduction}</ProcessTitle>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <IntroductionText page="process">
+          <pre>{introduction}</pre>
+        </IntroductionText>
+      </div>
       <ProcessTableContent className={tableFixed ? "fixed" : ""}>
         {processTitles.map((title) => (
           <ProcessTableItem
