@@ -72,8 +72,9 @@ html {
 }
 
 body {
-  font-family: "Reddit Mono";
-  color: var(--color-grey-700);
+  font-family: "Work Sans";
+  color: black;
+
 }
 
 

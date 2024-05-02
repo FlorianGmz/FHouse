@@ -6,19 +6,18 @@ import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../ui/IntroductionText";
 
 const ProcessTableContent = styled.section`
-  padding: 0 90px;
+  padding: 0 100px;
   position: absolute;
-  top: 825px;
+  top: 85vh;
   &.fixed {
     position: fixed;
-    top: 150px;
+    top: 100px;
   }
 `;
 const ProcessTableItem = styled.div`
   text-transform: capitalize;
   opacity: 0.2;
   font-size: large;
-
   line-height: 2rem;
   cursor: pointer;
   transition: 0.5s;
@@ -31,14 +30,13 @@ const ProcessTableItem = styled.div`
 const ProcessItemSection = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
   margin: auto;
-  padding-right: 9rem;
+  padding-right: 100px;
 `;
 
 const ProcessItem = styled.div`
-  width: 65vw;
+  width: 70vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -53,10 +51,10 @@ const ProcessImage = styled.img`
 const ProcessText = styled.p`
   width: 100%;
   height: 50%;
-  padding: 8rem 10rem;
-  font-size: 3rem;
-  font-weight: lighter;
-  line-height: 5rem;
+  padding: 40px 60px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 3rem;
 `;
 
 const Process = () => {
@@ -76,8 +74,12 @@ const Process = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > 675) {
+      const scrollTop =
+        ((window.scrollY || document.documentElement.scrollTop) /
+          window.innerHeight) *
+        100; // Convertir en vh
+      if (scrollTop > 77) {
+        // 20vh au lieu de 700px
         setTableFixed(true);
       } else {
         setTableFixed(false);
@@ -91,12 +93,19 @@ const Process = () => {
 
   return (
     <>
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <IntroductionText page="process">
-          <pre>{introduction}</pre>
-        </IntroductionText>
-      </div>
-      <ProcessTableContent className={tableFixed ? "fixed" : ""}>
+      <IntroductionText
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        page="process"
+      >
+        <pre>{introduction}</pre>
+      </IntroductionText>
+      <ProcessTableContent
+        data-aos="fade"
+        data-aos-duration="1000"
+        data-aos-offset="-500"
+        className={tableFixed ? "fixed" : ""}
+      >
         {processTitles.map((title) => (
           <ProcessTableItem
             className={
@@ -111,8 +120,15 @@ const Process = () => {
       <ProcessItemSection>
         {items.map((process) => (
           <ProcessItem key={process.id}>
-            <ProcessImage src={process.image} />
-            <ProcessText>{process.text}</ProcessText>
+            <ProcessImage
+              data-aos="fade"
+              data-aos-easing="ease"
+              data-aos-duration="1000"
+              src={process.image}
+            />
+            <ProcessText data-aos="fade-up" data-aos-duration="1000">
+              {process.text}
+            </ProcessText>
           </ProcessItem>
         ))}
       </ProcessItemSection>

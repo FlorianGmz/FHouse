@@ -2,16 +2,18 @@ import styled, { css } from "styled-components";
 
 const pages = {
   home: css`
-    color: black;
     padding: 400px 100px 50px;
     text-align: left;
     font-weight: 400;
     font-size: 4rem;
   `,
   process: css`
+    display: flex;
     width: 60vw;
-    padding: 400px 100px 50px;
-    font-weight: 400;
+    height: 85vh;
+    padding-left: 100px;
+    padding-top: 40vh;
+    font-weight: 500;
     font-size: 4rem;
   `,
   about: css`

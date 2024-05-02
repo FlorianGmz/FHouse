@@ -36,9 +36,9 @@ const Home = () => {
         <NavBar position="top" />
       </div>
       <div
-        data-aos="zoom-in-left"
+        data-aos="fade-left"
         data-aos-duration="1000"
-        data-aos-delay="250"
+        data-aos-delay="350"
         data-aos-offset="-500"
       >
         <Slideshow slideshow={slideshow} />

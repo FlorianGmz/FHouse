@@ -60,19 +60,6 @@ function App() {
       <GlobalStyles />
       <RouterProvider router={router} />
     </>
-    // <BrowserRouter>
-    //   <GlobalStyles />
-    //   <Routes>
-    //     <Route element={<AppLayout />}>
-    //       <Route index element={<Home />} />
-    //       <Route path="projects" element={<Projects />} />
-    //       <Route path="projects/:id" element={<Project />} />
-    //       <Route path="process" element={<Process />} />
-    //       <Route path="about" loader={aboutLoader} element={<About />} />
-    //       <Route path="contact" element={<Contact />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
   );
 }
 
