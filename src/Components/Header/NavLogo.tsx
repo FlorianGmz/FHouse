@@ -50,6 +50,7 @@ const Logo = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  z-index: 20;
   cursor: pointer;
   &.contact-page {
     color: white;
