@@ -18,6 +18,7 @@ const ProcessTableItem = styled.div`
   text-transform: capitalize;
   opacity: 0.2;
   font-size: large;
+  font-weight: 600;
   line-height: 2rem;
   cursor: pointer;
   transition: 0.5s;
@@ -33,6 +34,7 @@ const ProcessItemSection = styled.section`
   align-items: flex-end;
   margin: auto;
   padding-right: 100px;
+  z-index: 50;
 `;
 
 const ProcessItem = styled.div`
@@ -43,16 +45,16 @@ const ProcessItem = styled.div`
 `;
 const ProcessImage = styled.img`
   width: 100%;
-  height: 50%;
+  height: 55%;
   object-fit: cover;
   object-position: center;
 `;
 
 const ProcessText = styled.p`
   width: 100%;
-  height: 50%;
-  padding: 40px 60px;
-  font-size: 1.25rem;
+  height: 45%;
+  padding: 60px 100px;
+  font-size: 1.65rem;
   font-weight: 500;
   line-height: 3rem;
 `;
@@ -70,6 +72,11 @@ const Process = () => {
 
   const handleClick = (identifier: string) => {
     setCurrentIdentifier(identifier);
+    const element = document.getElementById(identifier);
+    console.log(element);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   useEffect(() => {
@@ -119,7 +126,7 @@ const Process = () => {
       </ProcessTableContent>
       <ProcessItemSection>
         {items.map((process) => (
-          <ProcessItem key={process.id}>
+          <ProcessItem key={process.id} id={process.title}>
             <ProcessImage
               data-aos="fade"
               data-aos-easing="ease"

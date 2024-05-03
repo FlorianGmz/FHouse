@@ -14,7 +14,7 @@ const pages = {
     padding-left: 100px;
     padding-top: 40vh;
     font-weight: 500;
-    font-size: 4rem;
+    font-size: 4.75rem;
   `,
   about: css`
     width: 50vw;

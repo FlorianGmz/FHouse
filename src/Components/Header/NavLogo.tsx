@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -43,7 +44,7 @@ const letterFadeOut = keyframes`
   }
   `;
 const Logo = styled.div`
-  color: black;
+  color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
   font-size: 3rem;
   display: flex;
   justify-content: flex-start;
@@ -107,9 +108,22 @@ const StyledLogoLetter = styled.span`
 const NavLogo = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 40;
+      setScrolled(isScrolled);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <Link reloadDocument to={"/"}>
-      <Logo className={isContactPage ? "contact-page" : ""}>
+      <Logo scrolled={scrolled} className={isContactPage ? "contact-page" : ""}>
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F
           <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
