@@ -43,6 +43,15 @@ const letterFadeOut = keyframes`
     color:transparent;
   }
   `;
+const StyledLink = styled(Link)`
+  position: fixed;
+  top: 47.5px;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 50px;
+  left: 100px;
+  z-index: 10;
+`;
 const Logo = styled.div`
   color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
   font-size: 3rem;
@@ -50,7 +59,6 @@ const Logo = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  z-index: 20;
   cursor: pointer;
   &.contact-page {
     color: white;
@@ -58,12 +66,11 @@ const Logo = styled.div`
 `;
 const StyledFLogo = styled.div`
   letter-spacing: 0.2rem;
-  font-weight: 500;
   transition: 1s;
   width: 1.5rem;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
-    width: 7.5rem;
+    width: 8.5rem;
     color: white;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
@@ -123,7 +130,7 @@ const NavLogo = ({ navIsOpen }) => {
   }, []);
 
   return (
-    <Link reloadDocument to={"/"}>
+    <StyledLink reloadDocument to={"/"}>
       <Logo scrolled={scrolled} className={isContactPage ? "contact-page" : ""}>
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F
@@ -153,7 +160,7 @@ const NavLogo = ({ navIsOpen }) => {
           </StyledLogoLetter>
         </StyledHLogo>
       </Logo>
-    </Link>
+    </StyledLink>
   );
 };
 

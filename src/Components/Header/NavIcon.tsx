@@ -3,14 +3,17 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const NavIconDiv = styled.div`
+  top: 60px;
+  position: fixed;
+  width: 50px;
+  margin-top: 16px;
+  right: 100px;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding-right: 1.5rem;
   gap: 0.75rem;
-  width: 100px;
-  height: 100%;
   cursor: pointer;
 `;
 
@@ -79,7 +82,7 @@ interface NavMenuIconProps {
   setNavIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
+const NavIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
   const location = useLocation();
   const currentPathname = location.pathname;
   return (
@@ -102,4 +105,4 @@ const NavMenuIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
   );
 };
 
-export default NavMenuIcon;
+export default NavIcon;
