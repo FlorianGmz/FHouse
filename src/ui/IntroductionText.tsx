@@ -8,11 +8,10 @@ const pages = {
     font-size: 4rem;
   `,
   process: css`
-    display: flex;
     width: 60vw;
-    height: 85vh;
+    height: 95vh;
     padding-left: 100px;
-    padding-top: 40vh;
+    padding-top: 45vh;
     font-weight: 500;
     font-size: 4.75rem;
   `,
@@ -29,7 +28,7 @@ const pages = {
 };
 
 const IntroductionText = styled.h2<{ page?: string }>`
-  ${(props) => pages[props.page]}
+  ${(props) => pages[props?.page]}
 `;
 
 export default IntroductionText;

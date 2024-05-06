@@ -8,7 +8,7 @@ import IntroductionText from "../ui/IntroductionText";
 const ProcessTableContent = styled.section`
   padding: 0 100px;
   position: absolute;
-  top: 85vh;
+  top: 95vh;
   &.fixed {
     position: fixed;
     top: 100px;
@@ -22,13 +22,13 @@ const ProcessTableItem = styled.div`
   line-height: 2rem;
   cursor: pointer;
   transition: 0.5s;
-
   &.current {
     opacity: 1;
   }
 `;
 
 const ProcessItemSection = styled.section`
+  top: 95vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -85,7 +85,7 @@ const Process = () => {
         ((window.scrollY || document.documentElement.scrollTop) /
           window.innerHeight) *
         100; // Convertir en vh
-      if (scrollTop > 77) {
+      if (scrollTop > 79) {
         // 20vh au lieu de 700px
         setTableFixed(true);
       } else {
