@@ -64,11 +64,11 @@ const Process = () => {
 
   const { introduction, items } = useLoaderData() as processState;
 
-  const processTitles = items
-    .map((process) => process.title)
-    .map((title) => title.replace(/-/g, " "));
+  const processTitles = items.map((process) => process.title);
 
-  const [currentIdentifier, setCurrentIdentifier] = useState(items[0].title);
+  console.log(processTitles);
+
+  const [currentIdentifier, setCurrentIdentifier] = useState(processTitles[0]);
 
   const handleClick = (identifier: string) => {
     setCurrentIdentifier(identifier);
@@ -120,7 +120,7 @@ const Process = () => {
             }
             onClick={() => handleClick(title)}
           >
-            {title}
+            {title.replace(/-/g, " ")}
           </ProcessTableItem>
         ))}
       </ProcessTableContent>
