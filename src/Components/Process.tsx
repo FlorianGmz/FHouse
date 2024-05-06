@@ -8,10 +8,10 @@ import IntroductionText from "../ui/IntroductionText";
 const ProcessTableContent = styled.section`
   padding: 0 100px;
   position: absolute;
-  top: 95vh;
+  top: 90vh;
   &.fixed {
     position: fixed;
-    top: 100px;
+    top: 10vh;
   }
 `;
 const ProcessTableItem = styled.div`
@@ -61,7 +61,7 @@ const ProcessText = styled.p`
 
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
-
+  5;
   const { introduction, items } = useLoaderData() as processState;
 
   const processTitles = items.map((process) => process.title);
@@ -85,7 +85,7 @@ const Process = () => {
         ((window.scrollY || document.documentElement.scrollTop) /
           window.innerHeight) *
         100; // Convertir en vh
-      if (scrollTop > 79) {
+      if (scrollTop > 80) {
         // 20vh au lieu de 700px
         setTableFixed(true);
       } else {

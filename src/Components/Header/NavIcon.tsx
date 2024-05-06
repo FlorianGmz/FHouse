@@ -13,7 +13,7 @@ const NavIconDiv = styled.div`
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 10px;
   cursor: pointer;
 `;
 
@@ -43,8 +43,8 @@ const Icon = styled.div`
 
       &.clicked {
         width: 2rem;
-        transform: rotate(45deg) translate(0.25rem, 0rem);
-        /* transition: ease-out 0.5s; */
+        transform: translate(0rem, 6px) rotate(45deg);
+        transition: ease-out 3s;
       }
     `}
   ${(props?) =>
@@ -71,8 +71,8 @@ const Icon = styled.div`
       }
       &.clicked {
         width: 2rem;
-        transform: rotate(-45deg) translate(0.5rem, -0.5rem);
-        transition: ease-out 0.5s;
+        transform: translate(0rem, -6px) rotate(-45deg);
+        transition: ease-out 1s;
       }
     `}
 `;

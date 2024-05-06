@@ -9,7 +9,7 @@ const pages = {
   `,
   process: css`
     width: 60vw;
-    height: 95vh;
+    height: 90vh;
     padding-left: 100px;
     padding-top: 45vh;
     font-weight: 500;
