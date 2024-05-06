@@ -1,23 +1,23 @@
 import styled from "styled-components";
-import IntroductionText from "./IntroductionText";
 import ProjectCard from "./ProjectCard";
 import NavBar from "./NavBar";
 import { getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { projectState, projectsState } from "../@types/types";
+import IntroductionText from "../ui/IntroductionText";
 
 const ProjectsHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  height: 55vh;
 `;
 
 const ProjectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
-  padding: 10rem 5rem;
+  justify-content: space-between;
+  margin: 300px 100px;
 `;
 
 const Projects = () => {
@@ -26,7 +26,9 @@ const Projects = () => {
   return (
     <>
       <ProjectsHeader>
-        <IntroductionText text={introduction} />
+        <IntroductionText page="projects">
+          <pre>{introduction}</pre>
+        </IntroductionText>
         <NavBar position="right" />
       </ProjectsHeader>
       <ProjectsContainer>

@@ -17,7 +17,11 @@ const NavIconDiv = styled.div`
   cursor: pointer;
 `;
 
-const Icon = styled.div`
+const Icon = styled.div<{
+  as: string;
+  currentPathname: string;
+  navOpen: boolean;
+}>`
   ${(props?) =>
     props.as === "top" &&
     css`

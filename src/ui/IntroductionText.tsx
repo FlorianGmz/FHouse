@@ -15,6 +15,13 @@ const pages = {
     font-weight: 500;
     font-size: 4.75rem;
   `,
+  projects: css`
+    width: 60vw;
+    padding-left: 100px;
+    padding-top: 35vh;
+    font-weight: 500;
+    font-size: 6.5rem;
+  `,
   about: css`
     width: 50vw;
     padding: 500px 90px 490px;

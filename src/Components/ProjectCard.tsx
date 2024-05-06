@@ -3,11 +3,12 @@ import { projectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled(Link)`
-  width: 40rem;
-  height: 70rem;
+  width: 460px;
+  height: 565px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 100px;
 `;
 
 const CardImg = styled.img`
@@ -19,9 +20,8 @@ const CardImg = styled.img`
 
 const CardName = styled.p`
   padding: 3rem 0rem;
-  letter-spacing: 0.2rem;
-  font-size: x-large;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 500;
 `;
 
 const ProjectCard: React.FC<projectState> = ({ project }) => {
