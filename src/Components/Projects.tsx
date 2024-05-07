@@ -5,13 +5,7 @@ import { getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { projectState, projectsState } from "../@types/types";
 import IntroductionText from "../ui/IntroductionText";
-
-const ProjectsHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 55vh;
-`;
+import StyledHeader from "../ui/StyledHeader";
 
 const ProjectsContainer = styled.div`
   display: flex;
@@ -25,13 +19,13 @@ const Projects = () => {
 
   return (
     <>
-      <ProjectsHeader>
+      <StyledHeader page="projects" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText page="projects">
           <pre>{introduction}</pre>
         </IntroductionText>
         <NavBar position="right" />
-      </ProjectsHeader>
-      <ProjectsContainer>
+      </StyledHeader>
+      <ProjectsContainer data-aos="fade" data-aos-duration="1000">
         {items.map((project: projectState["project"]) => (
           <ProjectCard key={project.id} project={project} />
         ))}

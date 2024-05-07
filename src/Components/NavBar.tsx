@@ -16,6 +16,7 @@ const StyledNavBar = styled.div`
     margin: 0px 100px 4rem;
   }
   &.bottom {
+    width: fit-content;
     margin: 100px auto 100px;
   }
   &.right {
@@ -31,10 +32,8 @@ const StyledNavLink = styled(NavLink)`
   }
 
   &.hidden {
-    opacity: 1;
     ${StyledNavBar}:hover & {
-      opacity: 1;
-      transform: translateY(-20px);
+      transform: translateY(-22px);
     }
   }
 `;
@@ -44,7 +43,7 @@ const StyledUnderline = styled.span`
   height: 1px;
   width: 100%;
   margin: 5px 0 0;
-  transition: linear 0.25s;
+  transition: ease 0.25s;
 
   ${StyledNavBar}:hover & {
     width: 0;

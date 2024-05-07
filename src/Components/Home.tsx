@@ -6,6 +6,7 @@ import { homeDataState } from "../@types/types";
 import styled from "styled-components";
 import Slideshow from "./Slideshow";
 import IntroductionText from "../ui/IntroductionText";
+import StyledHeader from "../ui/StyledHeader";
 
 const StyledTitle = styled.h3`
   width: 1200px;
@@ -29,12 +30,12 @@ const Home = () => {
   const projects = data.projectsData.items;
   return (
     <>
-      <div data-aos="fade-up" data-aos-duration="1000">
+      <StyledHeader page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText page="home">
           <pre>{introduction}</pre>
         </IntroductionText>
         <NavBar position="top" />
-      </div>
+      </StyledHeader>
       <div
         data-aos="fade-left"
         data-aos-duration="1000"

@@ -4,8 +4,8 @@ const pages = {
   home: css`
     padding: 400px 100px 50px;
     text-align: left;
-    font-weight: 400;
-    font-size: 4rem;
+    font-weight: 500;
+    font-size: 4.5rem;
   `,
   process: css`
     width: 60vw;
