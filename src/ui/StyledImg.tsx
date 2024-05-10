@@ -26,7 +26,7 @@ const pages = {
   aboutFinal: css`
     width: 100vw;
     height: 100vh;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   `,
   contact: css`
     background-color: black;

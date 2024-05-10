@@ -23,9 +23,10 @@ const pages = {
     font-size: 6.5rem;
   `,
   about: css`
-    width: 50vw;
-    padding: 500px 90px 490px;
-    font-size: 6rem;
+    width: 60vw;
+    padding: 500px 90px;
+    font-size: 5rem;
+    font-weight: 500;
   `,
   contact: css`
     width: 50vw;

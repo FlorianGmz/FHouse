@@ -7,9 +7,7 @@ const SlideDiv = styled.div`
   width: 80vw;
   height: 90vh;
   float: right;
-  /* background-color: transparent; */
   position: relative;
-  overflow: hidden;
 `;
 
 interface SlideShowProps {

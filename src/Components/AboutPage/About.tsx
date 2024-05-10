@@ -16,34 +16,41 @@ const TextDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 10rem;
-  padding: 20rem 20vw;
+  gap: 100px;
+  padding: 250px 20vw;
 `;
 
 const Text = styled.p`
   &.first {
-    font-size: 6rem;
+    font-size: 3.4rem;
+    font-weight: 500;
     width: 45vw;
   }
   &.second {
-    font-size: 3rem;
+    font-size: 1.8rem;
+    font-weight: 500;
     align-self: flex-end;
-    margin-left: 20rem;
+    line-height: 2.5rem;
+    margin-left: 15rem;
   }
   &.third {
-    font-size: 3rem;
-    width: 110rem;
-    padding: 20rem;
-    margin-left: 30rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    padding: 200px 20vw;
+    margin-left: 15rem;
   }
   &.conclusion {
-    padding: 0rem 20rem 20rem 20rem;
-    font-size: 5rem;
+    width: 50vw;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    font-size: 3.5rem;
   }
 `;
 
 const About = () => {
-  const aboutData: aboutState = useLoaderData();
+  const aboutData = useLoaderData() as aboutState;
   const {
     introduction,
     firstText,
@@ -57,17 +64,56 @@ const About = () => {
 
   return (
     <>
-      <IntroductionText page="about">{introduction}</IntroductionText>
-      <Slideshow slideshow={slideshow} />
+      <IntroductionText
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        page="about"
+      >
+        {introduction}
+      </IntroductionText>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="350"
+        data-aos-offset="-500"
+      >
+        <Slideshow slideshow={slideshow} />
+      </div>
       <MainSection>
         <TextDiv>
-          <Text className="first">{firstText}</Text>
-          <Text className="second">{secondText}</Text>
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <Text className="first">{firstText}</Text>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="1000">
+            <Text
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              className="second"
+            >
+              {secondText}
+            </Text>
+          </div>
         </TextDiv>
-        <StyledImg page="aboutMain" src={mainImage} />
-        <Text className="third">{thirdText}</Text>
-        <Text className="conclusion">{conclusionText}</Text>
-        <StyledImg page="aboutFinal" src={finalImage} />
+        <StyledImg
+          page="aboutMain"
+          src={mainImage}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        />
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <Text className="third">{thirdText}</Text>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <Text className="conclusion">
+            <pre>{conclusionText}</pre>
+          </Text>
+        </div>
+        <StyledImg
+          page="aboutFinal"
+          src={finalImage}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        />
       </MainSection>
     </>
   );
