@@ -2,23 +2,34 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { projectState, projectsState } from "../@types/types";
 import styled from "styled-components";
-
-const StyledProjectTitle = styled.div`
-  padding: 15rem 0 0 5rem;
-`;
+import StyledHeader from "../ui/StyledHeader";
+import StyledImg from "../ui/StyledImg";
+import NavBar from "./NavBar";
+import Caroussel from "./Caroussel";
 
 const ProjectTitle = styled.h2`
-  font-size: 8rem;
-  letter-spacing: 0.3rem;
-  line-height: 7rem;
+  font-size: 6rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
 `;
 
 const ProjectDetails = styled.h5`
-  letter-spacing: 0.5rem;
+  font-size: 1rem;
+  line-height: 4rem;
+  letter-spacing: 0.3rem;
 `;
 
-const ProjectImage = styled.img`
-  padding: 10rem 0;
+const MainSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledText = styled.p`
+  margin: 80px 100px 200px;
+  padding: 0 150px;
+  font-size: 1.8rem;
+  line-height: 3rem;
 `;
 
 const Project = () => {
@@ -47,16 +58,20 @@ const Project = () => {
   const { name, city, surface, description, image } = currentProject;
   return (
     <>
-      <StyledProjectTitle>
+      <StyledHeader page="project">
         <ProjectTitle>{name}</ProjectTitle>
         <ProjectDetails>
           <span>{city}</span>
           <span> | </span>
-          <span>{surface} sqft</span>
+          <span>{surface} sq. ft.</span>
         </ProjectDetails>
-      </StyledProjectTitle>
-      <ProjectImage src={image} />
-      <p>{description}</p>
+      </StyledHeader>
+      <MainSection>
+        <StyledImg page="project" src={image} />
+        <StyledText>{description}</StyledText>
+        <NavBar position="bottom">Back to Projects</NavBar>
+      </MainSection>
+      <Caroussel items={projects.items} />
     </>
   );
 };

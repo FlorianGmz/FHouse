@@ -14,6 +14,16 @@ const pages = {
     align-items: flex-end;
     height: 55vh;
   `,
+  project: css`
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    height: 80vh;
+        div>
+  `,
 };
 
 const StyledHeader = styled.div<{ page?: string }>`

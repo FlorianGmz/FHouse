@@ -34,7 +34,7 @@ const Home = () => {
         <IntroductionText page="home">
           <pre>{introduction}</pre>
         </IntroductionText>
-        <NavBar position="top" />
+        <NavBar position="top">Projects</NavBar>
       </StyledHeader>
       <div
         data-aos="fade-left"
@@ -49,7 +49,7 @@ const Home = () => {
         <StyledText>{secondText}</StyledText>
       </div>
       <Caroussel items={projects} />
-      <NavBar position="bottom" />
+      <NavBar position="bottom">Projects</NavBar>
     </>
   );
 };

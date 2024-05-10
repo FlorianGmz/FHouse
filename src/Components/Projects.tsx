@@ -23,7 +23,6 @@ const Projects = () => {
         <IntroductionText page="projects">
           <pre>{introduction}</pre>
         </IntroductionText>
-        <NavBar position="right" />
       </StyledHeader>
       <ProjectsContainer data-aos="fade" data-aos-duration="1000">
         {items.map((project: projectState["project"]) => (

@@ -34,6 +34,14 @@ const pages = {
     height: 100vh;
     float: right;
   `,
+  project: css`
+    padding: 0 100px;
+    width: 100%;
+    height: 60vh;
+    float: right;
+    object-fit: cover;
+    object-position: center;
+  `,
 };
 
 const StyledImg = styled.img<{ page?: string }>`

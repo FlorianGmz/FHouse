@@ -8,8 +8,13 @@ const CardContainer = styled(Link)`
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 100px;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+  &.carousel {
+    width: 22rem;
+    height: 35rem;
+    margin-bottom: 200px;
+  }
 `;
 
 const CardImg = styled.img`
@@ -24,7 +29,6 @@ const CardImg = styled.img`
 `;
 
 const CardName = styled.p`
-  padding-top: 3rem;
   font-size: 1.8rem;
   font-weight: 500;
 `;
@@ -34,16 +38,21 @@ const StyledUnderline = styled.span`
   width: 0;
   height: 1px;
   border-radius: 1px;
-  transition: 0.25s ease;
+  transition: 0.5s ease;
   ${CardContainer}:hover & {
     width: 100%;
   }
 `;
 
-const ProjectCard: React.FC<projectState> = ({ project }) => {
+interface ProjectCardProps {
+  project: projectState["project"];
+  element: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, element }) => {
   const { image, name, id } = project;
   return (
-    <CardContainer to={`/projects/${id}`}>
+    <CardContainer to={`/projects/${id}`} className={element}>
       <CardImg src={image} alt="home" />
       <div
         style={{

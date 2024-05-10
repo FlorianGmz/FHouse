@@ -17,7 +17,7 @@ const StyledNavBar = styled.div`
   }
   &.bottom {
     width: fit-content;
-    margin: 100px auto 100px;
+    margin: 0px auto 200px;
   }
   &.right {
     padding-right: 100px;
@@ -52,9 +52,10 @@ const StyledUnderline = styled.span`
 
 interface NavBarProps {
   position: string;
+  children: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ position }) => {
+const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
   return (
     <StyledNavBar className={position}>
       <div
@@ -65,9 +66,9 @@ const NavBar: React.FC<NavBarProps> = ({ position }) => {
           overflow: "hidden",
         }}
       >
-        <StyledNavLink to="projects">Projects</StyledNavLink>
+        <StyledNavLink to="projects">{children}</StyledNavLink>
         <StyledNavLink className="hidden" to="projects">
-          Projects
+          {children}
         </StyledNavLink>
       </div>
       <StyledUnderline />
