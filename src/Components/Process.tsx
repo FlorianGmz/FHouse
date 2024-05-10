@@ -85,7 +85,7 @@ const Process = () => {
         ((window.scrollY || document.documentElement.scrollTop) /
           window.innerHeight) *
         100; // Convertir en vh
-      if (scrollTop > 80) {
+      if (scrollTop > 70) {
         // 20vh au lieu de 700px
         setTableFixed(true);
       } else {
