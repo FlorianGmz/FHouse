@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const NavIconDiv = styled.div`
   top: 60px;
@@ -26,22 +26,18 @@ const Icon = styled.div<{
     props?.as === "top" &&
     css`
       background-color: ${
-        (props) =>
-          props?.currentPathname === "/contact"
+        props.currentPathname === "/contact"
             ? "white"
             : props?.navOpen
             ? "white"
             : "black"
-        /*       props.navOpen && props.currentPathname === "/contact"
-          ? "white"
-      : "white"} */
       };
       width: 3rem;
       height: 0.2rem;
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${(props) => (props?.navOpen ? "2rem" : "1.5rem")};
+        width: ${props.navOpen ? "2rem" : "1.5rem"};
         transition: ease-out 0.3s;
       }
 
@@ -51,92 +47,32 @@ const Icon = styled.div<{
         transition: ease-out 3s;
       }
     `}
-  ${(props?) =>
+  ${(props) =>
     props?.as === "bottom" &&
     css`
       background-color: ${
-        (props) =>
-          props?.currentPathname === "/contact"
+        props.currentPathname === "/contact"
             ? "white"
             : props?.navOpen
             ? "white"
             : "black"
-        /*       props.navOpen && props.currentPathname === "/contact"
-          ? "white"
-      : "white"} */
       };
       width: 1.5rem;
       height: 0.2rem;
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${(props) => (props?.navOpen ? "2rem" : "3rem")};
+        width: ${props.navOpen ? "2rem" : "3rem"};
         transition: ease-out 0.3s;
       }
       &.clicked {
         width: 2rem;
         transform: translate(0rem, -6px) rotate(-45deg);
         transition: ease-out 1s;
+        height
       }
     `}
 `;
-
-// const Icon = styled.div(
-//   ({
-//     as,
-//     currentPathname,
-//     navOpen,
-//   }: {
-//     as: string;
-//     currentPathname: string;
-//     navOpen: boolean;
-//   }) => [
-//     as === "top" &&
-//       css`
-//         background-color: ${
-//           currentPathname === "/contact" ? "white" : navOpen ? "white" : "black"
-//           /*       props.navOpen && props.currentPathname === "/contact"
-//           ? "white"
-//       : "white"} */
-//         };
-//         width: 3rem;
-//         height: 0.2rem;
-//         border-radius: 0.2rem;
-//         transition: ease-in 0.3s;
-//         ${NavIconDiv}:hover & {
-//           width: ${navOpen ? "2rem" : "1.5rem"};
-//           transition: ease-out 0.3s;
-//         }
-//         &.clicked {
-//           width: 2rem;
-//           transform: translate(0rem, 6px) rotate(45deg);
-//           transition: ease-out 3s;
-//         }
-//       `,
-//     as === "bottom" &&
-//       css`
-//         background-color: ${
-//           currentPathname === "/contact" ? "white" : navOpen ? "white" : "black"
-//           /*       props.navOpen && props.currentPathname === "/contact"
-//           ? "white"
-//       : "white"} */
-//         };
-//         width: 1.5rem;
-//         height: 0.2rem;
-//         border-radius: 0.2rem;
-//         transition: ease-in 0.3s;
-//         ${NavIconDiv}:hover & {
-//           width: ${navOpen ? "2rem" : "3rem"};
-//           transition: ease-out 0.3s;
-//         }
-//         &.clicked {
-//           width: 2rem;
-//           transform: translate(0rem, -6px) rotate(-45deg);
-//           transition: ease-out 1s;
-//         }
-//       `,
-//   ]
-// );
 
 interface NavMenuIconProps {
   isOpen: boolean;
