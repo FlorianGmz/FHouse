@@ -1,5 +1,4 @@
 import "react-slideshow-image/dist/styles.css";
-// import data from "../../../data/data.json";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";

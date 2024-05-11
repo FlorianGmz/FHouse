@@ -22,14 +22,14 @@ const Icon = styled.div<{
   currentPathname: string;
   navOpen: boolean;
 }>`
-  ${(props?) =>
-    props.as === "top" &&
+  ${(props) =>
+    props?.as === "top" &&
     css`
       background-color: ${
-        (props?) =>
-          props.currentPathname === "/contact"
+        (props) =>
+          props?.currentPathname === "/contact"
             ? "white"
-            : props.navOpen
+            : props?.navOpen
             ? "white"
             : "black"
         /*       props.navOpen && props.currentPathname === "/contact"
@@ -41,7 +41,7 @@ const Icon = styled.div<{
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${(props) => (props.navOpen ? "2rem" : "1.5rem")};
+        width: ${(props) => (props?.navOpen ? "2rem" : "1.5rem")};
         transition: ease-out 0.3s;
       }
 
@@ -52,13 +52,13 @@ const Icon = styled.div<{
       }
     `}
   ${(props?) =>
-    props.as === "bottom" &&
+    props?.as === "bottom" &&
     css`
       background-color: ${
         (props) =>
-          props.currentPathname === "/contact"
+          props?.currentPathname === "/contact"
             ? "white"
-            : props.navOpen
+            : props?.navOpen
             ? "white"
             : "black"
         /*       props.navOpen && props.currentPathname === "/contact"
@@ -70,7 +70,7 @@ const Icon = styled.div<{
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${(props) => (props.navOpen ? "2rem" : "3rem")};
+        width: ${(props) => (props?.navOpen ? "2rem" : "3rem")};
         transition: ease-out 0.3s;
       }
       &.clicked {
@@ -80,6 +80,63 @@ const Icon = styled.div<{
       }
     `}
 `;
+
+// const Icon = styled.div(
+//   ({
+//     as,
+//     currentPathname,
+//     navOpen,
+//   }: {
+//     as: string;
+//     currentPathname: string;
+//     navOpen: boolean;
+//   }) => [
+//     as === "top" &&
+//       css`
+//         background-color: ${
+//           currentPathname === "/contact" ? "white" : navOpen ? "white" : "black"
+//           /*       props.navOpen && props.currentPathname === "/contact"
+//           ? "white"
+//       : "white"} */
+//         };
+//         width: 3rem;
+//         height: 0.2rem;
+//         border-radius: 0.2rem;
+//         transition: ease-in 0.3s;
+//         ${NavIconDiv}:hover & {
+//           width: ${navOpen ? "2rem" : "1.5rem"};
+//           transition: ease-out 0.3s;
+//         }
+//         &.clicked {
+//           width: 2rem;
+//           transform: translate(0rem, 6px) rotate(45deg);
+//           transition: ease-out 3s;
+//         }
+//       `,
+//     as === "bottom" &&
+//       css`
+//         background-color: ${
+//           currentPathname === "/contact" ? "white" : navOpen ? "white" : "black"
+//           /*       props.navOpen && props.currentPathname === "/contact"
+//           ? "white"
+//       : "white"} */
+//         };
+//         width: 1.5rem;
+//         height: 0.2rem;
+//         border-radius: 0.2rem;
+//         transition: ease-in 0.3s;
+//         ${NavIconDiv}:hover & {
+//           width: ${navOpen ? "2rem" : "3rem"};
+//           transition: ease-out 0.3s;
+//         }
+//         &.clicked {
+//           width: 2rem;
+//           transform: translate(0rem, -6px) rotate(-45deg);
+//           transition: ease-out 1s;
+//         }
+//       `,
+//   ]
+// );
 
 interface NavMenuIconProps {
   isOpen: boolean;
