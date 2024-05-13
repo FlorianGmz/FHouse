@@ -27,6 +27,8 @@ const pages = {
     width: 100vw;
     height: 100vh;
     margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: center;
   `,
   contact: css`
     background-color: black;
