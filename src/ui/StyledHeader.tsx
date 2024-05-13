@@ -22,7 +22,6 @@ const pages = {
     align-items: flex-start;
     gap: 2rem;
     height: 80vh;
-        div>
   `,
 };
 

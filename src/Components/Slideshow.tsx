@@ -26,15 +26,13 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
   };
 
   return (
-    <div>
-      <Fade {...slideProperties}>
-        {slideshow.map((slide, index) => (
-          <SlideDiv key={index}>
-            <StyledImg key={slide} page="slideshow" src={slide} />
-          </SlideDiv>
-        ))}
-      </Fade>
-    </div>
+    <Fade {...slideProperties}>
+      {slideshow.map((slide, index) => (
+        <SlideDiv key={index}>
+          <StyledImg key={slide} page="slideshow" src={slide} />
+        </SlideDiv>
+      ))}
+    </Fade>
   );
 };
 

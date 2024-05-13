@@ -8,7 +8,8 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Projects, { loader as projectsLoader } from "./Components/Projects";
 import Project from "./Components/Project";
 import Process, { loader as processLoader } from "./Components/Process";
-import About, { loader as aboutLoader } from "./Components/AboutPage/About";
+import About from "./Components/AboutPage/About";
+import { aboutLoader } from "./services/loaders";
 import Contact, {
   loader as contactLoader,
 } from "./Components/ContactPage/Contact";

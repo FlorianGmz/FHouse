@@ -3,23 +3,18 @@ import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";
 import Slideshow from "../Slideshow";
-import { getAbout } from "../../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { aboutState } from "../../@types/types";
 
-const MainSection = styled.div`
-  /* padding: 0 90px; */
-`;
-
-const TextDiv = styled.div`
+const StyledDiv = styled.section`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   gap: 100px;
   padding: 250px 20vw;
 `;
 
-const Text = styled.p`
+const TextDiv = styled.div`
   &.first {
     font-size: 3.4rem;
     font-weight: 500;
@@ -41,10 +36,11 @@ const Text = styled.p`
   }
   &.conclusion {
     width: 50vw;
+    font-weight: 500;
     text-align: center;
     margin: 0 auto;
     padding-bottom: 200px;
-    font-size: 3.5rem;
+    font-size: 3.3rem;
   }
 `;
 
@@ -68,7 +64,7 @@ const About = () => {
         data-aos-duration="1000"
         page="about"
       >
-        {introduction}
+        <pre>{introduction}</pre>
       </IntroductionText>
       <div
         data-aos="fade-left"
@@ -78,49 +74,32 @@ const About = () => {
       >
         <Slideshow slideshow={slideshow} />
       </div>
-      <MainSection>
-        <TextDiv>
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <Text className="first">{firstText}</Text>
-          </div>
-          <div data-aos="fade-up" data-aos-duration="1000">
-            <Text
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              className="second"
-            >
-              {secondText}
-            </Text>
-          </div>
+      <StyledDiv>
+        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="first">
+          <p>{firstText}</p>
         </TextDiv>
-        <StyledImg
-          page="aboutMain"
-          src={mainImage}
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        />
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <Text className="third">{thirdText}</Text>
-        </div>
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <Text className="conclusion">
-            <pre>{conclusionText}</pre>
-          </Text>
-        </div>
-        <StyledImg
-          page="aboutFinal"
-          src={finalImage}
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        />
-      </MainSection>
+        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="second">
+          <p>{secondText}</p>
+        </TextDiv>
+      </StyledDiv>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <StyledImg page="aboutMain" src={mainImage} />
+      </div>
+      <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
+        <p>{thirdText}</p>
+      </TextDiv>{" "}
+      <TextDiv
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        className="conclusion"
+      >
+        <p>{conclusionText}</p>
+      </TextDiv>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <StyledImg page="aboutFinal" src={finalImage} />
+      </div>
     </>
   );
 };
-
-export async function loader() {
-  const aboutData = await getAbout();
-  return aboutData;
-}
 
 export default About;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -52,7 +52,7 @@ const StyledLink = styled(Link)`
   left: 100px;
   z-index: 10;
 `;
-const Logo = styled.div`
+const Logo = styled.div<{scrolled: boolean}>`
   color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
   font-size: 3rem;
   display: flex;
@@ -97,7 +97,7 @@ const animationTimings = {
   e: 3.25,
 };
 
-const StyledLogoLetter = styled.span`
+const StyledLogoLetter = styled.span<{as:string}>`
   text-decoration: none;
   color: transparent;
   font-size: 3rem;
@@ -113,7 +113,11 @@ const StyledLogoLetter = styled.span`
   }
 `;
 
-const NavLogo = ({ navIsOpen }) => {
+interface NavLogoProps {
+  navIsOpen:boolean,
+}
+
+const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
   const [scrolled, setScrolled] = useState(false);
