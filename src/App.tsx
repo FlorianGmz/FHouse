@@ -1,18 +1,25 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 import AppLayout from "./Components/AppLayout";
-import Home, { loader as homeLoader } from "./Components/Home";
+import Home from "./Components/Home";
 import GlobalStyles from "./styles/GlobalStyles";
-import Projects, { loader as projectsLoader } from "./Components/Projects";
+import Projects from "./Components/Projects";
 import Project from "./Components/Project";
-import Process, { loader as processLoader } from "./Components/Process";
+import Process from "./Components/Process";
 import About from "./Components/AboutPage/About";
-import { aboutLoader } from "./services/loaders";
-import Contact, {
-  loader as contactLoader,
-} from "./Components/ContactPage/Contact";
+import Contact from "./Components/ContactPage/Contact";
+
+import {
+  aboutLoader,
+  homeLoader,
+  processLoader,
+  projectsLoader,
+  contactLoader,
+} from "./services/loaders";
 
 const router = createBrowserRouter([
   {

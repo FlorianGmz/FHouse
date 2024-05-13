@@ -54,10 +54,4 @@ const Home = () => {
   );
 };
 
-export async function loader() {
-  const homeData = await getHome();
-  const projectsData = await getProjects();
-  return { homeData, projectsData };
-}
-
 export default Home;

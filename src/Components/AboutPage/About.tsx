@@ -82,12 +82,15 @@ const About = () => {
           <p>{secondText}</p>
         </TextDiv>
       </StyledDiv>
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <StyledImg page="aboutMain" src={mainImage} />
-      </div>
+      <StyledImg
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        page="aboutMain"
+        src={mainImage}
+      />
       <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
         <p>{thirdText}</p>
-      </TextDiv>{" "}
+      </TextDiv>
       <TextDiv
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -95,9 +98,12 @@ const About = () => {
       >
         <p>{conclusionText}</p>
       </TextDiv>
-      <div data-aos="fade-up" data-aos-duration="1000">
-        <StyledImg page="aboutFinal" src={finalImage} />
-      </div>
+      <StyledImg
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        page="aboutFinal"
+        src={finalImage}
+      />
     </>
   );
 };

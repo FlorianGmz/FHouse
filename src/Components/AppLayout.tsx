@@ -29,7 +29,6 @@ const AppLayout = () => {
   }, [location]);
   return (
     <div>
-      {/* <Header /> */}
       <NavLogo navIsOpen={navIsOpen} />
       <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       {navIsOpen && <NavList navIsOpen={navIsOpen} />}

@@ -143,9 +143,4 @@ const Process = () => {
   );
 };
 
-export async function loader() {
-  const processData = await getProcess();
-  return processData;
-}
-
 export default Process;

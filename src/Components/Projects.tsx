@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
-import NavBar from "./NavBar";
-import { getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { projectState, projectsState } from "../@types/types";
 import IntroductionText from "../ui/IntroductionText";
@@ -32,10 +30,5 @@ const Projects = () => {
     </>
   );
 };
-
-export async function loader() {
-  const projectsData = await getProjects();
-  return projectsData;
-}
 
 export default Projects;

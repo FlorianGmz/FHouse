@@ -2,7 +2,6 @@ import IntroductionText from "../../ui/IntroductionText";
 import styled from "styled-components";
 import StyledImg from "../../ui/StyledImg";
 import ContactRow from "../ContactRow";
-import { getContact } from "../../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { contactState } from "../../@types/types";
 
@@ -27,10 +26,5 @@ const Contact = () => {
     </ContactSection>
   );
 };
-
-export async function loader() {
-  const contactData = await getContact();
-  return contactData;
-}
 
 export default Contact;
