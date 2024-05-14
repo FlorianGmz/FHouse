@@ -40,21 +40,21 @@
       "id": 1,
       "firstName": "Florian",
       "lastName": "Gomez",
-      "mail": "floriangomez@flhouse.com",
+      "mail": "floriangomez@farohouse.com",
       "phone": "+33 123456789"
     },
     {
       "id": 2,
       "firstName": "Fanny",
       "lastName": "Lisle",
-      "mail": "fannylisle@flhouse.com",
+      "mail": "fannylisle@farohouse.com",
       "phone": "+33 123456789"
     },
     {
       "id": 3,
       "firstName": "Roman",
       "lastName": "Gomez",
-      "mail": "romangomez@flhouse.com",
+      "mail": "romangomez@farohouse.com",
       "phone": "+33 123456789"
     }
   ],

@@ -11,9 +11,9 @@ const StyledMainContainer = styled.main`
   z-index: 2;
   background-color: white;
   overflow: hidden;
-  margin-bottom: 270px;
+  margin-bottom: 40vh;
   display: inline-block;
-  width: 100%;
+  width: 100vw;
   &.contact-page {
     background-color: black;
   }
