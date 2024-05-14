@@ -5,7 +5,8 @@ import styled, { css } from "styled-components";
 
 const Row = styled.div<{ page: string }>`
   display: flex;
-  gap: 100px;
+  gap: 80px;
+  line-height: 1.5rem;
   ${(props) =>
     props?.page === "contact" &&
     css`

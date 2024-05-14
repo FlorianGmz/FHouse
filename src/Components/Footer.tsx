@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
   padding: 100px 100px;
 `;
 
-const ReservedFooter = styled.div`
+const FooterRow = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -28,22 +28,36 @@ const ReservedFooter = styled.div`
   }
 `;
 
+const FooterText = styled.div`
+  &.logo {
+    font-size: 7.5rem;
+    font-weight: 500;
+  }
+  &.title {
+    font-size: 2rem;
+  }
+  &.bottom {
+    color: #505050;
+    font-size: 0.9rem;
+  }
+`;
+
 const Footer = () => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
   return (
     <StyledFooter>
-      <ReservedFooter className="left">
+      <FooterRow className="left">
         <div>
-          <div>Fh</div>
-          <span>At home with nature.</span>
+          <FooterText className="logo">Fh</FooterText>
+          <FooterText className="title">At home with nature.</FooterText>
         </div>
-        <div>© Copyright 2024 FAROhouse.</div>
-      </ReservedFooter>
-      <ReservedFooter className="right">
+        <FooterText className="bottom">© Copyright 2024 FAROhouse.</FooterText>
+      </FooterRow>
+      <FooterRow className="right">
         {!isContactPage && <ContactRow page="*" />}
-        <div>All rights reserved.</div>
-      </ReservedFooter>
+        <FooterText className="bottom">All rights reserved.</FooterText>
+      </FooterRow>
     </StyledFooter>
   );
 };
