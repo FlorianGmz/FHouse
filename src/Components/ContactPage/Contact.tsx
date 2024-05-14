@@ -10,8 +10,8 @@ const ContactSection = styled.div`
 `;
 
 const StyledText = styled.p`
-  margin-left: 9rem;
-  font-size: 3rem;
+  margin-left: 100px;
+  font-size: 2.2rem;
 `;
 
 const Contact = () => {

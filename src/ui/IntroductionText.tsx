@@ -30,8 +30,10 @@ const pages = {
   `,
   contact: css`
     width: 50vw;
-    padding: 350px 90px 10px;
-    font-size: 7rem;
+    padding: 350px 100px 10px;
+    font-size: 6.6rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
   `,
 };
 

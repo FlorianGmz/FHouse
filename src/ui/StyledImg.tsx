@@ -35,6 +35,8 @@ const pages = {
     width: 80vw;
     height: 100vh;
     float: right;
+    object-fit: cover;
+    object-position: center;
   `,
   project: css`
     padding: 0 100px;
