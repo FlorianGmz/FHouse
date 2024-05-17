@@ -13,6 +13,13 @@ const StyledTitle = styled.h3`
   line-height: 5rem;
   font-size: 3.5rem;
   font-weight: 400;
+  @media only screen and (max-width: 600px) {
+    width: 100vw;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 100px 50px;
+  }
 `;
 
 const StyledText = styled.h4`

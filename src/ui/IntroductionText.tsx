@@ -6,6 +6,11 @@ const pages = {
     text-align: left;
     font-weight: 500;
     font-size: 4.5rem;
+    @media only screen and (max-width: 600px) {
+      letter-spacing: 0.1rem;
+      padding: 350px 50px 30px;
+      font-size: 1.6rem;
+    }
   `,
   process: css`
     width: 60vw;

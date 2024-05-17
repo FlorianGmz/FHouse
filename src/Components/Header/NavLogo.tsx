@@ -51,6 +51,9 @@ const StyledLink = styled(Link)`
   line-height: 50px;
   left: 100px;
   z-index: 10;
+  @media only screen and (max-width: 600px) {
+    left: 50px;
+  }
 `;
 const Logo = styled.div<{ scrolled: boolean }>`
   color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};

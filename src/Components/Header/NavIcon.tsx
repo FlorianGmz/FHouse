@@ -15,6 +15,9 @@ const NavIconDiv = styled.div`
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  @media only screen and (max-width: 600px) {
+    right: 50px;
+  }
 `;
 
 const Icon = styled.div<{
@@ -25,13 +28,11 @@ const Icon = styled.div<{
   ${(props) =>
     props?.as === "top" &&
     css`
-      background-color: ${
-        props.currentPathname === "/contact"
-            ? "white"
-            : props?.navOpen
-            ? "white"
-            : "black"
-      };
+      background-color: ${props.currentPathname === "/contact"
+        ? "white"
+        : props?.navOpen
+        ? "white"
+        : "black"};
       width: 3rem;
       height: 0.2rem;
       border-radius: 0.2rem;
@@ -52,10 +53,10 @@ const Icon = styled.div<{
     css`
       background-color: ${
         props.currentPathname === "/contact"
-            ? "white"
-            : props?.navOpen
-            ? "white"
-            : "black"
+          ? "white"
+          : props?.navOpen
+          ? "white"
+          : "black"
       };
       width: 1.5rem;
       height: 0.2rem;

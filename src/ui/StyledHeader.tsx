@@ -7,6 +7,9 @@ const pages = {
     align-items: flex-start;
     gap: 2rem;
     height: 90vh;
+    @media only screen and (max-width: 600px) {
+      height: 70vh;
+    }
   `,
   projects: css`
     display: flex;

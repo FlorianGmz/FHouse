@@ -1,13 +1,4 @@
 import styled, { RuleSet, css } from "styled-components";
-import { keyframes } from "styled-components";
-
-const translateAnimation = keyframes` 
-from {
-    transform: translateX(0); 
-  }
-to {
-    transform: translateX(-50px); 
-  }`;
 
 const pages: RuleSet<object> = {
   slideshow: css`
@@ -15,6 +6,10 @@ const pages: RuleSet<object> = {
     height: 90vh;
     object-fit: cover;
     object-position: center;
+    @media only screen and (max-width: 600px) {
+      object-position: top;
+      object-fit: scale-down;
+    }
   `,
   aboutMain: css`
     width: 80vw;

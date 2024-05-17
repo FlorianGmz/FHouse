@@ -14,6 +14,10 @@ const StyledNavBar = styled.div`
   letter-spacing: 0.2rem;
   &.top {
     margin: 0px 100px 4rem;
+    @media only screen and (max-width: 600px) {
+      margin-left: 50px;
+      margin-bottom: 1rem;
+    }
   }
   &.bottom {
     width: fit-content;
