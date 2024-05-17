@@ -30,7 +30,6 @@ const pages: RuleSet<object> = {
     object-position: center;
   `,
   contact: css`
-    background-color: black;
     width: 80vw;
     height: 100vh;
     float: right;

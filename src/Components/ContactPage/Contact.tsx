@@ -19,9 +19,13 @@ const Contact = () => {
 
   return (
     <ContactSection>
-      <IntroductionText page="contact">{introduction}</IntroductionText>
-      <StyledText>{location}</StyledText>
-      <ContactRow page="contact" />
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <IntroductionText page="contact">{introduction}</IntroductionText>
+        <StyledText>{location}</StyledText>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        <ContactRow page="contact" />
+      </div>
       <StyledImg src={mainImage} page="contact" />
     </ContactSection>
   );

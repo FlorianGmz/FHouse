@@ -48,10 +48,12 @@ const Footer = () => {
   return (
     <StyledFooter>
       <FooterRow className="left">
-        <div>
-          <FooterText className="logo">Fh</FooterText>
-          <FooterText className="title">At home with nature.</FooterText>
-        </div>
+        {!isContactPage && (
+          <div>
+            <FooterText className="logo">Fh</FooterText>
+            <FooterText className="title">At home with nature.</FooterText>
+          </div>
+        )}
         <FooterText className="bottom">© Copyright 2024 FAROhouse.</FooterText>
       </FooterRow>
       <FooterRow className="right">

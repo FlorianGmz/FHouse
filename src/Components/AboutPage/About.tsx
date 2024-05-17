@@ -2,7 +2,6 @@ import "react-slideshow-image/dist/styles.css";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";
-import Slideshow from "../Slideshow";
 import { useLoaderData } from "react-router-dom";
 import { aboutState } from "../../@types/types";
 
@@ -77,11 +76,7 @@ const About = () => {
         </div>
       </section>
       <section>
-        <StyledDiv
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          data-aos-anchor=".first"
-        >
+        <StyledDiv data-aos="fade-up" data-aos-duration="1000">
           <TextDiv className="first">{firstText}</TextDiv>
           <TextDiv className="second">{secondText}</TextDiv>
         </StyledDiv>
