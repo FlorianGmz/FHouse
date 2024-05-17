@@ -21,5 +21,3 @@ const IntroductionText: React.FC<IntroductionTextProps> = ({ text }) => {
 };
 
 export default IntroductionText;
-
-// a supprimer

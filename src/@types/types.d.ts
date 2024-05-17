@@ -52,7 +52,7 @@ export interface aboutState {
   secondText: string;
   thirdText: string;
   conclusionText: string;
-  slideshow: string[];
+  fistImage: string;
   mainImage: string;
   finalImage: string;
 }

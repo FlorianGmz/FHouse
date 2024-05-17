@@ -1,6 +1,5 @@
 import NavBar from "./NavBar";
 import Caroussel from "./Caroussel";
-import { getHome, getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { homeDataState } from "../@types/types";
 import styled from "styled-components";

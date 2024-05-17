@@ -6,7 +6,7 @@ import Slideshow from "../Slideshow";
 import { useLoaderData } from "react-router-dom";
 import { aboutState } from "../../@types/types";
 
-const StyledDiv = styled.section`
+const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,7 +14,7 @@ const StyledDiv = styled.section`
   padding: 250px 20vw;
 `;
 
-const TextDiv = styled.div`
+const TextDiv = styled.h4`
   &.first {
     font-size: 3.4rem;
     font-weight: 500;
@@ -52,58 +52,58 @@ const About = () => {
     secondText,
     thirdText,
     conclusionText,
-    slideshow,
+    firstImage,
     mainImage,
     finalImage,
   } = aboutData;
 
   return (
     <>
-      <IntroductionText
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        page="about"
-      >
-        <pre>{introduction}</pre>
-      </IntroductionText>
-      <div
-        data-aos="fade-left"
-        data-aos-duration="1000"
-        data-aos-delay="350"
-        data-aos-offset="-500"
-      >
-        <Slideshow slideshow={slideshow} />
-      </div>
-      <StyledDiv>
-        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="first">
-          <p>{firstText}</p>
+      <section>
+        <IntroductionText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          page="about"
+        >
+          <pre>{introduction}</pre>
+        </IntroductionText>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="350"
+          data-aos-offset="-500"
+        >
+          <StyledImg page="about" src={firstImage} />
+        </div>
+      </section>
+      <section>
+        <StyledDiv
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-anchor=".first"
+        >
+          <TextDiv className="first">{firstText}</TextDiv>
+          <TextDiv className="second">{secondText}</TextDiv>
+        </StyledDiv>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg page="aboutMain" src={mainImage} />
+        </div>
+      </section>
+      <section>
+        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
+          {thirdText}
         </TextDiv>
-        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="second">
-          <p>{secondText}</p>
+        <TextDiv
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="conclusion"
+        >
+          {conclusionText}
         </TextDiv>
-      </StyledDiv>
-      <StyledImg
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        page="aboutMain"
-        src={mainImage}
-      />
-      <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
-        <p>{thirdText}</p>
-      </TextDiv>
-      <TextDiv
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        className="conclusion"
-      >
-        <p>{conclusionText}</p>
-      </TextDiv>
-      <StyledImg
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        page="aboutFinal"
-        src={finalImage}
-      />
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg page="aboutFinal" src={finalImage} />
+        </div>
+      </section>
     </>
   );
 };

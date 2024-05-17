@@ -52,7 +52,7 @@ const StyledLink = styled(Link)`
   left: 100px;
   z-index: 10;
 `;
-const Logo = styled.div<{scrolled: boolean}>`
+const Logo = styled.div<{ scrolled: boolean }>`
   color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
   font-size: 3rem;
   display: flex;
@@ -61,7 +61,7 @@ const Logo = styled.div<{scrolled: boolean}>`
   width: 100%;
   cursor: pointer;
   &.contact-page {
-    color: white;
+    color: ${({ scrolled }) => (scrolled ? "transparent" : "white")};
   }
 `;
 const StyledFLogo = styled.div`
@@ -97,7 +97,7 @@ const animationTimings = {
   e: 3.25,
 };
 
-const StyledLogoLetter = styled.span<{as:string}>`
+const StyledLogoLetter = styled.span<{ as: string }>`
   text-decoration: none;
   color: transparent;
   font-size: 3rem;
@@ -114,7 +114,7 @@ const StyledLogoLetter = styled.span<{as:string}>`
 `;
 
 interface NavLogoProps {
-  navIsOpen:boolean,
+  navIsOpen: boolean;
 }
 
 const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {

@@ -30,7 +30,7 @@ const FooterRow = styled.div`
 
 const FooterText = styled.div`
   &.logo {
-    font-size: 7.5rem;
+    font-size: 7rem;
     font-weight: 500;
   }
   &.title {

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { RuleSet, css } from "styled-components";
 import { keyframes } from "styled-components";
 
 const translateAnimation = keyframes` 
@@ -9,17 +9,16 @@ to {
     transform: translateX(-50px); 
   }`;
 
-const pages = {
+const pages: RuleSet<object> = {
   slideshow: css`
-    width: 120%;
-    height: 100%;
+    width: 80vw;
+    height: 90vh;
     object-fit: cover;
     object-position: center;
-    /* animation: ${translateAnimation} 5.5s linear infinite; */
   `,
   aboutMain: css`
     width: 80vw;
-    height: 100vh;
+    height: 80vh;
     object-fit: cover;
     object-position: center;
   `,
@@ -46,10 +45,17 @@ const pages = {
     object-fit: cover;
     object-position: center;
   `,
+  about: css`
+    width: 80vw;
+    height: 90vh;
+    float: right;
+    object-fit: cover;
+    object-position: center;
+  `,
 };
 
 const StyledImg = styled.img<{ page?: string }>`
-  ${(props) => pages[props.page]}
+  ${(props) => pages[props?.page]}
 `;
 
 export default StyledImg;
