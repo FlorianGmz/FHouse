@@ -3,33 +3,69 @@ import { projectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled(Link)`
-  width: 40rem;
-  height: 70rem;
+  width: 460px;
+  height: 565px;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 10rem;
+  &.carousel {
+    width: 22rem;
+    height: 35rem;
+    margin-bottom: 200px;
+  }
 `;
 
 const CardImg = styled.img`
-  width: 100%;
+  width: 120%;
   height: 80%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s ease;
+  ${CardContainer}:hover & {
+    transform: translateX(-50px);
+  }
 `;
 
 const CardName = styled.p`
-  padding: 3rem 0rem;
-  letter-spacing: 0.2rem;
-  font-size: x-large;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 500;
 `;
 
-const ProjectCard: React.FC<projectState> = ({ project }) => {
+const StyledUnderline = styled.span`
+  background-color: black;
+  width: 0;
+  height: 1px;
+  border-radius: 1px;
+  transition: 0.5s ease;
+  ${CardContainer}:hover & {
+    width: 100%;
+  }
+`;
+
+interface ProjectCardProps {
+  project: projectState["project"];
+  element: string;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, element }) => {
   const { image, name, id } = project;
   return (
-    <CardContainer to={`/projects/${id}`}>
+    <CardContainer to={`/projects/${id}`} className={element}>
       <CardImg src={image} alt="home" />
-      <CardName>{name}</CardName>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          gap: "5px",
+          maxWidth: "fit-content",
+        }}
+      >
+        <CardName>{name}</CardName>
+        <StyledUnderline />
+      </div>
     </CardContainer>
   );
 };

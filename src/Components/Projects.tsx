@@ -1,23 +1,15 @@
 import styled from "styled-components";
-import IntroductionText from "./IntroductionText";
 import ProjectCard from "./ProjectCard";
-import NavBar from "./NavBar";
-import { getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { projectState, projectsState } from "../@types/types";
-
-const ProjectsHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-`;
+import IntroductionText from "../ui/IntroductionText";
+import StyledHeader from "../ui/StyledHeader";
 
 const ProjectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
-  padding: 10rem 5rem;
+  justify-content: space-between;
+  margin: 300px 100px;
 `;
 
 const Projects = () => {
@@ -25,11 +17,12 @@ const Projects = () => {
 
   return (
     <>
-      <ProjectsHeader>
-        <IntroductionText text={introduction} />
-        <NavBar position="right" />
-      </ProjectsHeader>
-      <ProjectsContainer>
+      <StyledHeader page="projects" data-aos="fade-up" data-aos-duration="1000">
+        <IntroductionText page="projects">
+          <pre>{introduction}</pre>
+        </IntroductionText>
+      </StyledHeader>
+      <ProjectsContainer data-aos="fade" data-aos-duration="1000">
         {items.map((project: projectState["project"]) => (
           <ProjectCard key={project.id} project={project} />
         ))}
@@ -37,10 +30,5 @@ const Projects = () => {
     </>
   );
 };
-
-export async function loader() {
-  const projectsData = await getProjects();
-  return projectsData;
-}
 
 export default Projects;

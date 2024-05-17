@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
 import { architectState } from "../@types/types";
 
-const StyledContact = styled.div`
+const StyledContact = styled.div<{ page: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  ${(props?) =>
-    props.page === "contact" &&
+  ${(props) =>
+    props?.page === "contact" &&
     css`
       align-items: flex-start;
     `}

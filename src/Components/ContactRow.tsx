@@ -3,17 +3,20 @@ import ArchitectContact from "./ArchitectContact";
 import data from "../../data/data.json";
 import styled, { css } from "styled-components";
 
-const Row = styled.div`
+const Row = styled.div<{ page: string }>`
   display: flex;
-  gap: 2rem;
-  ${(props?) =>
-    props.page === "contact" &&
+  gap: 80px;
+  line-height: 1.5rem;
+  ${(props) =>
+    props?.page === "contact" &&
     css`
       width: 80vw;
       float: right;
-      margin-top: 200px;
-      margin-bottom: 80px;
-      background-color: black;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      margin-top: 300px;
+      /* background-color: black; */
+      margin-bottom: 100px;
     `}
 `;
 

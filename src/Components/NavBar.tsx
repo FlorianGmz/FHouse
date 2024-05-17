@@ -2,46 +2,76 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNavBar = styled.div`
+  position: relative;
+  top: 0;
+  width: auto;
+  height: 25px;
   display: flex;
-  font-size: 1.3rem;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
   &.top {
-    gap: 4rem;
-    padding: 0px 100px;
-    margin-bottom: 400px;
-    letter-spacing: 0.1rem;
-    font-weight: 500;
+    margin: 0px 100px 4rem;
   }
   &.bottom {
-    justify-content: center;
-    gap: 15rem;
-    letter-spacing: 0.5rem;
-    margin: 5rem;
+    width: fit-content;
+    margin: 0px auto 200px;
   }
   &.right {
-    gap: 4rem;
-    padding: 0rem 9rem 2.5rem;
-    letter-spacing: 0.3rem;
+    padding-right: 100px;
   }
 `;
 
 const StyledNavLink = styled(NavLink)`
-  border-bottom: solid black 1px;
-  padding: 0.5rem 0rem;
-  transition: ease-in-out 0.5s;
-  &:hover {
-    transition: ease-in-out 0.5s;
-    border: none;
+  transition: ease-in-out 0.25s;
+
+  ${StyledNavBar}:hover & {
+    transform: translateY(-50px);
+  }
+
+  &.hidden {
+    ${StyledNavBar}:hover & {
+      transform: translateY(-22px);
+    }
+  }
+`;
+
+const StyledUnderline = styled.span`
+  background-color: black;
+  height: 1px;
+  width: 100%;
+  margin: 5px 0 0;
+  transition: ease 0.25s;
+
+  ${StyledNavBar}:hover & {
+    width: 0;
   }
 `;
 
 interface NavBarProps {
   position: string;
+  children: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ position }) => {
+const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
   return (
     <StyledNavBar className={position}>
-      <StyledNavLink to="projects">Projects</StyledNavLink>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "30px",
+          overflow: "hidden",
+        }}
+      >
+        <StyledNavLink to="projects">{children}</StyledNavLink>
+        <StyledNavLink className="hidden" to="projects">
+          {children}
+        </StyledNavLink>
+      </div>
+      <StyledUnderline />
     </StyledNavBar>
   );
 };

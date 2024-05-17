@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -42,8 +43,17 @@ const letterFadeOut = keyframes`
     color:transparent;
   }
   `;
-const Logo = styled.div`
-  color: black;
+const StyledLink = styled(Link)`
+  position: fixed;
+  top: 47.5px;
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 50px;
+  left: 100px;
+  z-index: 10;
+`;
+const Logo = styled.div<{ scrolled: boolean }>`
+  color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
   font-size: 3rem;
   display: flex;
   justify-content: flex-start;
@@ -51,17 +61,16 @@ const Logo = styled.div`
   width: 100%;
   cursor: pointer;
   &.contact-page {
-    color: white;
+    color: ${({ scrolled }) => (scrolled ? "transparent" : "white")};
   }
 `;
 const StyledFLogo = styled.div`
   letter-spacing: 0.2rem;
-  font-weight: 500;
   transition: 1s;
   width: 1.5rem;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
-    width: 7.5rem;
+    width: 8.5rem;
     color: white;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
@@ -88,7 +97,7 @@ const animationTimings = {
   e: 3.25,
 };
 
-const StyledLogoLetter = styled.span`
+const StyledLogoLetter = styled.span<{ as: string }>`
   text-decoration: none;
   color: transparent;
   font-size: 3rem;
@@ -104,12 +113,29 @@ const StyledLogoLetter = styled.span`
   }
 `;
 
-const NavLogo = ({ navIsOpen }) => {
+interface NavLogoProps {
+  navIsOpen: boolean;
+}
+
+const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 40;
+      setScrolled(isScrolled);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Link reloadDocument to={"/"}>
-      <Logo className={isContactPage ? "contact-page" : ""}>
+    <StyledLink reloadDocument to={"/"}>
+      <Logo scrolled={scrolled} className={isContactPage ? "contact-page" : ""}>
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F
           <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
@@ -138,7 +164,7 @@ const NavLogo = ({ navIsOpen }) => {
           </StyledLogoLetter>
         </StyledHLogo>
       </Logo>
-    </Link>
+    </StyledLink>
   );
 };
 

@@ -1,81 +1,106 @@
 import "react-slideshow-image/dist/styles.css";
-// import data from "../../../data/data.json";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";
-import Slideshow from "../Slideshow";
-import { getAbout } from "../../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { aboutState } from "../../@types/types";
 
-const MainSection = styled.div`
-  /* padding: 0 90px; */
-`;
-
-const TextDiv = styled.div`
+const StyledDiv = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 10rem;
-  padding: 20rem 20vw;
+  gap: 100px;
+  padding: 250px 20vw;
 `;
 
-const Text = styled.p`
+const TextDiv = styled.h4`
   &.first {
-    font-size: 6rem;
+    font-size: 3.4rem;
+    font-weight: 500;
     width: 45vw;
   }
   &.second {
-    font-size: 3rem;
+    font-size: 1.8rem;
+    font-weight: 500;
     align-self: flex-end;
-    margin-left: 20rem;
+    line-height: 2.5rem;
+    margin-left: 15rem;
   }
   &.third {
-    font-size: 3rem;
-    width: 110rem;
-    padding: 20rem;
-    margin-left: 30rem;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.5rem;
+    padding: 200px 20vw;
+    margin-left: 15rem;
   }
   &.conclusion {
-    padding: 0rem 20rem 20rem 20rem;
-    font-size: 5rem;
+    width: 50vw;
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 200px;
+    font-size: 3.3rem;
   }
 `;
 
 const About = () => {
-  const aboutData: aboutState = useLoaderData();
+  const aboutData = useLoaderData() as aboutState;
   const {
     introduction,
     firstText,
     secondText,
     thirdText,
     conclusionText,
-    slideshow,
+    firstImage,
     mainImage,
     finalImage,
   } = aboutData;
 
   return (
     <>
-      <IntroductionText page="about">{introduction}</IntroductionText>
-      <Slideshow slideshow={slideshow} />
-      <MainSection>
-        <TextDiv>
-          <Text className="first">{firstText}</Text>
-          <Text className="second">{secondText}</Text>
+      <section>
+        <IntroductionText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          page="about"
+        >
+          <pre>{introduction}</pre>
+        </IntroductionText>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="350"
+          data-aos-offset="-500"
+        >
+          <StyledImg page="about" src={firstImage} />
+        </div>
+      </section>
+      <section>
+        <StyledDiv data-aos="fade-up" data-aos-duration="1000">
+          <TextDiv className="first">{firstText}</TextDiv>
+          <TextDiv className="second">{secondText}</TextDiv>
+        </StyledDiv>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg page="aboutMain" src={mainImage} />
+        </div>
+      </section>
+      <section>
+        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
+          {thirdText}
         </TextDiv>
-        <StyledImg page="aboutMain" src={mainImage} />
-        <Text className="third">{thirdText}</Text>
-        <Text className="conclusion">{conclusionText}</Text>
-        <StyledImg page="aboutFinal" src={finalImage} />
-      </MainSection>
+        <TextDiv
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="conclusion"
+        >
+          {conclusionText}
+        </TextDiv>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg page="aboutFinal" src={finalImage} />
+        </div>
+      </section>
     </>
   );
 };
-
-export async function loader() {
-  const aboutData = await getAbout();
-  return aboutData;
-}
 
 export default About;

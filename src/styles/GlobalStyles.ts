@@ -59,10 +59,10 @@ const GlobalStyles = createGlobalStyle`
 *,
 *::before,
 *::after {
+  font-family: "Quicksand", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
   /* Creating animations for dark mode */
   transition: background-color 0.3s, border 0.3s;
 }
@@ -72,8 +72,7 @@ html {
 }
 
 body {
-  font-family: "Reddit Mono";
-  color: var(--color-grey-700);
+  color: black;
 }
 
 

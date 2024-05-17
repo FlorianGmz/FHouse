@@ -1,46 +1,56 @@
-import IntroductionText from "./IntroductionText";
 import NavBar from "./NavBar";
 import Caroussel from "./Caroussel";
-import { getHome, getProjects } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import { homeDataState } from "../@types/types";
 import styled from "styled-components";
 import Slideshow from "./Slideshow";
+import IntroductionText from "../ui/IntroductionText";
+import StyledHeader from "../ui/StyledHeader";
 
 const StyledTitle = styled.h3`
-  padding: 12rem 15rem 3rem;
-  line-height: 4rem;
-  letter-spacing: 0.5rem;
-  font-size: x-large;
+  width: 1200px;
+  padding: 13rem 20vw 3rem;
+  line-height: 5rem;
+  font-size: 3.5rem;
+  font-weight: 400;
 `;
 
 const StyledText = styled.h4`
-  padding: 0rem 15rem 12rem;
+  width: 1200px;
+  padding: 0rem 20vw 13rem;
   line-height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
 `;
 
 const Home = () => {
   const data = useLoaderData() as homeDataState;
   const { introduction, firstText, secondText, slideshow } = data.homeData;
   const projects = data.projectsData.items;
-
   return (
-    <div>
-      <IntroductionText text={introduction} />
-      <NavBar position="top" />
-      <Slideshow slideshow={slideshow} />
-      <StyledTitle>{firstText}</StyledTitle>
-      <StyledText>{secondText}</StyledText>
+    <>
+      <StyledHeader page="home" data-aos="fade-up" data-aos-duration="1000">
+        <IntroductionText page="home">
+          <pre>{introduction}</pre>
+        </IntroductionText>
+        <NavBar position="top">Projects</NavBar>
+      </StyledHeader>
+      <div
+        data-aos="fade-left"
+        data-aos-duration="1000"
+        data-aos-delay="350"
+        data-aos-offset="-500"
+      >
+        <Slideshow slideshow={slideshow} />
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <StyledTitle>{firstText}</StyledTitle>
+        <StyledText>{secondText}</StyledText>
+      </div>
       <Caroussel items={projects} />
-      <NavBar position="bottom" />
-    </div>
+      <NavBar position="bottom">Projects</NavBar>
+    </>
   );
 };
-
-export async function loader() {
-  const homeData = await getHome();
-  const projectsData = await getProjects();
-  return { homeData, projectsData };
-}
 
 export default Home;
