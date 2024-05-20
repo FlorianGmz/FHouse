@@ -15,7 +15,7 @@ const NavIconDiv = styled.div`
   justify-content: center;
   gap: 10px;
   cursor: pointer;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 770px) {
     right: 50px;
   }
 `;

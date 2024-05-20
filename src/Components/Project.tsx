@@ -5,7 +5,7 @@ import styled from "styled-components";
 import StyledHeader from "../ui/StyledHeader";
 import StyledImg from "../ui/StyledImg";
 import NavBar from "./NavBar";
-import Caroussel from "./Caroussel";
+import Caroussel from "./Carousel/Carousel";
 
 const ProjectTitle = styled.h2`
   font-size: 6rem;

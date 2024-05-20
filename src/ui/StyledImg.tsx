@@ -6,7 +6,7 @@ const pages: RuleSet<object> = {
     height: 90vh;
     object-fit: cover;
     object-position: center;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 770px) {
       object-position: top;
       object-fit: scale-down;
     }

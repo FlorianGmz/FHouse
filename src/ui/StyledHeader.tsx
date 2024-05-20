@@ -7,7 +7,7 @@ const pages = {
     align-items: flex-start;
     gap: 2rem;
     height: 90vh;
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 770px) {
       height: 70vh;
     }
   `,
