@@ -11,20 +11,29 @@ const StyledFooter = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 40vh;
+  height: 60vh;
   padding: 100px 100px;
+  @media only screen and (max-width: 770px) {
+    flex-direction: column;
+    height: 50vh;
+    padding: 100px 50px;
+  }
 `;
 
 const FooterRow = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-bottom: 50px;
   gap: 100px;
   &.left {
     align-items: flex-start;
   }
   &.right {
     align-items: flex-end;
+    @media only screen and (max-width: 770px) {
+      align-items: flex-start;
+    }
   }
 `;
 
@@ -32,13 +41,21 @@ const FooterText = styled.div`
   &.logo {
     font-size: 7rem;
     font-weight: 500;
+    @media only screen and (max-width: 770px) {
+    }
   }
   &.title {
     font-size: 2rem;
+    @media only screen and (max-width: 770px) {
+      font-size: 1rem;
+    }
   }
   &.bottom {
     color: #505050;
     font-size: 0.9rem;
+    @media only screen and (max-width: 770px) {
+      font-size: 0.5rem;
+    }
   }
 `;
 
