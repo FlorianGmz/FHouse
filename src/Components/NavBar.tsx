@@ -21,7 +21,7 @@ const StyledNavBar = styled.div`
   }
   &.bottom {
     width: fit-content;
-    margin: 0px auto 200px;
+    margin: 100px auto 200px;
     @media only screen and (max-width: 770px) {
       margin-bottom: 100px;
     }

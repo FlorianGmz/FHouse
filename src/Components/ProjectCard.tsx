@@ -13,7 +13,7 @@ const CardContainer = styled(Link)`
   &.carousel {
     width: 22rem;
     height: 35rem;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
     @media only screen and (max-width: 770px) {
       margin-bottom: 50px;
     }

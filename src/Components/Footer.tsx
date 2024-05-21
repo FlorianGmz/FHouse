@@ -3,15 +3,17 @@ import ContactRow from "./ContactRow";
 import { useLocation } from "react-router-dom";
 
 const StyledFooter = styled.footer`
-  display: flex;
-  justify-content: space-between;
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 100px;
   color: white;
   z-index: 1 !important;
   position: fixed;
   bottom: 0;
-  width: 100vw;
-  height: 60vh;
+  width: 100%;
+  height: 40vh;
   padding: 100px 100px;
   @media only screen and (max-width: 770px) {
     flex-direction: column;
@@ -22,16 +24,15 @@ const StyledFooter = styled.footer`
 
 const FooterRow = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-bottom: 50px;
-  gap: 100px;
-  &.left {
-    align-items: flex-start;
+  &.top {
+    justify-content: space-between;
+    align-items: center;
   }
-  &.right {
+  &.bottom {
+    justify-content: space-between;
     align-items: flex-end;
     @media only screen and (max-width: 770px) {
+      flex-direction: column;
       align-items: flex-start;
     }
   }
@@ -50,7 +51,7 @@ const FooterText = styled.div`
       font-size: 1rem;
     }
   }
-  &.bottom {
+  &.copyright {
     color: #505050;
     font-size: 0.9rem;
     @media only screen and (max-width: 770px) {
@@ -64,18 +65,22 @@ const Footer = () => {
   const isContactPage = location.pathname === "/contact";
   return (
     <StyledFooter>
-      <FooterRow className="left">
-        {!isContactPage && (
+      {!isContactPage && (
+        <FooterRow className="top">
           <div>
             <FooterText className="logo">Fh</FooterText>
             <FooterText className="title">At home with nature.</FooterText>
           </div>
-        )}
-        <FooterText className="bottom">© Copyright 2024 FAROhouse.</FooterText>
-      </FooterRow>
-      <FooterRow className="right">
-        {!isContactPage && <ContactRow page="*" />}
-        <FooterText className="bottom">All rights reserved.</FooterText>
+          <div>
+            <ContactRow page="*" />
+          </div>
+        </FooterRow>
+      )}
+      <FooterRow className="bottom">
+        <FooterText className="copyright">
+          © Copyright 2024 FAROhouse.
+        </FooterText>
+        <FooterText className="copyright">All rights reserved.</FooterText>
       </FooterRow>
     </StyledFooter>
   );
