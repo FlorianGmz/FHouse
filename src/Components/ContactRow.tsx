@@ -5,8 +5,17 @@ import styled, { css } from "styled-components";
 
 const Row = styled.div<{ page: string }>`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 80px;
   line-height: 1.5rem;
+  font-size: 1rem;
+  @media only screen and (max-width: 770px) {
+    gap: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.8rem;
+  }
   ${(props) =>
     props?.page === "contact" &&
     css`

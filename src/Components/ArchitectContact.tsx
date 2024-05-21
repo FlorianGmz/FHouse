@@ -5,6 +5,9 @@ const StyledContact = styled.div<{ page: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media only screen and (max-width: 770px) {
+    align-items: flex-start;
+  }
   ${(props) =>
     props?.page === "contact" &&
     css`
