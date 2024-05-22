@@ -32,7 +32,7 @@ const CardImg = styled.img`
 `;
 
 const CardName = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   @media only screen and (max-width: 770px) {
     font-size: 1.2rem;

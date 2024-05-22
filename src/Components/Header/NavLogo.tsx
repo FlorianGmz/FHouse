@@ -51,7 +51,7 @@ const StyledLink = styled(Link)`
   line-height: 50px;
   left: 100px;
   z-index: 10;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 770px) {
     left: 50px;
   }
 `;
@@ -63,8 +63,13 @@ const Logo = styled.div<{ scrolled: boolean }>`
   align-items: center;
   width: 100%;
   cursor: pointer;
+  @media only screen and (max-width: 770px) {
+    font-size: 2.5rem;
+  }
   &.contact-page {
     color: ${({ scrolled }) => (scrolled ? "transparent" : "white")};
+  }
+  @media only screen and (max-width: 770px) {
   }
 `;
 const StyledFLogo = styled.div`
@@ -77,6 +82,10 @@ const StyledFLogo = styled.div`
     color: white;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
+    @media only screen and (max-width: 770px) {
+      width: 6.65rem;
+      letter-spacing: 0rem;
+    }
   }
 `;
 
@@ -87,6 +96,9 @@ const StyledHLogo = styled.div`
   &.clicked {
     color: white;
     animation: 1s ${logoFadeIn} ease-out;
+    @media only screen and (max-width: 770px) {
+      letter-spacing: 0rem;
+    }
   }
 `;
 
@@ -108,6 +120,9 @@ const StyledLogoLetter = styled.span<{ as: string }>`
   transition: 4s;
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   animation: 0.5s linear forwards;
+  @media only screen and (max-width: 770px) {
+    font-size: 2.5rem;
+  }
 
   &.clicked {
     animation: 0.5s linear forwards;

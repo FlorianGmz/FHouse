@@ -3,7 +3,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const NavIconDiv = styled.div`
-  top: 60px;
+  top: 55px;
   position: fixed;
   width: 50px;
   margin-top: 16px;
@@ -11,6 +11,7 @@ const NavIconDiv = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
+  width: 7rem;
   align-items: flex-end;
   justify-content: center;
   gap: 10px;

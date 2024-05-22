@@ -4,7 +4,7 @@ import React from "react";
 
 const backgroundFadeIn = keyframes`
   from{
-    background-color:#101010ee ;
+    background-color:#101010f4;;
   }
   to{
     background-color: transparent;
@@ -16,7 +16,7 @@ const backgroundFadeOut = keyframes`
     background-color: transparent ;
   }
   to{
-    background-color: #101010ee;
+    background-color: #101010f4;
   }
 `;
 
@@ -38,6 +38,11 @@ const StyledList = styled.ul<{ navOpen: boolean }>`
   height: 100vh;
   width: 100vw;
   animation: 0.5s ${backgroundFadeIn} ease-in-out forwards;
+  @media only screen and (max-width: 770px) {
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 500;
+  }
   &.clicked {
     animation: 0.5s ${backgroundFadeOut} ease-in-out forwards;
   }
