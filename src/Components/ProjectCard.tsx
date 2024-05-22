@@ -10,6 +10,9 @@ const CardContainer = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10rem;
+  @media only screen and (max-width: 770px) {
+    margin-bottom: 50px;
+  }
   &.carousel {
     width: 22rem;
     height: 35rem;
