@@ -73,9 +73,12 @@ const Logo = styled.div<{ scrolled: boolean }>`
   }
 `;
 const StyledFLogo = styled.div`
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   transition: 1s;
   width: 1.5rem;
+  @media only screen and (max-width: 770px) {
+    width: 1.3rem;
+  }
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
     width: 8.5rem;
@@ -83,8 +86,7 @@ const StyledFLogo = styled.div`
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
     @media only screen and (max-width: 770px) {
-      width: 6.65rem;
-      letter-spacing: 0rem;
+      width: 7rem;
     }
   }
 `;
