@@ -37,8 +37,9 @@ const StyledText = styled.p`
   @media only screen and (max-width: 770px) {
     font-size: 1rem;
     padding: 0 50px;
-    line-height: 1.5rem;
-    margin: 80px 0 100px;
+    line-height: 1.7rem;
+    margin: 80px 0 0px;
+    text-indent: 1rem;
   }
 `;
 
