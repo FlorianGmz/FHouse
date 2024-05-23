@@ -42,6 +42,10 @@ const pages = {
     padding: 500px 100px;
     font-size: 5rem;
     font-weight: 500;
+    @media only screen and (max-width: 770px) {
+      font-size: 1.6rem;
+      padding: 300px 50px 300px;
+    }
   `,
   contact: css`
     width: 50vw;

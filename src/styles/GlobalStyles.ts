@@ -54,6 +54,7 @@ const GlobalStyles = createGlobalStyle`
   /* For dark mode */
   --image-grayscale: 0;
   --image-opacity: 100%;
+  --padding-mobile: 25px;
 }
 
 *,

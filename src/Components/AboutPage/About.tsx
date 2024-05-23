@@ -11,6 +11,10 @@ const StyledDiv = styled.div`
   justify-content: space-between;
   gap: 100px;
   padding: 250px 20vw;
+  @media only screen and (max-width: 770px) {
+    padding: 50px;
+    gap: 30px;
+  }
 `;
 
 const TextDiv = styled.h4`
@@ -18,6 +22,11 @@ const TextDiv = styled.h4`
     font-size: 3.4rem;
     font-weight: 500;
     width: 45vw;
+    @media only screen and (max-width: 770px) {
+      width: 100%;
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
   }
   &.second {
     font-size: 1.8rem;
@@ -25,6 +34,11 @@ const TextDiv = styled.h4`
     align-self: flex-end;
     line-height: 2.5rem;
     margin-left: 15rem;
+    @media only screen and (max-width: 770px) {
+      width: 100%;
+      font-size: 1.1rem;
+      line-height: 2rem;
+    }
   }
   &.third {
     font-size: 1.8rem;
@@ -57,7 +71,7 @@ const About = () => {
   } = aboutData;
 
   return (
-    <>
+    <div data-aos-once="true">
       <section>
         <IntroductionText
           data-aos="fade-up"
@@ -99,7 +113,7 @@ const About = () => {
           <StyledImg page="aboutFinal" src={finalImage} />
         </div>
       </section>
-    </>
+    </div>
   );
 };
 

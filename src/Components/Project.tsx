@@ -69,7 +69,7 @@ const Project = () => {
   const { name, city, surface, description, image } = currentProject;
   return (
     <>
-      <StyledHeader page="project">
+      <StyledHeader page="project" data-aos="fade-up" data-aos-duration="1000">
         <ProjectTitle>{name}</ProjectTitle>
         <ProjectDetails>
           <span>{city}</span>
@@ -77,10 +77,12 @@ const Project = () => {
           <span>{surface} sq. ft.</span>
         </ProjectDetails>
       </StyledHeader>
-      <MainSection>
+      <MainSection data-aos="fade-up" data-aos-duration="1000">
         <StyledImg page="project" src={image} />
         <StyledText>{description}</StyledText>
-        <NavBar position="bottom">Back to Projects</NavBar>
+        <NavBar position="bottom" data-aos="fade" data-aos-duration="1000">
+          Back to Projects
+        </NavBar>
       </MainSection>
       <Caroussel items={projects.items} />
     </>
