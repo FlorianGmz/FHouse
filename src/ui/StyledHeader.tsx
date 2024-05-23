@@ -25,6 +25,11 @@ const pages = {
     align-items: flex-start;
     gap: 2rem;
     height: 80vh;
+    @media only screen and (max-width: 770px) {
+      padding-left: 50px;
+      gap: 0.5rem;
+      height: 60vh;
+    }
   `,
 };
 

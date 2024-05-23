@@ -11,6 +11,10 @@ const ProjectTitle = styled.h2`
   font-size: 6rem;
   font-weight: 500;
   letter-spacing: 0.2rem;
+  @media only screen and (max-width: 770px) {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
 `;
 
 const ProjectDetails = styled.h5`
@@ -30,6 +34,12 @@ const StyledText = styled.p`
   padding: 0 150px;
   font-size: 1.8rem;
   line-height: 3rem;
+  @media only screen and (max-width: 770px) {
+    font-size: 1rem;
+    padding: 0 50px;
+    line-height: 1.5rem;
+    margin: 80px 0 100px;
+  }
 `;
 
 const Project = () => {

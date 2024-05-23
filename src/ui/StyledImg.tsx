@@ -38,6 +38,9 @@ const pages: RuleSet<object> = {
     float: right;
     object-fit: cover;
     object-position: center;
+    @media only screen and (max-width: 770px) {
+      padding: 0;
+    }
   `,
   about: css`
     width: 80vw;
