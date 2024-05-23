@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { processState } from "../@types/types";
-import { getProcess } from "../services/apiFaliHouse";
 import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../ui/IntroductionText";
+import StyledImg from "../ui/StyledImg";
+import StyledText from "../ui/StyledText";
 
 const ProcessTableContent = styled.section`
   padding: 0 100px;
@@ -22,6 +23,9 @@ const ProcessTableItem = styled.div`
   line-height: 2rem;
   cursor: pointer;
   transition: 0.5s;
+  @media only screen and (max-width: 770px) {
+    display: none;
+  }
   &.current {
     opacity: 1;
   }
@@ -35,6 +39,9 @@ const ProcessItemSection = styled.section`
   margin: auto;
   padding-right: 100px;
   z-index: 50;
+  @media only screen and (max-width: 770px) {
+    display: block;
+  }
 `;
 
 const ProcessItem = styled.div`
@@ -42,12 +49,6 @@ const ProcessItem = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-`;
-const ProcessImage = styled.img`
-  width: 100%;
-  height: 55%;
-  object-fit: cover;
-  object-position: center;
 `;
 
 const ProcessText = styled.p`
@@ -127,15 +128,20 @@ const Process = () => {
       <ProcessItemSection>
         {items.map((process) => (
           <ProcessItem key={process.id} id={process.title}>
-            <ProcessImage
+            <StyledImg
+              page="process"
               data-aos="fade"
               data-aos-easing="ease"
               data-aos-duration="1000"
               src={process.image}
             />
-            <ProcessText data-aos="fade-up" data-aos-duration="1000">
+            <StyledText
+              page="process"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               {process.text}
-            </ProcessText>
+            </StyledText>
           </ProcessItem>
         ))}
       </ProcessItemSection>

@@ -42,6 +42,17 @@ const pages: RuleSet<object> = {
       padding: 0;
     }
   `,
+  process: css`
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+    object-position: center;
+    @media only screen and (max-width: 770px) {
+      width: 100vw;
+      height: 40vh;
+      padding: 0 50px;
+    }
+  `,
   about: css`
     width: 80vw;
     height: 90vh;

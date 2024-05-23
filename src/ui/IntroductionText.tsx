@@ -19,6 +19,11 @@ const pages = {
     padding-top: 45vh;
     font-weight: 500;
     font-size: 4.75rem;
+    @media only screen and (max-width: 770px) {
+      font-size: 1.5rem;
+      height: 80vh;
+      padding-left: 50px;
+    }
   `,
   projects: css`
     width: 60vw;
