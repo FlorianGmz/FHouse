@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { projectState, projectsState } from "../@types/types";
+import { ProjectState, ProjectsState } from "../@types/types";
 import styled from "styled-components";
 import StyledHeader from "../ui/StyledHeader";
 import StyledImg from "../ui/StyledImg";
@@ -44,9 +44,9 @@ const StyledText = styled.p`
 `;
 
 const Project = () => {
-  const projects = useLoaderData() as projectsState;
+  const projects = useLoaderData() as ProjectsState;
   const { id } = useParams<{ id: string }>();
-  const [currentProject, setCurrentProject] = useState<projectState["project"]>(
+  const [currentProject, setCurrentProject] = useState<ProjectState["project"]>(
     {
       id: 0,
       name: "",

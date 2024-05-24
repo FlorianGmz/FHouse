@@ -1,6 +1,16 @@
 import styled, { RuleSet, css } from "styled-components";
 
-const pages: RuleSet<object> = {
+interface PagesState {
+  slideshow: RuleSet<object>;
+  contact: RuleSet<object>;
+  project: RuleSet<object>;
+  process: RuleSet<object>;
+  about: RuleSet<object>;
+  aboutMain: RuleSet<object>;
+  aboutFinal: RuleSet<object>;
+}
+
+const pages: PagesState = {
   slideshow: css`
     width: 80vw;
     height: 90vh;
@@ -59,7 +69,7 @@ const pages: RuleSet<object> = {
     object-position: center;
     @media only screen and (max-width: 770px) {
       width: 100vw;
-      padding-left: 50px;
+      padding-right: 50px;
       height: 40vh;
     }
   `,
@@ -70,8 +80,8 @@ const pages: RuleSet<object> = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
+      margin-bottom: 0;
       width: 100vw;
-      padding-left: 50px;
       height: 40vh;
     }
   `,

@@ -3,7 +3,7 @@ import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import styled from "styled-components";
 import { useLoaderData } from "react-router-dom";
-import { aboutState } from "../../@types/types";
+import { AboutState } from "../../@types/types";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -46,6 +46,13 @@ const TextDiv = styled.h4`
     line-height: 2.5rem;
     padding: 200px 20vw;
     margin-left: 15rem;
+    @media only screen and (max-width: 770px) {
+      width: 100%;
+      margin-left: 0;
+      padding: 50px;
+      font-size: 1.1rem;
+      line-height: 2rem;
+    }
   }
   &.conclusion {
     width: 50vw;
@@ -54,11 +61,19 @@ const TextDiv = styled.h4`
     margin: 0 auto;
     padding-bottom: 200px;
     font-size: 3.3rem;
+    @media only screen and (max-width: 770px) {
+      width: 100%;
+      font-size: 1.5rem;
+      text-align: left;
+      font-weight: 600;
+      line-height: 2.2rem;
+      padding: 70px 50px 50px;
+    }
   }
 `;
 
 const About = () => {
-  const aboutData = useLoaderData() as aboutState;
+  const aboutData = useLoaderData() as AboutState;
   const {
     introduction,
     firstText,

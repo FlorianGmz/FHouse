@@ -1,14 +1,14 @@
-export interface homeDataState {
-  homeData: homeState;
-  projectsData: projectsState;
+export interface HomeDataState {
+  homeData: HomeState;
+  projectsData: ProjectsState;
 }
-export interface homeState {
+export interface HomeState {
   introduction: string;
   firstText: string;
   secondText: string;
   slideshow: string[];
 }
-export interface architectState {
+export interface ArchitectState {
   architect: {
     firstName: string;
     lastName: string;
@@ -17,12 +17,12 @@ export interface architectState {
   };
 }
 
-export interface projectsState {
+export interface ProjectsState {
   introduction: string;
-  items: projectState["project"][];
+  items: ProjectState["project"][];
 }
 
-export interface projectState {
+export interface ProjectState {
   project: {
     id: number;
     name: string;
@@ -33,11 +33,11 @@ export interface projectState {
   };
 }
 
-export interface processState {
+export interface ProcessState {
   introduction: string;
-  items: processItemsState["item"][];
+  items: ProcessItemsState["item"][];
 }
-interface processItemState {
+interface ProcessItemState {
   item: {
     id: number;
     title: string;
@@ -46,18 +46,18 @@ interface processItemState {
   };
 }
 
-export interface aboutState {
+export interface AboutState {
   introduction: string;
   firstText: string;
   secondText: string;
   thirdText: string;
   conclusionText: string;
-  fistImage: string;
+  firstImage: string;
   mainImage: string;
   finalImage: string;
 }
 
-export interface contactState {
+export interface ContactState {
   introduction: string;
   location: string;
   mainImage: string;

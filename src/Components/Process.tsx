@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { processState } from "../@types/types";
+import { ProcessState } from "../@types/types";
 import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../ui/IntroductionText";
 import StyledImg from "../ui/StyledImg";
@@ -51,19 +51,10 @@ const ProcessItem = styled.div`
   flex-direction: column;
 `;
 
-const ProcessText = styled.p`
-  width: 100%;
-  height: 45%;
-  padding: 60px 100px;
-  font-size: 1.65rem;
-  font-weight: 500;
-  line-height: 3rem;
-`;
-
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
   5;
-  const { introduction, items } = useLoaderData() as processState;
+  const { introduction, items } = useLoaderData() as ProcessState;
 
   const processTitles = items.map((process) => process.title);
 
