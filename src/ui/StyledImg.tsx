@@ -27,6 +27,11 @@ const pages: PagesState = {
     float: right;
     object-fit: cover;
     object-position: center;
+    @media only screen and (max-width: 770px) {
+      float: none;
+      width: 100%;
+      padding-left: 50px;
+    }
   `,
   project: css`
     padding: 0 100px;

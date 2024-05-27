@@ -1,5 +1,6 @@
 import {
   getAbout,
+  getArchitects,
   getContact,
   getHome,
   getProcess,
@@ -29,5 +30,11 @@ export async function projectsLoader() {
 
 export async function contactLoader() {
   const contactData = await getContact();
-  return contactData;
+  const architectsData = await getArchitects();
+  return { contactData, architectsData };
+}
+
+export async function footerLoader() {
+  const architectsData = await getArchitects();
+  return architectsData;
 }

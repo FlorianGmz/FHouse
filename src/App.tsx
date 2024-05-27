@@ -16,11 +16,13 @@ import {
   processLoader,
   projectsLoader,
   contactLoader,
+  footerLoader,
 } from "./services/loaders";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    loader: footerLoader,
     children: [
       {
         path: "/",

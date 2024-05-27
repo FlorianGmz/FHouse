@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import ContactRow from "./ContactRow";
-import { useLocation } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
+import { ArchitectState } from "../@types/types";
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled.footer<{ isContactPage: boolean }>`
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -18,7 +19,7 @@ const StyledFooter = styled.footer`
   @media only screen and (max-width: 770px) {
     flex-direction: column;
     padding: 50px;
-    height: 468px;
+    height: ${({ isContactPage }) => (isContactPage ? "150px" : "468px")};
     gap: 50px;
   }
 `;
@@ -70,8 +71,9 @@ const FooterText = styled.div`
 const Footer = () => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
+  const architectsData = useLoaderData() as ArchitectState["architect"][];
   return (
-    <StyledFooter>
+    <StyledFooter isContactPage={isContactPage}>
       {!isContactPage && (
         <FooterRow className="top">
           <div>
@@ -79,7 +81,7 @@ const Footer = () => {
             <FooterText className="title">At home with nature.</FooterText>
           </div>
           <div>
-            <ContactRow page="*" />
+            <ContactRow page="*" architectsData={architectsData} />
           </div>
         </FooterRow>
       )}

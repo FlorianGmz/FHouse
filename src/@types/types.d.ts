@@ -8,14 +8,6 @@ export interface HomeState {
   secondText: string;
   slideshow: string[];
 }
-export interface ArchitectState {
-  architect: {
-    firstName: string;
-    lastName: string;
-    mail: string;
-    phone: string;
-  };
-}
 
 export interface ProjectsState {
   introduction: string;
@@ -57,8 +49,22 @@ export interface AboutState {
   finalImage: string;
 }
 
+export interface ContactDataState {
+  contactData: ContactState;
+  architectsData: ArchitectState["architect"][];
+}
+
 export interface ContactState {
   introduction: string;
   location: string;
   mainImage: string;
+}
+export interface ArchitectState {
+  architect: {
+    id: number;
+    firstName: string;
+    lastName: string;
+    mail: string;
+    phone: string;
+  };
 }

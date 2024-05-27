@@ -3,7 +3,7 @@ import styled from "styled-components";
 import StyledImg from "../../ui/StyledImg";
 import ContactRow from "../ContactRow";
 import { useLoaderData } from "react-router-dom";
-import { contactState } from "../../@types/types";
+import { ContactDataState } from "../../@types/types";
 
 const ContactSection = styled.div`
   color: white;
@@ -12,10 +12,16 @@ const ContactSection = styled.div`
 const StyledText = styled.p`
   margin-left: 100px;
   font-size: 2.2rem;
+  @media only screen and (max-width: 770px) {
+    margin-left: 50px;
+    font-size: 1.1rem;
+  }
 `;
 
 const Contact = () => {
-  const { introduction, location, mainImage } = useLoaderData() as contactState;
+  const { contactData, architectsData } = useLoaderData() as ContactDataState;
+
+  const { introduction, location, mainImage } = contactData;
 
   return (
     <ContactSection>
@@ -24,7 +30,7 @@ const Contact = () => {
         <StyledText>{location}</StyledText>
       </div>
       <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-        <ContactRow page="contact" />
+        <ContactRow page="contact" architectsData={architectsData} />
       </div>
       <StyledImg src={mainImage} page="contact" />
     </ContactSection>

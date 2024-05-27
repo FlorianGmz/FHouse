@@ -53,6 +53,12 @@ const pages = {
     font-size: 6.6rem;
     font-weight: 500;
     letter-spacing: 0.2rem;
+    @media only screen and (max-width: 770px) {
+      width: auto;
+      letter-spacing: 0.1rem;
+      font-size: 2.7rem;
+      padding: 300px 50px 15px;
+    }
   `,
 };
 

@@ -19,6 +19,9 @@ const StyledMainContainer = styled.main`
   }
   &.contact-page {
     background-color: black;
+    @media only screen and (max-width: 770px) {
+      margin-bottom: 150px;
+    }
   }
 `;
 
