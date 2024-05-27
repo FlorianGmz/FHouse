@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ProjectCard from "./ProjectCard";
 import { useLoaderData } from "react-router-dom";
-import { projectState, projectsState } from "../@types/types";
+import { ProjectState, ProjectsState } from "../@types/types";
 import IntroductionText from "../ui/IntroductionText";
 import StyledHeader from "../ui/StyledHeader";
 
@@ -16,7 +16,7 @@ const ProjectsContainer = styled.div`
 `;
 
 const Projects = () => {
-  const { introduction, items } = useLoaderData() as projectsState;
+  const { introduction, items } = useLoaderData() as ProjectsState;
 
   return (
     <>
@@ -30,7 +30,7 @@ const Projects = () => {
         data-aos-duration="1000"
         data-aos-once="true"
       >
-        {items.map((project: projectState["project"]) => (
+        {items.map((project: ProjectState["project"]) => (
           <ProjectCard key={project.id} project={project} element="projects" />
         ))}
       </ProjectsContainer>

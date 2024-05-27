@@ -34,7 +34,7 @@ const pages = {
 };
 
 const StyledHeader = styled.div<{ page?: string }>`
-  ${(props) => pages[props.page]}
+  ${(props) => pages[props.page as keyof typeof pages]}
 `;
 
 export default StyledHeader;
