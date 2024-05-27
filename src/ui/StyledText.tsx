@@ -1,6 +1,6 @@
-import styled, { RuleSet, css } from "styled-components";
+import styled, { css } from "styled-components";
 
-const pages: RuleSet<object> = {
+const pages = {
   process: css`
     width: 100%;
     height: 45%;
@@ -19,7 +19,7 @@ const pages: RuleSet<object> = {
   `,
 };
 const StyledText = styled.p<{ page?: string }>`
-  ${(props) => pages[props?.page]}
+  ${(props) => pages[props?.page as keyof typeof pages]}
 `;
 
 export default StyledText;

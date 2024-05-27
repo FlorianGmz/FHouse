@@ -1,16 +1,6 @@
-import styled, { RuleSet, css } from "styled-components";
+import styled, { css } from "styled-components";
 
-interface PagesState {
-  slideshow: RuleSet<object>;
-  contact: RuleSet<object>;
-  project: RuleSet<object>;
-  process: RuleSet<object>;
-  about: RuleSet<object>;
-  aboutMain: RuleSet<object>;
-  aboutFinal: RuleSet<object>;
-}
-
-const pages: PagesState = {
+const pages = {
   slideshow: css`
     width: 80vw;
     height: 90vh;
@@ -93,7 +83,7 @@ const pages: PagesState = {
 };
 
 const StyledImg = styled.img<{ page?: string }>`
-  ${(props) => pages[props?.page]}
+  ${(props) => pages[props?.page as keyof typeof pages]}
 `;
 
 export default StyledImg;
