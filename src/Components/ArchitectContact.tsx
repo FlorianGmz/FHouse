@@ -1,10 +1,15 @@
 import styled, { css } from "styled-components";
-import { architectState } from "../@types/types";
+import { ArchitectState } from "../@types/types";
 
 const StyledContact = styled.div<{ page: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-size: 1.2rem;
+  @media only screen and (max-width: 770px) {
+    align-items: flex-start;
+    font-size: 0.8rem;
+  }
   ${(props) =>
     props?.page === "contact" &&
     css`
@@ -13,7 +18,7 @@ const StyledContact = styled.div<{ page: string }>`
 `;
 
 interface ArchitectContactProps {
-  architect: architectState["architect"];
+  architect: ArchitectState["architect"];
   page: string;
 }
 

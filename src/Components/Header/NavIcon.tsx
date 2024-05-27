@@ -3,7 +3,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const NavIconDiv = styled.div`
-  top: 60px;
+  top: 55px;
   position: fixed;
   width: 50px;
   margin-top: 16px;
@@ -11,10 +11,14 @@ const NavIconDiv = styled.div`
   z-index: 10;
   display: flex;
   flex-direction: column;
+  width: 7rem;
   align-items: flex-end;
   justify-content: center;
   gap: 10px;
   cursor: pointer;
+  @media only screen and (max-width: 770px) {
+    right: 50px;
+  }
 `;
 
 const Icon = styled.div<{
@@ -25,13 +29,11 @@ const Icon = styled.div<{
   ${(props) =>
     props?.as === "top" &&
     css`
-      background-color: ${
-        props.currentPathname === "/contact"
-            ? "white"
-            : props?.navOpen
-            ? "white"
-            : "black"
-      };
+      background-color: ${props.currentPathname === "/contact"
+        ? "white"
+        : props?.navOpen
+        ? "white"
+        : "black"};
       width: 3rem;
       height: 0.2rem;
       border-radius: 0.2rem;
@@ -52,10 +54,10 @@ const Icon = styled.div<{
     css`
       background-color: ${
         props.currentPathname === "/contact"
-            ? "white"
-            : props?.navOpen
-            ? "white"
-            : "black"
+          ? "white"
+          : props?.navOpen
+          ? "white"
+          : "black"
       };
       width: 1.5rem;
       height: 0.2rem;

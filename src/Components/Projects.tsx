@@ -9,7 +9,10 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 300px 100px;
+  margin: 300px 100px 100px;
+  @media only screen and (max-width: 770px) {
+    margin: 300px 50px 50px;
+  }
 `;
 
 const Projects = () => {
@@ -22,9 +25,13 @@ const Projects = () => {
           <pre>{introduction}</pre>
         </IntroductionText>
       </StyledHeader>
-      <ProjectsContainer data-aos="fade" data-aos-duration="1000">
+      <ProjectsContainer
+        data-aos="fade"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         {items.map((project: projectState["project"]) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.id} project={project} element="projects" />
         ))}
       </ProjectsContainer>
     </>

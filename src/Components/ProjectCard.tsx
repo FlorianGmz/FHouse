@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { projectState } from "../@types/types";
+import { ProjectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled(Link)`
@@ -10,10 +10,16 @@ const CardContainer = styled(Link)`
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10rem;
+  @media only screen and (max-width: 770px) {
+    margin-bottom: 50px;
+  }
   &.carousel {
     width: 22rem;
     height: 35rem;
-    margin-bottom: 200px;
+    margin-bottom: 50px;
+    @media only screen and (max-width: 770px) {
+      margin-bottom: 50px;
+    }
   }
 `;
 
@@ -29,8 +35,13 @@ const CardImg = styled.img`
 `;
 
 const CardName = styled.p`
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  @media only screen and (max-width: 770px) {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 50px;
+  }
 `;
 
 const StyledUnderline = styled.span`
@@ -45,7 +56,7 @@ const StyledUnderline = styled.span`
 `;
 
 interface ProjectCardProps {
-  project: projectState["project"];
+  project: ProjectState["project"];
   element: string;
 }
 

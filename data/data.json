@@ -35,21 +35,14 @@
       "id": 1,
       "firstName": "Florian",
       "lastName": "Gomez",
-      "mail": "floriangomez@farohouse.com",
+      "mail": "florian@farohouse.com",
       "phone": "+33 123456789"
     },
     {
       "id": 2,
       "firstName": "Fanny",
       "lastName": "Lisle",
-      "mail": "fannylisle@farohouse.com",
-      "phone": "+33 123456789"
-    },
-    {
-      "id": 3,
-      "firstName": "Roman",
-      "lastName": "Gomez",
-      "mail": "romangomez@farohouse.com",
+      "mail": "fanny@farohouse.com",
       "phone": "+33 123456789"
     }
   ],
@@ -137,7 +130,7 @@
         "name": "L'Élégante",
         "city": "Nice",
         "surface": 350,
-        "description": "Experience unparalleled luxury at Villa L'Élégance, where sophistication meets serenity. Nestled amidst lush gardens overlooking the Mediterranean Sea, this exquisite villa boasts opulent interiors, expansive outdoor spaces, and state-of-the-art amenities. From the sleek modern design to the breathtaking sea views, every aspect of Villa L'Élégance is designed to enchant and inspire. Indulge in the ultimate Mediterranean escape at Villa L'Élégance.",
+        "description": "Experience unparalleled luxury at Villa L'Élégance, where sophistication meets serenity.\n Nestled amidst lush gardens overlooking the Mediterranean Sea, this exquisite villa boasts opulent interiors, expansive outdoor spaces, and state-of-the-art amenities. From the sleek modern design to the breathtaking sea views, every aspect of Villa L'Élégance is designed to enchant and inspire. Indulge in the ultimate Mediterranean escape at Villa L'Élégance.",
         "image": "https://images.unsplash.com/photo-1502005097973-6a7082348e28?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {

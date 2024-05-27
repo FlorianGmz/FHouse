@@ -7,6 +7,11 @@ const StyledNavLink = styled(Link)`
   transition: transform 0.5s ease-out;
   display: list-item;
   color: white;
+  @media only screen and (max-width: 770px) {
+    padding: 0 50px;
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
   &:hover {
     transform: translateX(-2rem);
   }

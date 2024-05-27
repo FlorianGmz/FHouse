@@ -1,5 +1,5 @@
 import NavBar from "./NavBar";
-import Caroussel from "./Caroussel";
+import Caroussel from "./Carousel/Carousel";
 import { useLoaderData } from "react-router-dom";
 import { homeDataState } from "../@types/types";
 import styled from "styled-components";
@@ -8,19 +8,32 @@ import IntroductionText from "../ui/IntroductionText";
 import StyledHeader from "../ui/StyledHeader";
 
 const StyledTitle = styled.h3`
-  width: 1200px;
+  max-width: 1400px;
   padding: 13rem 20vw 3rem;
   line-height: 5rem;
   font-size: 3.5rem;
   font-weight: 400;
+  @media only screen and (max-width: 770px) {
+    width: auto;
+    line-height: 3rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 100px 50px 50px;
+  }
 `;
 
 const StyledText = styled.h4`
-  width: 1200px;
+  max-width: 1400px;
   padding: 0rem 20vw 13rem;
   line-height: 3rem;
   font-size: 1.5rem;
   font-weight: 400;
+  @media only screen and (max-width: 770px) {
+    width: auto;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    padding: 0 50px 100px;
+  }
 `;
 
 const Home = () => {
