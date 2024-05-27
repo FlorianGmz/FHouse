@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
 import Caroussel from "./Carousel/Carousel";
 import { useLoaderData } from "react-router-dom";
-import { homeDataState } from "../@types/types";
+import { HomeDataState } from "../@types/types";
 import styled from "styled-components";
 import Slideshow from "./Slideshow";
 import IntroductionText from "../ui/IntroductionText";
@@ -37,7 +37,7 @@ const StyledText = styled.h4`
 `;
 
 const Home = () => {
-  const data = useLoaderData() as homeDataState;
+  const data = useLoaderData() as HomeDataState;
   const { introduction, firstText, secondText, slideshow } = data.homeData;
   const projects = data.projectsData.items;
   return (
