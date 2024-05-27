@@ -28,7 +28,7 @@ const FooterRow = styled.div`
   display: flex;
   &.top {
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     @media only screen and (max-width: 770px) {
       flex-direction: column;
       align-items: flex-start;
