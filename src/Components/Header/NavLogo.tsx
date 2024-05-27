@@ -32,17 +32,6 @@ const letterFadeIn = keyframes`
   }
   `;
 
-const letterFadeOut = keyframes`
-  from {
-    opacity: 1;
-    color:white;
-    visibility: visible;
-  }
-  to {
-    opacity: 0;
-    color:transparent;
-  }
-  `;
 const StyledLink = styled(Link)`
   position: fixed;
   top: 47.5px;
@@ -125,10 +114,10 @@ const StyledLogoLetter = styled.span<{ as: string }>`
   @media only screen and (max-width: 770px) {
     font-size: 2.5rem;
   }
-
   &.clicked {
     animation: 0.5s linear forwards;
-    animation-delay: ${({ as }) => `${animationTimings[as]}s`};
+    animation-delay: ${({ as }) =>
+      `${animationTimings[as as keyof typeof animationTimings]}s`};
     animation-name: ${({ as }) => (as ? letterFadeIn : "none")};
   }
 `;
