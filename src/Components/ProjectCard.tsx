@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { projectState } from "../@types/types";
+import { ProjectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
 const CardContainer = styled(Link)`
@@ -56,7 +56,7 @@ const StyledUnderline = styled.span`
 `;
 
 interface ProjectCardProps {
-  project: projectState["project"];
+  project: ProjectState["project"];
   element: string;
 }
 
