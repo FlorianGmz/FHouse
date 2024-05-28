@@ -1,79 +1,11 @@
 import "react-slideshow-image/dist/styles.css";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
-import styled from "styled-components";
+import { StyledDiv, StyledText } from "./StyledComponents";
 import { useLoaderData } from "react-router-dom";
 import { AboutState } from "../../@types/types";
 
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 100px;
-  padding: 250px 20vw;
-  @media only screen and (max-width: 770px) {
-    padding: 50px;
-    gap: 30px;
-  }
-`;
-
-const TextDiv = styled.h4`
-  &.first {
-    font-size: 3.4rem;
-    font-weight: 500;
-    width: 45vw;
-    @media only screen and (max-width: 770px) {
-      width: 100%;
-      font-size: 1.5rem;
-      line-height: 2.2rem;
-    }
-  }
-  &.second {
-    font-size: 1.8rem;
-    font-weight: 500;
-    align-self: flex-end;
-    line-height: 2.5rem;
-    margin-left: 15rem;
-    @media only screen and (max-width: 770px) {
-      width: 100%;
-      font-size: 1.1rem;
-      line-height: 2rem;
-    }
-  }
-  &.third {
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 2.5rem;
-    padding: 200px 20vw;
-    margin-left: 15rem;
-    @media only screen and (max-width: 770px) {
-      width: 100%;
-      margin-left: 0;
-      padding: 50px;
-      font-size: 1.1rem;
-      line-height: 2rem;
-    }
-  }
-  &.conclusion {
-    width: 50vw;
-    font-weight: 500;
-    text-align: center;
-    margin: 0 auto;
-    padding-bottom: 200px;
-    font-size: 3.3rem;
-    @media only screen and (max-width: 770px) {
-      width: 100%;
-      font-size: 1.5rem;
-      text-align: left;
-      font-weight: 600;
-      line-height: 2.2rem;
-      padding: 70px 50px 50px;
-    }
-  }
-`;
-
 const About = () => {
-  const aboutData = useLoaderData() as AboutState;
   const {
     introduction,
     firstText,
@@ -83,7 +15,7 @@ const About = () => {
     firstImage,
     mainImage,
     finalImage,
-  } = aboutData;
+  } = useLoaderData() as AboutState;
 
   return (
     <div data-aos-once="true">
@@ -106,24 +38,28 @@ const About = () => {
       </section>
       <section>
         <StyledDiv data-aos="fade-up" data-aos-duration="1000">
-          <TextDiv className="first">{firstText}</TextDiv>
-          <TextDiv className="second">{secondText}</TextDiv>
+          <StyledText className="first">{firstText}</StyledText>
+          <StyledText className="second">{secondText}</StyledText>
         </StyledDiv>
         <div data-aos="fade-up" data-aos-duration="1000">
           <StyledImg page="aboutMain" src={mainImage} />
         </div>
       </section>
       <section>
-        <TextDiv data-aos="fade-up" data-aos-duration="1000" className="third">
+        <StyledText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="third"
+        >
           {thirdText}
-        </TextDiv>
-        <TextDiv
+        </StyledText>
+        <StyledText
           data-aos="fade-up"
           data-aos-duration="1000"
           className="conclusion"
         >
           {conclusionText}
-        </TextDiv>
+        </StyledText>
         <div data-aos="fade-up" data-aos-duration="1000">
           <StyledImg page="aboutFinal" src={finalImage} />
         </div>
