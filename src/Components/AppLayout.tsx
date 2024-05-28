@@ -19,6 +19,7 @@ const StyledMainContainer = styled.main`
   }
   &.contact-page {
     background-color: black;
+    color: white;
     @media only screen and (max-width: 770px) {
       margin-bottom: 150px;
     }
