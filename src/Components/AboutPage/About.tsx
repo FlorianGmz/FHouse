@@ -1,9 +1,9 @@
+import { AboutState } from "../../@types/types";
 import "react-slideshow-image/dist/styles.css";
+import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import { StyledDiv, StyledText } from "./StyledComponents";
-import { useLoaderData } from "react-router-dom";
-import { AboutState } from "../../@types/types";
 
 const About = () => {
   const {

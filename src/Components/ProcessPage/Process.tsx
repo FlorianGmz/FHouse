@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { ProcessState } from "../@types/types";
+import { ProcessState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
-import IntroductionText from "../ui/IntroductionText";
-import StyledImg from "../ui/StyledImg";
-import StyledText from "../ui/StyledText";
+import IntroductionText from "../../ui/IntroductionText";
+import StyledImg from "../../ui/StyledImg";
+import StyledText from "../../ui/StyledText";
 
 const ProcessTableContent = styled.section`
   padding: 0 100px;
@@ -53,12 +53,10 @@ const ProcessItem = styled.div`
 
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
-  5;
+
   const { introduction, items } = useLoaderData() as ProcessState;
 
   const processTitles = items.map((process) => process.title);
-
-  console.log(processTitles);
 
   const [currentIdentifier, setCurrentIdentifier] = useState(processTitles[0]);
 
@@ -73,22 +71,27 @@ const Process = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        ((window.scrollY || document.documentElement.scrollTop) /
-          window.innerHeight) *
-        100; // Convertir en vh
-      if (scrollTop > 70) {
-        // 20vh au lieu de 700px
-        setTableFixed(true);
-      } else {
-        setTableFixed(false);
-      }
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+
+      setTableFixed(scrollTop > windowHeight * 0.7);
+
+      items.forEach((process) => {
+        const element = document.getElementById(process.title);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top >= 0 && rect.top <= windowHeight / 10) {
+            setCurrentIdentifier(process.title);
+          }
+        }
+      });
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [items]);
 
   return (
     <>
