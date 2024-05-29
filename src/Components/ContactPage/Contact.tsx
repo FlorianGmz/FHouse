@@ -1,6 +1,6 @@
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
-import { StyledText } from "./StyledComponents";
+import { StyledText } from "./StyledContactComponents";
 import ContactRow from "../ContactRow";
 import { useLoaderData } from "react-router-dom";
 import { ContactDataState } from "../../@types/types";

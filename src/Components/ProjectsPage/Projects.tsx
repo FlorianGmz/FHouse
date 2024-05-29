@@ -1,19 +1,10 @@
-import styled from "styled-components";
-import ProjectCard from "./ProjectCard";
+import { ProjectState, ProjectsState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
-import { ProjectState, ProjectsState } from "../@types/types";
-import IntroductionText from "../ui/IntroductionText";
-import StyledHeader from "../ui/StyledHeader";
 
-const ProjectsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 300px 100px 100px;
-  @media only screen and (max-width: 770px) {
-    margin: 300px 50px 50px;
-  }
-`;
+import { ProjectsContainer } from "./StyledProjectsComponents";
+import ProjectCard from "../ProjectCard";
+import IntroductionText from "../../ui/IntroductionText";
+import StyledHeader from "../../ui/StyledHeader";
 
 const Projects = () => {
   const { introduction, items } = useLoaderData() as ProjectsState;

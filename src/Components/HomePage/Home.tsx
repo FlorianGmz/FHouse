@@ -1,6 +1,6 @@
 import { HomeDataState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
-import { StyledTitle, StyledText } from "./StyledComponents";
+import { StyledTitle, StyledText } from "./StyledHomeComponents";
 import Slideshow from "../Slideshow";
 import Caroussel from "../Carousel/Carousel";
 import NavBar from "../NavBar";

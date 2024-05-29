@@ -3,7 +3,7 @@ import "react-slideshow-image/dist/styles.css";
 import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
-import { StyledDiv, StyledText } from "./StyledComponents";
+import { StyledDiv, StyledText } from "./StyledAboutComponents";
 
 const About = () => {
   const {
