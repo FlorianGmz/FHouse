@@ -23,7 +23,6 @@ const Process = () => {
   const handleClick = (identifier: string) => {
     setCurrentIdentifier(identifier);
     const element = document.getElementById(identifier);
-    console.log(element);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

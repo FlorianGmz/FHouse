@@ -1,9 +1,9 @@
 import { HomeDataState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
 import { StyledTitle, StyledText } from "./StyledHomeComponents";
-import Slideshow from "../Slideshow";
+import Slideshow from "../Slideshow/Slideshow";
 import Caroussel from "../Carousel/Carousel";
-import NavBar from "../NavBar";
+import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeader from "../../ui/StyledHeader";
 

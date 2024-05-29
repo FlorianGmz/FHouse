@@ -10,7 +10,7 @@ import {
 } from "./StyledProjectComponents";
 import StyledHeader from "../../ui/StyledHeader";
 import StyledImg from "../../ui/StyledImg";
-import NavBar from "../NavBar";
+import NavBar from "../NavBar/NavBar";
 import Caroussel from "../Carousel/Carousel";
 
 const Project = () => {

@@ -1,7 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "aos/dist/aos.css";
 
-import AppLayout from "./Components/AppLayout";
+import AppLayout from "./Components/AppLayout/AppLayout";
 import Home from "./Components/HomePage/Home";
 import GlobalStyles from "./styles/GlobalStyles";
 import Projects from "./Components/ProjectsPage/Projects";

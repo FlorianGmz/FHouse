@@ -1,9 +1,6 @@
-import React from "react";
-import ArchitectContact from "./ArchitectContact";
 import styled, { css } from "styled-components";
-import { ArchitectState } from "../@types/types";
 
-const Row = styled.div<{ page: string }>`
+export const Row = styled.div<{ page: string }>`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -37,25 +34,3 @@ const Row = styled.div<{ page: string }>`
       }
     `}
 `;
-
-interface ContactRowProps {
-  page: string;
-  architectsData: ArchitectState["architect"][];
-}
-
-const ContactRow: React.FC<ContactRowProps> = ({ page, architectsData }) => {
-  console.log(architectsData);
-  return (
-    <Row page={page}>
-      {architectsData.map((architect) => (
-        <ArchitectContact
-          key={architect.id}
-          architect={architect}
-          page={page}
-        />
-      ))}
-    </Row>
-  );
-};
-
-export default ContactRow;

@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import ContactRow from "./ContactRow";
-import { useLoaderData, useLocation } from "react-router-dom";
-import { ArchitectState } from "../@types/types";
 
-const StyledFooter = styled.footer<{ isContactPage: boolean }>`
+export const StyledFooter = styled.footer<{ isContactPage: boolean }>`
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -24,7 +21,7 @@ const StyledFooter = styled.footer<{ isContactPage: boolean }>`
   }
 `;
 
-const FooterRow = styled.div`
+export const FooterRow = styled.div`
   display: flex;
   &.top {
     justify-content: space-between;
@@ -44,7 +41,7 @@ const FooterRow = styled.div`
   }
 `;
 
-const FooterText = styled.div`
+export const FooterText = styled.div`
   &.logo {
     font-size: 7rem;
     font-weight: 500;
@@ -67,32 +64,3 @@ const FooterText = styled.div`
     }
   }
 `;
-
-const Footer = () => {
-  const location = useLocation();
-  const isContactPage = location.pathname === "/contact";
-  const architectsData = useLoaderData() as ArchitectState["architect"][];
-  return (
-    <StyledFooter isContactPage={isContactPage}>
-      {!isContactPage && (
-        <FooterRow className="top">
-          <div>
-            <FooterText className="logo">Fh</FooterText>
-            <FooterText className="title">At home with nature.</FooterText>
-          </div>
-          <div>
-            <ContactRow page="*" architectsData={architectsData} />
-          </div>
-        </FooterRow>
-      )}
-      <FooterRow className="bottom">
-        <FooterText className="copyright">
-          © Copyright 2024 FAROhouse.
-        </FooterText>
-        <FooterText className="copyright">All rights reserved.</FooterText>
-      </FooterRow>
-    </StyledFooter>
-  );
-};
-
-export default Footer;

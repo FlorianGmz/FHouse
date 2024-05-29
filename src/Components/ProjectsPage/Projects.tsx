@@ -2,7 +2,7 @@ import { ProjectState, ProjectsState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
 
 import { ProjectsContainer } from "./StyledProjectsComponents";
-import ProjectCard from "../ProjectCard";
+import ProjectCard from "../ProjectCard/ProjectCard";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeader from "../../ui/StyledHeader";
 
