@@ -3,16 +3,16 @@ import { StyledContact } from "./StyledArchitectComponents";
 
 interface ArchitectContactProps {
   architect: ArchitectState["architect"];
-  page: string;
+  $page: string;
 }
 
 const ArchitectContact: React.FC<ArchitectContactProps> = ({
   architect,
-  page,
+  $page,
 }) => {
   const { firstName, lastName, mail, phone } = architect;
   return (
-    <StyledContact page={page}>
+    <StyledContact $page={$page}>
       <p>
         {firstName} {lastName}
       </p>

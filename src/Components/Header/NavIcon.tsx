@@ -22,16 +22,16 @@ const NavIconDiv = styled.div`
 `;
 
 const Icon = styled.div<{
-  as: string;
-  currentPathname: string;
-  navOpen: boolean;
+  $position: string;
+  $currentPathname: string;
+  $navOpen: boolean;
 }>`
   ${(props) =>
-    props?.as === "top" &&
+    props?.$position === "top" &&
     css`
-      background-color: ${props.currentPathname === "/contact"
+      background-color: ${props.$currentPathname === "/contact"
         ? "white"
-        : props?.navOpen
+        : props?.$navOpen
         ? "white"
         : "black"};
       width: 3rem;
@@ -39,7 +39,7 @@ const Icon = styled.div<{
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${props.navOpen ? "2rem" : "1.5rem"};
+        width: ${props.$navOpen ? "2rem" : "1.5rem"};
         transition: ease-out 0.3s;
       }
 
@@ -50,12 +50,12 @@ const Icon = styled.div<{
       }
     `}
   ${(props) =>
-    props?.as === "bottom" &&
+    props?.$position === "bottom" &&
     css`
       background-color: ${
-        props.currentPathname === "/contact"
+        props.$currentPathname === "/contact"
           ? "white"
-          : props?.navOpen
+          : props?.$navOpen
           ? "white"
           : "black"
       };
@@ -64,7 +64,7 @@ const Icon = styled.div<{
       border-radius: 0.2rem;
       transition: ease-in 0.3s;
       ${NavIconDiv}:hover & {
-        width: ${props.navOpen ? "2rem" : "3rem"};
+        width: ${props.$navOpen ? "2rem" : "3rem"};
         transition: ease-out 0.3s;
       }
       &.clicked {
@@ -83,21 +83,21 @@ interface NavMenuIconProps {
 
 const NavIcon: React.FC<NavMenuIconProps> = ({ isOpen, setNavIsOpen }) => {
   const location = useLocation();
-  const currentPathname = location.pathname;
+  const $currentPathname = location.pathname;
   return (
     <>
       <NavIconDiv onClick={() => setNavIsOpen((open) => !open)}>
         <Icon
           className={isOpen ? "clicked" : ""}
-          as="top"
-          currentPathname={currentPathname}
-          navOpen={isOpen}
+          $position="top"
+          $currentPathname={$currentPathname}
+          $navOpen={isOpen}
         ></Icon>
         <Icon
           className={isOpen ? "clicked" : ""}
-          as="bottom"
-          currentPathname={currentPathname}
-          navOpen={isOpen}
+          $position="bottom"
+          $currentPathname={$currentPathname}
+          $navOpen={isOpen}
         ></Icon>
       </NavIconDiv>
     </>

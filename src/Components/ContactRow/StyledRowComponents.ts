@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Row = styled.div<{ page: string }>`
+export const Row = styled.div<{ $page: string }>`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -14,7 +14,7 @@ export const Row = styled.div<{ page: string }>`
     font-size: 0.8rem;
   }
   ${(props) =>
-    props?.page === "contact" &&
+    props?.$page === "contact" &&
     css`
       width: 80vw;
       float: right;

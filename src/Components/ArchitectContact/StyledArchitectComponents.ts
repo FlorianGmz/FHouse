@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const StyledContact = styled.div<{ page: string }>`
+export const StyledContact = styled.div<{ $page: string }>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -10,7 +10,7 @@ export const StyledContact = styled.div<{ page: string }>`
     font-size: 0.8rem;
   }
   ${(props) =>
-    props?.page === "contact" &&
+    props?.$page === "contact" &&
     css`
       align-items: flex-start;
     `}

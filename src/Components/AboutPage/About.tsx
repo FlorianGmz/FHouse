@@ -23,7 +23,7 @@ const About = () => {
         <IntroductionText
           data-aos="fade-up"
           data-aos-duration="1000"
-          page="about"
+          $page="about"
         >
           <pre>{introduction}</pre>
         </IntroductionText>

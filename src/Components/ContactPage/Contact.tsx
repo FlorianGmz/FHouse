@@ -13,7 +13,7 @@ const Contact = () => {
   return (
     <section>
       <div data-aos="fade-up" data-aos-duration="1000">
-        <IntroductionText page="contact">{introduction}</IntroductionText>
+        <IntroductionText $page="contact">{introduction}</IntroductionText>
         <StyledText>{location}</StyledText>
       </div>
       <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">

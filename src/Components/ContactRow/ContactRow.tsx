@@ -11,12 +11,12 @@ interface ContactRowProps {
 
 const ContactRow: React.FC<ContactRowProps> = ({ page, architectsData }) => {
   return (
-    <Row page={page}>
+    <Row $page={page}>
       {architectsData.map((architect) => (
         <ArchitectContact
           key={architect.id}
           architect={architect}
-          page={page}
+          $page={page}
         />
       ))}
     </Row>

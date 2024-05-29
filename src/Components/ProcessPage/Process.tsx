@@ -57,7 +57,7 @@ const Process = () => {
       <IntroductionText
         data-aos="fade-up"
         data-aos-duration="1000"
-        page="process"
+        $page="process"
       >
         <pre>{introduction}</pre>
       </IntroductionText>
@@ -69,6 +69,7 @@ const Process = () => {
       >
         {processTitles.map((title) => (
           <ProcessTableItem
+            key={title}
             className={
               currentIdentifier === title ? `${title} current` : `${title}`
             }

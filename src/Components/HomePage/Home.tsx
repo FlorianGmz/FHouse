@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <StyledHeader page="home" data-aos="fade-up" data-aos-duration="1000">
-        <IntroductionText page="home">
+        <IntroductionText $page="home">
           <pre>{introduction}</pre>
         </IntroductionText>
         <NavBar position="top">Projects</NavBar>

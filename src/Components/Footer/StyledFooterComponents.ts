@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFooter = styled.footer<{ isContactPage: boolean }>`
+export const StyledFooter = styled.footer<{ $isContactPage: boolean }>`
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@ export const StyledFooter = styled.footer<{ isContactPage: boolean }>`
   @media only screen and (max-width: 770px) {
     flex-direction: column;
     padding: 50px;
-    height: ${({ isContactPage }) => (isContactPage ? "150px" : "468px")};
+    height: ${({ $isContactPage }) => ($isContactPage ? "150px" : "468px")};
     gap: 50px;
   }
 `;

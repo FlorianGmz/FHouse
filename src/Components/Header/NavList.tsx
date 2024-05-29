@@ -20,11 +20,11 @@ const backgroundFadeOut = keyframes`
   }
 `;
 
-const StyledNavList = styled.nav<{ navOpen: boolean }>`
+const StyledNavList = styled.nav<{ $navOpen: boolean }>`
   display: block;
 `;
 
-const StyledList = styled.ul<{ navOpen: boolean }>`
+const StyledList = styled.ul<{ $navOpen: boolean }>`
   z-index: 5;
   position: fixed;
   top: 0;
@@ -54,8 +54,8 @@ interface NavListProps {
 
 const NavList: React.FC<NavListProps> = ({ navIsOpen }) => {
   return (
-    <StyledNavList navOpen={navIsOpen}>
-      <StyledList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
+    <StyledNavList $navOpen={navIsOpen}>
+      <StyledList $navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
         <ListItem to="/projects">Projects</ListItem>
         <ListItem to="/process">Process</ListItem>
         <ListItem to="/about">About</ListItem>

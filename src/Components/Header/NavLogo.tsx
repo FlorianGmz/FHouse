@@ -44,8 +44,8 @@ const StyledLink = styled(Link)`
     left: 50px;
   }
 `;
-const Logo = styled.div<{ scrolled: boolean }>`
-  color: ${({ scrolled }) => (scrolled ? "transparent" : "black")};
+const Logo = styled.div<{ $scrolled: boolean }>`
+  color: ${({ $scrolled }) => ($scrolled ? "transparent" : "black")};
   font-size: 3rem;
   display: flex;
   justify-content: flex-start;
@@ -56,13 +56,13 @@ const Logo = styled.div<{ scrolled: boolean }>`
     font-size: 2.5rem;
   }
   &.contact-page {
-    color: ${({ scrolled }) => (scrolled ? "transparent" : "white")};
+    color: ${({ $scrolled }) => ($scrolled ? "transparent" : "white")};
   }
   @media only screen and (max-width: 770px) {
   }
 `;
 const StyledFLogo = styled.div`
-  letter-spacing: 0.1rem;
+  $letter-spacing: 0.1rem;
   transition: 1s;
   width: 1.5rem;
   @media only screen and (max-width: 770px) {
@@ -70,7 +70,7 @@ const StyledFLogo = styled.div`
   }
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
-    width: 8.5rem;
+    width: 8.3rem;
     color: white;
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     animation: 1s ${logoFadeIn} ease-out;
@@ -81,14 +81,14 @@ const StyledFLogo = styled.div`
 `;
 
 const StyledHLogo = styled.div`
-  letter-spacing: 0.1rem;
+  $letter-spacing: 0.1rem;
   transition: 1s;
   /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
     color: white;
     animation: 1s ${logoFadeIn} ease-out;
     @media only screen and (max-width: 770px) {
-      letter-spacing: 0rem;
+      $letter-spacing: 0rem;
     }
   }
 `;
@@ -103,7 +103,7 @@ const animationTimings = {
   e: 3.25,
 };
 
-const StyledLogoLetter = styled.span<{ as: string }>`
+const StyledLogoLetter = styled.span<{ $letter: string }>`
   text-decoration: none;
   color: transparent;
   font-size: 3rem;
@@ -116,9 +116,9 @@ const StyledLogoLetter = styled.span<{ as: string }>`
   }
   &.clicked {
     animation: 0.5s linear forwards;
-    animation-delay: ${({ as }) =>
-      `${animationTimings[as as keyof typeof animationTimings]}s`};
-    animation-name: ${({ as }) => (as ? letterFadeIn : "none")};
+    animation-delay: ${({ $letter }) =>
+      `${animationTimings[$letter as keyof typeof animationTimings]}s`};
+    animation-name: ${({ $letter }) => ($letter ? letterFadeIn : "none")};
   }
 `;
 
@@ -129,7 +129,7 @@ interface NavLogoProps {
 const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
-  const [scrolled, setScrolled] = useState(false);
+  const [$scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -144,31 +144,34 @@ const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
 
   return (
     <StyledLink reloadDocument to={"/"}>
-      <Logo scrolled={scrolled} className={isContactPage ? "contact-page" : ""}>
+      <Logo
+        $scrolled={$scrolled}
+        className={isContactPage ? "contact-page" : ""}
+      >
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
           F
-          <StyledLogoLetter as="A" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="A" className={navIsOpen ? "clicked" : ""}>
             A
           </StyledLogoLetter>
-          <StyledLogoLetter as="R" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="R" className={navIsOpen ? "clicked" : ""}>
             R
           </StyledLogoLetter>
-          <StyledLogoLetter as="O" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="O" className={navIsOpen ? "clicked" : ""}>
             O
           </StyledLogoLetter>
         </StyledFLogo>
         <StyledHLogo className={navIsOpen ? "clicked" : ""}>
           h
-          <StyledLogoLetter as="o" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="o" className={navIsOpen ? "clicked" : ""}>
             o
           </StyledLogoLetter>
-          <StyledLogoLetter as="u" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="u" className={navIsOpen ? "clicked" : ""}>
             u
           </StyledLogoLetter>
-          <StyledLogoLetter as="s" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="s" className={navIsOpen ? "clicked" : ""}>
             s
           </StyledLogoLetter>
-          <StyledLogoLetter as="e" className={navIsOpen ? "clicked" : ""}>
+          <StyledLogoLetter $letter="e" className={navIsOpen ? "clicked" : ""}>
             e
           </StyledLogoLetter>
         </StyledHLogo>

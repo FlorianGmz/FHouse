@@ -2,31 +2,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import styled from "styled-components";
 import { ProjectState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
+import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
 
-const CarousselContainer = styled.div`
-  width: 100vw;
-  overflow: visible;
-  padding: 0 100px;
-  margin-bottom: 80px;
-  @media only screen and (max-width: 770px) {
-    padding: 0 50px;
-    margin-bottom: 0;
-  }
-`;
-
-const CarousselTitle = styled.h4`
-  font-size: 2rem;
-  font-weight: 400;
-  padding-bottom: 100px;
-  @media only screen and (max-width: 770px) {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding-bottom: 50px;
-  }
-`;
 interface CarousselProps {
   items: ProjectState["project"][];
 }

@@ -12,7 +12,7 @@ const Projects = () => {
   return (
     <>
       <StyledHeader page="projects" data-aos="fade-up" data-aos-duration="1000">
-        <IntroductionText page="projects">
+        <IntroductionText $page="projects">
           <pre>{introduction}</pre>
         </IntroductionText>
       </StyledHeader>

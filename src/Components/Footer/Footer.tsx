@@ -8,7 +8,7 @@ const Footer = () => {
   const isContactPage = location.pathname === "/contact";
   const architectsData = useLoaderData() as ArchitectState["architect"][];
   return (
-    <StyledFooter isContactPage={isContactPage}>
+    <StyledFooter $isContactPage={isContactPage}>
       {!isContactPage && (
         <FooterRow className="top">
           <div>
