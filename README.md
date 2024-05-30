@@ -40,3 +40,68 @@ This repository contains my first personal project, a simple yet beautiful websi
    ```sh
    npm install
    ```
+3. **Start the JSON server**:
+
+   ```sh
+   npm run server
+   ```
+
+   This will start a fake backend server at http://localhost:9000.
+
+4. **Start the development server**:
+   ```sh
+   npm run dev
+   ```
+   This will start the Vite development server at http://localhost:5173.
+
+## Project Structure
+
+```
+     📁data
+        └── data.json
+     📁src
+        └── 📁@types
+        └── main.tsx
+        └── App.tsx
+        └── vite-env.d.ts
+        └── 📁Components
+            └── 📁AboutPage
+            └── 📁AppLayout
+            └── 📁ArchitectContact
+            └── 📁Carousel
+            └── 📁ContactPage
+            └── 📁ContactRow
+            └── 📁Footer
+            └── 📁Header
+                └── Header.tsx
+                └── StyledHeaderComponents.ts
+                └── 📁ListItem
+                └── 📁NavIcon
+                └── 📁NavList
+                └── 📁NavLogo
+            └── 📁HomePage
+            └── 📁NavBar
+            └── 📁ProcessPage
+            └── 📁ProjectCard
+            └── 📁ProjectPage
+            └── 📁ProjectsPage
+            └── 📁Slideshow
+        └── 📁assets
+        └── 📁services
+            └── apiFaliHouse.ts
+            └── loaders.ts
+        └── 📁styles
+            └── GlobalStyles.ts
+        └── 📁ui
+            └── IntroductionText.tsx
+            └── LoadingPage.tsx
+            └── StyledHeader.tsx
+            └── StyledImg.tsx
+     tsconfig.json
+     tsconfig.node.json
+     vite.config.ts
+     README.md
+     index.html
+     package-lock.json
+     package.json
+```
