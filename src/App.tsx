@@ -1,18 +1,28 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AppLayout from "./Components/AppLayout";
-import Home, { loader as homeLoader } from "./Components/Home";
+import "aos/dist/aos.css";
+
+import AppLayout from "./Components/AppLayout/AppLayout";
+import Home from "./Components/HomePage/Home";
 import GlobalStyles from "./styles/GlobalStyles";
-import Projects, { loader as projectsLoader } from "./Components/Projects";
-import Project from "./Components/Project";
-import Process, { loader as processLoader } from "./Components/Process";
-import About, { loader as aboutLoader } from "./Components/AboutPage/About";
-import Contact, {
-  loader as contactLoader,
-} from "./Components/ContactPage/Contact";
+import Projects from "./Components/ProjectsPage/Projects";
+import Project from "./Components/ProjectPage/Project";
+import Process from "./Components/ProcessPage/Process";
+import About from "./Components/AboutPage/About";
+import Contact from "./Components/ContactPage/Contact";
+
+import {
+  aboutLoader,
+  homeLoader,
+  processLoader,
+  projectsLoader,
+  contactLoader,
+  footerLoader,
+} from "./services/loaders";
 
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    loader: footerLoader,
     children: [
       {
         path: "/",
@@ -54,19 +64,6 @@ function App() {
       <GlobalStyles />
       <RouterProvider router={router} />
     </>
-    // <BrowserRouter>
-    //   <GlobalStyles />
-    //   <Routes>
-    //     <Route element={<AppLayout />}>
-    //       <Route index element={<Home />} />
-    //       <Route path="projects" element={<Projects />} />
-    //       <Route path="projects/:id" element={<Project />} />
-    //       <Route path="process" element={<Process />} />
-    //       <Route path="about" loader={aboutLoader} element={<About />} />
-    //       <Route path="contact" element={<Contact />} />
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
   );
 }
 

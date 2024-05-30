@@ -1,6 +1,6 @@
 {
   "home": {
-    "introduction": "Classy,\nmodern\nconscious homes.",
+    "introduction": "Classy, modern\nconscious homes.",
     "firstText": "Great homes begin\nwith great\nrelationships.",
     "secondText": "Throughout the design process,\nwe collaborate with each client to gain an\nunderstanding of their unique needs –\ndefining the success of each building.",
     "slideshow": [
@@ -16,17 +16,12 @@
     ]
   },
   "about": {
-    "introduction": "Uniting families with their environments",
+    "introduction": "Uniting families with\ntheir environments",
     "firstText": "We love to build modernist homes that connect with and celebrate their natural environment.",
     "secondText": "Our first home in 2012 was a personal retreat we named Aturna. An all-glass pavilion, flat roof, post and beam structure. The home was off-grid and sustainable, giving us a sense of independence and a synonymous relationship with our natural surroundings.",
     "thirdText": "We drew design inspiration from the timeless mid-century “International style” architecture alongside the 1945 – 1966 California Case Study House Program. Aturna was a phenomenon – attracting the attention of architecture, lifestyle and ecological publications worldwide. Like minded people began contacting us and FAROhouse was born.",
-    "conclusionText": "Our ideals remain the same – our inspiration now is you.",
-    "slideshow": [
-      "https://images.unsplash.com/photo-1609191508310-4edf2ec20c57?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1596313127813-b9f7c7a3b466?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1610907083431-d36d8947c8e2?q=80&w=1680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1620052687177-9ba9e51a4ea6?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    ],
+    "conclusionText": "Our ideals remain the same\nOur inspiration now is you.",
+    "firstImage": "https://images.unsplash.com/photo-1596313127813-b9f7c7a3b466?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "mainImage": "https://plus.unsplash.com/premium_photo-1661876567457-d9bd96f4b67f?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "finalImage": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
@@ -40,32 +35,25 @@
       "id": 1,
       "firstName": "Florian",
       "lastName": "Gomez",
-      "mail": "floriangomez@flhouse.com",
+      "mail": "florian@farohouse.com",
       "phone": "+33 123456789"
     },
     {
       "id": 2,
       "firstName": "Fanny",
       "lastName": "Lisle",
-      "mail": "fannylisle@flhouse.com",
-      "phone": "+33 123456789"
-    },
-    {
-      "id": 3,
-      "firstName": "Roman",
-      "lastName": "Gomez",
-      "mail": "romangomez@flhouse.com",
+      "mail": "fanny@farohouse.com",
       "phone": "+33 123456789"
     }
   ],
   "process": {
-    "introduction": "An efficient journey from start to finish.",
+    "introduction": "An efficient journey\nfrom start to finish.",
     "items": [
       {
         "id": 1,
         "title": "meet",
         "image": "https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "text": "We believe that great homes begin with great relationships. By listening and getting to know you we’ll gain an intimate understanding of the requirements of your home. Through discussions at our studio, on-site or in your home you’ll come to know us and the Mh design philosophy. And, together, we will develop an inspired, collaborative process to realizing your vision."
+        "text": "We believe that great homes begin with great relationships. By listening and getting to know you we’ll gain an intimate understanding of the requirements of your home. Through discussions at our studio, on-site or in your home you’ll come to know us and the Fh design philosophy. And, together, we will develop an inspired, collaborative process to realizing your vision."
       },
       {
         "id": 2,
@@ -83,7 +71,7 @@
         "id": 4,
         "title": "budget-analysis",
         "image": "https://images.unsplash.com/photo-1531860711453-b2f3b6453611?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "text": "We have developed a budget analysis spreadsheet that will take you step-by-step through both the Mh build and complete finishing of the house. Our team will provide a square foot estimate for the Mh supplied components. The cost to finish the home can vary, based on the level of finishing materials you choose. Our budget analysis spreadsheet will guide you through the options and costs for a variety of finishes, helping you to make the optimum choices to meet your design and budget requirements."
+        "text": "We have developed a budget analysis spreadsheet that will take you step-by-step through both the Fh build and complete finishing of the house. Our team will provide a square foot estimate for the Mh supplied components. The cost to finish the home can vary, based on the level of finishing materials you choose. Our budget analysis spreadsheet will guide you through the options and costs for a variety of finishes, helping you to make the optimum choices to meet your design and budget requirements."
       },
       {
         "id": 5,
@@ -95,7 +83,7 @@
         "id": 6,
         "title": "structural-engineering",
         "image": "https://images.unsplash.com/photo-1587582423116-ec07293f0395?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "text": "The Fh pre-engineered post and beam building system is specified to a 16’ x 16’ modular grid. The superstructure of our custom modular home eliminates the requirement for load-bearing walls, providing an open plan with the opportunity to integrate extensive floor-to-ceiling windows. Roof lines are kept low and flat. The Mh roof framing system is engineered to withstand maximum wind and snow loads. Our structural engineer partner, Blackwell, reviews, and stamps the structural drawings for building permit."
+        "text": "The Fh pre-engineered post and beam building system is specified to a 16’ x 16’ modular grid. The superstructure of our custom modular home eliminates the requirement for load-bearing walls, providing an open plan with the opportunity to integrate extensive floor-to-ceiling windows. Roof lines are kept low and flat. The Fh roof framing system is engineered to withstand maximum wind and snow loads. Our structural engineer partner, Blackwell, reviews, and stamps the structural drawings for building permit."
       },
       {
         "id": 7,
@@ -113,13 +101,13 @@
         "id": 9,
         "title": "the-build",
         "image": "https://plus.unsplash.com/premium_photo-1661871134049-8ec58bd20158?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "text": "We can recommend a qualified GC or work with a contractor of your choice. The GC is involved from the ground up, being responsible for the building’s foundation; the labour to erect the Faro framing component; and, assisting in the provision of a network of sub-trades to install electrical, mechanical and plumbing requirements. When it comes time to finish your home inside and out, the GC will provide Mh specified or your choice of finish."
+        "text": "We can recommend a qualified GC or work with a contractor of your choice. The GC is involved from the ground up, being responsible for the building’s foundation; the labour to erect the Faro framing component; and, assisting in the provision of a network of sub-trades to install electrical, mechanical and plumbing requirements. When it comes time to finish your home inside and out, the GC will provide Fh specified or your choice of finish."
       }
     ]
   },
 
   "projects": {
-    "introduction": "At home,\nwith\nnature.",
+    "introduction": "At home \nwith nature.",
     "items": [
       {
         "id": 1,
@@ -142,7 +130,7 @@
         "name": "L'Élégante",
         "city": "Nice",
         "surface": 350,
-        "description": "Experience unparalleled luxury at Villa L'Élégance, where sophistication meets serenity. Nestled amidst lush gardens overlooking the Mediterranean Sea, this exquisite villa boasts opulent interiors, expansive outdoor spaces, and state-of-the-art amenities. From the sleek modern design to the breathtaking sea views, every aspect of Villa L'Élégance is designed to enchant and inspire. Indulge in the ultimate Mediterranean escape at Villa L'Élégance.",
+        "description": "Experience unparalleled luxury at Villa L'Élégance, where sophistication meets serenity.\n Nestled amidst lush gardens overlooking the Mediterranean Sea, this exquisite villa boasts opulent interiors, expansive outdoor spaces, and state-of-the-art amenities. From the sleek modern design to the breathtaking sea views, every aspect of Villa L'Élégance is designed to enchant and inspire. Indulge in the ultimate Mediterranean escape at Villa L'Élégance.",
         "image": "https://images.unsplash.com/photo-1502005097973-6a7082348e28?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {

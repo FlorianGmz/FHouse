@@ -1,81 +1,71 @@
+import { AboutState } from "../../@types/types";
 import "react-slideshow-image/dist/styles.css";
-// import data from "../../../data/data.json";
+import { useLoaderData } from "react-router-dom";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
-import styled from "styled-components";
-import Slideshow from "../Slideshow";
-import { getAbout } from "../../services/apiFaliHouse";
-import { useLoaderData } from "react-router-dom";
-import { aboutState } from "../../@types/types";
-
-const MainSection = styled.div`
-  /* padding: 0 90px; */
-`;
-
-const TextDiv = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10rem;
-  padding: 20rem 20vw;
-`;
-
-const Text = styled.p`
-  &.first {
-    font-size: 6rem;
-    width: 45vw;
-  }
-  &.second {
-    font-size: 3rem;
-    align-self: flex-end;
-    margin-left: 20rem;
-  }
-  &.third {
-    font-size: 3rem;
-    width: 110rem;
-    padding: 20rem;
-    margin-left: 30rem;
-  }
-  &.conclusion {
-    padding: 0rem 20rem 20rem 20rem;
-    font-size: 5rem;
-  }
-`;
+import { StyledDiv, StyledText } from "./StyledAboutComponents";
 
 const About = () => {
-  const aboutData: aboutState = useLoaderData();
   const {
     introduction,
     firstText,
     secondText,
     thirdText,
     conclusionText,
-    slideshow,
+    firstImage,
     mainImage,
     finalImage,
-  } = aboutData;
+  } = useLoaderData() as AboutState;
 
   return (
-    <>
-      <IntroductionText page="about">{introduction}</IntroductionText>
-      <Slideshow slideshow={slideshow} />
-      <MainSection>
-        <TextDiv>
-          <Text className="first">{firstText}</Text>
-          <Text className="second">{secondText}</Text>
-        </TextDiv>
-        <StyledImg page="aboutMain" src={mainImage} />
-        <Text className="third">{thirdText}</Text>
-        <Text className="conclusion">{conclusionText}</Text>
-        <StyledImg page="aboutFinal" src={finalImage} />
-      </MainSection>
-    </>
+    <div data-aos-once="true">
+      <section>
+        <IntroductionText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          $page="about"
+        >
+          <pre>{introduction}</pre>
+        </IntroductionText>
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-delay="350"
+          data-aos-offset="-500"
+        >
+          <StyledImg $page="about" src={firstImage} />
+        </div>
+      </section>
+      <section>
+        <StyledDiv data-aos="fade-up" data-aos-duration="1000">
+          <StyledText className="first">{firstText}</StyledText>
+          <StyledText className="second">{secondText}</StyledText>
+        </StyledDiv>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg $page="aboutMain" src={mainImage} />
+        </div>
+      </section>
+      <section>
+        <StyledText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="third"
+        >
+          {thirdText}
+        </StyledText>
+        <StyledText
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          className="conclusion"
+        >
+          {conclusionText}
+        </StyledText>
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <StyledImg $page="aboutFinal" src={finalImage} />
+        </div>
+      </section>
+    </div>
   );
 };
-
-export async function loader() {
-  const aboutData = await getAbout();
-  return aboutData;
-}
 
 export default About;
