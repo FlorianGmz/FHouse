@@ -105,3 +105,22 @@ This repository contains my first personal project, a simple yet beautiful websi
      package-lock.json
      package.json
 ```
+
+## Learning Experience
+
+This project was a fantastic learning opportunity where I:
+
+- **Gained hands-on experience with Styled Components for the first time.**
+- **Learned to use lightweight libraries like React AOS, React Slick, and React Slideshow to enhance the user interface.**
+- **Improved my understanding of React Router DOM for efficient routing and data fetching.**
+- **Explored how to create a fake backend with JSON Server.**
+
+## Conclusion
+
+I had a great time working on this project and learned a lot along the way. The project showcases my ability to create a stylish, functional, and user-friendly website with a focus on design and animation. I hope you enjoy exploring the Architect Agency Website as much as I enjoyed building it.
+
+Feel free to reach out if you have any questions or feedback!
+
+## License
+
+This project is licensed under the MIT License.
