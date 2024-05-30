@@ -1,4 +1,4 @@
-# Architect Agency Website
+# FLHouse Project
 
 ## Overview
 
@@ -117,7 +117,7 @@ This project was a fantastic learning opportunity where I:
 
 ## Conclusion
 
-I had a great time working on this project and learned a lot along the way. The project showcases my ability to create a stylish, functional, and user-friendly website with a focus on design and animation. I hope you enjoy exploring the Architect Agency Website as much as I enjoyed building it.
+I had a great time working on this project and learned a lot along the way. The project showcases my ability to create a stylish, functional, and user-friendly website with a focus on design and animation. I hope you enjoy exploring the FLHouse Project as much as I enjoyed building it.
 
 Feel free to reach out if you have any questions or feedback!
 
