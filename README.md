@@ -34,7 +34,7 @@ This repository contains my first personal project, a simple yet beautiful websi
 1. **Clone the repository**:
    ```sh
    git clone https://github.com/FlorianGmz/FLHouse.git
-   cd architect-agency-website
+   cd FLHouse
    ```
 2. **Install dependencies**:
    ```sh
