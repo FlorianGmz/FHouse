@@ -33,8 +33,8 @@ const pages = {
   `,
 };
 
-const StyledHeader = styled.div<{ page?: string }>`
-  ${(props) => pages[props.page as keyof typeof pages]}
+const StyledHeaderDiv = styled.div<{ $page?: string }>`
+  ${(props) => pages[props.$page as keyof typeof pages]}
 `;
 
-export default StyledHeader;
+export default StyledHeaderDiv;

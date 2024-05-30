@@ -1,6 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import ListItem from "./ListItem.tsx";
-import React from "react";
 
 const backgroundFadeIn = keyframes`
   from{
@@ -20,11 +18,11 @@ const backgroundFadeOut = keyframes`
   }
 `;
 
-const StyledNavList = styled.nav<{ navOpen: boolean }>`
+export const StyledNavList = styled.nav<{ $navOpen: boolean }>`
   display: block;
 `;
 
-const StyledList = styled.ul<{ navOpen: boolean }>`
+export const StyledList = styled.ul<{ $navOpen: boolean }>`
   z-index: 5;
   position: fixed;
   top: 0;
@@ -47,22 +45,3 @@ const StyledList = styled.ul<{ navOpen: boolean }>`
     animation: 0.5s ${backgroundFadeOut} ease-in-out forwards;
   }
 `;
-
-interface NavListProps {
-  navIsOpen: boolean;
-}
-
-const NavList: React.FC<NavListProps> = ({ navIsOpen }) => {
-  return (
-    <StyledNavList navOpen={navIsOpen}>
-      <StyledList navOpen={navIsOpen} className={navIsOpen ? "clicked" : ""}>
-        <ListItem to="/projects">Projects</ListItem>
-        <ListItem to="/process">Process</ListItem>
-        <ListItem to="/about">About</ListItem>
-        <ListItem to="/contact">Contact</ListItem>
-      </StyledList>
-    </StyledNavList>
-  );
-};
-
-export default NavList;

@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { ProjectState } from "../@types/types";
 import { Link } from "react-router-dom";
 
-const CardContainer = styled(Link)`
+export const CardContainer = styled(Link)`
   width: 460px;
   height: 565px;
   display: flex;
@@ -23,7 +22,7 @@ const CardContainer = styled(Link)`
   }
 `;
 
-const CardImg = styled.img`
+export const CardImg = styled.img`
   width: 120%;
   height: 80%;
   object-fit: cover;
@@ -34,7 +33,7 @@ const CardImg = styled.img`
   }
 `;
 
-const CardName = styled.p`
+export const CardName = styled.p`
   font-size: 1.6rem;
   font-weight: 500;
   @media only screen and (max-width: 770px) {
@@ -44,7 +43,7 @@ const CardName = styled.p`
   }
 `;
 
-const StyledUnderline = styled.span`
+export const StyledUnderline = styled.span`
   background-color: black;
   width: 0;
   height: 1px;
@@ -54,31 +53,3 @@ const StyledUnderline = styled.span`
     width: 100%;
   }
 `;
-
-interface ProjectCardProps {
-  project: ProjectState["project"];
-  element: string;
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, element }) => {
-  const { image, name, id } = project;
-  return (
-    <CardContainer to={`/projects/${id}`} className={element}>
-      <CardImg src={image} alt="home" />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          gap: "5px",
-          maxWidth: "fit-content",
-        }}
-      >
-        <CardName>{name}</CardName>
-        <StyledUnderline />
-      </div>
-    </CardContainer>
-  );
-};
-
-export default ProjectCard;

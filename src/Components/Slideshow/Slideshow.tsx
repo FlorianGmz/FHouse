@@ -1,19 +1,7 @@
 import React from "react";
 import { Fade } from "react-slideshow-image";
-import styled from "styled-components";
-import StyledImg from "../ui/StyledImg";
-
-const SlideDiv = styled.div`
-  width: 80vw;
-  height: 90vh;
-  float: right;
-  position: relative;
-  @media only screen and (max-width: 770px) {
-    float: left;
-    padding-left: 50px;
-    height: 50vh;
-  }
-`;
+import StyledImg from "../../ui/StyledImg";
+import { SlideDiv } from "./StyledSlideshowComponent";
 
 interface SlideShowProps {
   slideshow: string[];
@@ -34,7 +22,7 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
     <Fade {...slideProperties}>
       {slideshow.map((slide, index) => (
         <SlideDiv key={index}>
-          <StyledImg key={slide} page="slideshow" src={slide} />
+          <StyledImg key={slide} $page="slideshow" src={slide} />
         </SlideDiv>
       ))}
     </Fade>

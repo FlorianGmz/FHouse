@@ -1,21 +1,8 @@
 import { useState } from "react";
-import styled from "styled-components";
-import NavLogo from "./NavLogo";
-import NavIcon from "./NavIcon";
-import NavList from "./NavList";
-
-const StyledHeader = styled.header`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  width: 100vw;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 100px;
-`;
+import NavLogo from "./NavLogo/NavLogo";
+import NavIcon from "./NavIcon/NavIcon";
+import NavList from "./NavList/NavList";
+import { StyledHeader } from "./StyledHeaderComponents";
 
 const Header = () => {
   const [navIsOpen, setNavIsOpen] = useState(false);

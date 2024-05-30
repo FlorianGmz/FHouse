@@ -82,8 +82,8 @@ const pages = {
   `,
 };
 
-const StyledImg = styled.img<{ page?: string }>`
-  ${(props) => pages[props?.page as keyof typeof pages]}
+const StyledImg = styled.img<{ $page?: string }>`
+  ${(props) => pages[props?.$page as keyof typeof pages]}
 `;
 
 export default StyledImg;

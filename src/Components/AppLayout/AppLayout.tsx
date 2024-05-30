@@ -1,29 +1,11 @@
-import Footer from "./Footer";
 import { Outlet, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-import NavLogo from "./Header/NavLogo";
-import NavIcon from "./Header/NavIcon";
-import NavList from "./Header/NavList";
 
-const StyledMainContainer = styled.main`
-  position: relative;
-  z-index: 2;
-  background-color: white;
-  overflow: hidden;
-  margin-bottom: 560px;
-  display: inline-block;
-  width: 100vw;
-  @media only screen and (max-width: 770px) {
-    margin-bottom: 468px;
-  }
-  &.contact-page {
-    background-color: black;
-    @media only screen and (max-width: 770px) {
-      margin-bottom: 150px;
-    }
-  }
-`;
+import { StyledMainContainer } from "./StyledAppComponents";
+import Footer from "../Footer/Footer";
+import NavLogo from "../Header/NavLogo/NavLogo";
+import NavIcon from "../Header/NavIcon/NavIcon";
+import NavList from "../Header/NavList/NavList";
 
 const AppLayout = () => {
   const location = useLocation();

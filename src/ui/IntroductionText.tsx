@@ -62,8 +62,8 @@ const pages = {
   `,
 };
 
-const IntroductionText = styled.h2<{ page?: string }>`
-  ${(props) => pages[props?.page as keyof typeof pages]}
+const IntroductionText = styled.h2<{ $page?: string }>`
+  ${(props) => pages[props?.$page as keyof typeof pages]}
 `;
 
 export default IntroductionText;

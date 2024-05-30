@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledNavBar = styled.div`
+export const StyledNavBar = styled.div`
   position: relative;
   top: 0;
   width: auto;
@@ -31,7 +31,7 @@ const StyledNavBar = styled.div`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink)`
   transition: ease-in-out 0.25s;
 
   ${StyledNavBar}:hover & {
@@ -45,7 +45,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const StyledUnderline = styled.span`
+export const StyledUnderline = styled.span`
   background-color: black;
   height: 1px;
   width: 100%;
@@ -56,31 +56,3 @@ const StyledUnderline = styled.span`
     width: 0;
   }
 `;
-
-interface NavBarProps {
-  position: string;
-  children: string;
-}
-
-const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
-  return (
-    <StyledNavBar className={position}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "30px",
-          overflow: "hidden",
-        }}
-      >
-        <StyledNavLink to="projects">{children}</StyledNavLink>
-        <StyledNavLink className="hidden" to="projects">
-          {children}
-        </StyledNavLink>
-      </div>
-      <StyledUnderline />
-    </StyledNavBar>
-  );
-};
-
-export default NavBar;
