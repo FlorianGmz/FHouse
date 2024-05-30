@@ -4,14 +4,14 @@ import { useLoaderData } from "react-router-dom";
 import { ProjectsContainer } from "./StyledProjectsComponents";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import IntroductionText from "../../ui/IntroductionText";
-import StyledHeader from "../../ui/StyledHeader";
+import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Projects = () => {
   const { introduction, items } = useLoaderData() as ProjectsState;
 
   return (
     <>
-      <StyledHeader
+      <StyledHeaderDiv
         $page="projects"
         data-aos="fade-up"
         data-aos-duration="1000"
@@ -19,7 +19,7 @@ const Projects = () => {
         <IntroductionText $page="projects">
           <pre>{introduction}</pre>
         </IntroductionText>
-      </StyledHeader>
+      </StyledHeaderDiv>
       <ProjectsContainer
         data-aos="fade"
         data-aos-duration="1000"

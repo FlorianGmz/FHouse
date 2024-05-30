@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 
 import { StyledMainContainer } from "./StyledAppComponents";
 import Footer from "../Footer/Footer";
-import NavLogo from "../Header/NavLogo";
-import NavIcon from "../Header/NavIcon";
-import NavList from "../Header/NavList";
+import NavLogo from "../Header/NavLogo/NavLogo";
+import NavIcon from "../Header/NavIcon/NavIcon";
+import NavList from "../Header/NavList/NavList";
 
 const AppLayout = () => {
   const location = useLocation();

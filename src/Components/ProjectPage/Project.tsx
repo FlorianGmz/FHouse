@@ -8,7 +8,7 @@ import {
   ProjectTitle,
   StyledText,
 } from "./StyledProjectComponents";
-import StyledHeader from "../../ui/StyledHeader";
+import StyledHeaderDiv from "../../ui/StyledHeader";
 import StyledImg from "../../ui/StyledImg";
 import NavBar from "../NavBar/NavBar";
 import Caroussel from "../Carousel/Carousel";
@@ -39,14 +39,18 @@ const Project = () => {
   const { name, city, surface, description, image } = currentProject;
   return (
     <>
-      <StyledHeader $page="project" data-aos="fade-up" data-aos-duration="1000">
+      <StyledHeaderDiv
+        $page="project"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <ProjectTitle>{name}</ProjectTitle>
         <ProjectDetails>
           <span>{city}</span>
           <span> | </span>
           <span>{surface} sq. ft.</span>
         </ProjectDetails>
-      </StyledHeader>
+      </StyledHeaderDiv>
       <MainSection data-aos="fade-up" data-aos-duration="1000">
         <StyledImg $page="project" src={image} />
         <StyledText>{description}</StyledText>

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import React from "react";
 
-const StyledNavLink = styled(Link)`
+export const StyledNavLink = styled(Link)`
   font-size: 4rem;
   transition: transform 0.5s ease-out;
   display: list-item;
@@ -17,7 +16,7 @@ const StyledNavLink = styled(Link)`
   }
 `;
 
-const NavLinkCursor = styled.span`
+export const NavLinkCursor = styled.span`
   width: 0;
   height: 1px;
   position: absolute;
@@ -30,21 +29,3 @@ const NavLinkCursor = styled.span`
     transition: ease-out 0.5s;
   }
 `;
-
-interface ListItemProps {
-  to: string;
-  children: React.ReactNode;
-}
-
-const ListItem: React.FC<ListItemProps> = ({ to, children }) => {
-  return (
-    <li>
-      <StyledNavLink reloadDocument to={to}>
-        {children}
-        <NavLinkCursor />
-      </StyledNavLink>
-    </li>
-  );
-};
-
-export default ListItem;

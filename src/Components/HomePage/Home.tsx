@@ -5,7 +5,7 @@ import Slideshow from "../Slideshow/Slideshow";
 import Caroussel from "../Carousel/Carousel";
 import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
-import StyledHeader from "../../ui/StyledHeader";
+import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Home = () => {
   const data = useLoaderData() as HomeDataState;
@@ -13,12 +13,12 @@ const Home = () => {
   const projects = data.projectsData.items;
   return (
     <>
-      <StyledHeader $page="home" data-aos="fade-up" data-aos-duration="1000">
+      <StyledHeaderDiv $page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText $page="home">
           <pre>{introduction}</pre>
         </IntroductionText>
         <NavBar position="top">Projects</NavBar>
-      </StyledHeader>
+      </StyledHeaderDiv>
       <div
         data-aos="fade-left"
         data-aos-duration="1000"
