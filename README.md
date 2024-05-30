@@ -58,13 +58,13 @@ This repository contains my first personal project, a simple yet beautiful websi
 
 ```
      📁data
-        └── data.json
+        └── data.json                               # Fake data for JSON server
      📁src
-        └── 📁@types
-        └── main.tsx
-        └── App.tsx
+        └── 📁@types                                # Types declaration
+        └── main.tsx                                # React components
+        └── App.tsx                                 # Main app component with router
         └── vite-env.d.ts
-        └── 📁Components
+        └── 📁Components                            # React components
             └── 📁AboutPage
             └── 📁AppLayout
             └── 📁ArchitectContact
@@ -88,11 +88,11 @@ This repository contains my first personal project, a simple yet beautiful websi
             └── 📁Slideshow
         └── 📁assets
         └── 📁services
-            └── apiFaliHouse.ts
-            └── loaders.ts
+            └── apiFaliHouse.ts                     # Utility functions for data fetching
+            └── loaders.ts                          # Loader for React-Router
         └── 📁styles
-            └── GlobalStyles.ts
-        └── 📁ui
+            └── GlobalStyles.ts                     # Global css value used with StyledComponents
+        └── 📁ui                                    # Reusable StyledComponents
             └── IntroductionText.tsx
             └── LoadingPage.tsx
             └── StyledHeader.tsx
