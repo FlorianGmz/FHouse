@@ -83,7 +83,7 @@ const Process = () => {
         {items.map((process) => (
           <ProcessItem key={process.id} id={process.title}>
             <StyledImg
-              page="process"
+              $page="process"
               data-aos="fade"
               data-aos-easing="ease"
               data-aos-duration="1000"

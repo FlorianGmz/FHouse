@@ -19,7 +19,7 @@ const Contact = () => {
       <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
         <ContactRow page="contact" architectsData={architectsData} />
       </div>
-      <StyledImg src={mainImage} page="contact" />
+      <StyledImg src={mainImage} $page="contact" />
     </section>
   );
 };

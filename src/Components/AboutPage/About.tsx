@@ -33,7 +33,7 @@ const About = () => {
           data-aos-delay="350"
           data-aos-offset="-500"
         >
-          <StyledImg page="about" src={firstImage} />
+          <StyledImg $page="about" src={firstImage} />
         </div>
       </section>
       <section>
@@ -42,7 +42,7 @@ const About = () => {
           <StyledText className="second">{secondText}</StyledText>
         </StyledDiv>
         <div data-aos="fade-up" data-aos-duration="1000">
-          <StyledImg page="aboutMain" src={mainImage} />
+          <StyledImg $page="aboutMain" src={mainImage} />
         </div>
       </section>
       <section>
@@ -61,7 +61,7 @@ const About = () => {
           {conclusionText}
         </StyledText>
         <div data-aos="fade-up" data-aos-duration="1000">
-          <StyledImg page="aboutFinal" src={finalImage} />
+          <StyledImg $page="aboutFinal" src={finalImage} />
         </div>
       </section>
     </div>

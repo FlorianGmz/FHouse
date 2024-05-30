@@ -13,7 +13,7 @@ const Home = () => {
   const projects = data.projectsData.items;
   return (
     <>
-      <StyledHeader page="home" data-aos="fade-up" data-aos-duration="1000">
+      <StyledHeader $page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText $page="home">
           <pre>{introduction}</pre>
         </IntroductionText>
