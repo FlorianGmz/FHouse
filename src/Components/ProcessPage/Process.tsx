@@ -87,6 +87,7 @@ const Process = () => {
               data-aos="fade"
               data-aos-easing="ease"
               data-aos-duration="1000"
+              data-aos-offset="-500"
               src={process.image}
             />
             <ProcessText data-aos="fade-up" data-aos-duration="1000">

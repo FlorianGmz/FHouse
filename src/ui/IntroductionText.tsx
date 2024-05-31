@@ -39,7 +39,9 @@ const pages = {
   `,
   about: css`
     width: 60vw;
-    padding: 500px 100px;
+    height: 90vh;
+    padding-top: 40vh;
+    padding-left: 100px;
     font-size: 5rem;
     font-weight: 500;
     @media only screen and (max-width: 770px) {
@@ -48,8 +50,8 @@ const pages = {
     }
   `,
   contact: css`
-    width: 50vw;
-    padding: 350px 100px 10px;
+    width: 90vw;
+    padding: 30vh 100px 10px;
     font-size: 6.6rem;
     font-weight: 500;
     letter-spacing: 0.2rem;

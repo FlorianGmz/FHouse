@@ -20,7 +20,7 @@ export const Row = styled.div<{ $page: string }>`
       float: right;
       font-size: 1.2rem;
       line-height: 1.8rem;
-      margin-top: 300px;
+      margin-top: 25vh;
       margin-bottom: 100px;
       @media only screen and (max-width: 770px) {
         float: none;
