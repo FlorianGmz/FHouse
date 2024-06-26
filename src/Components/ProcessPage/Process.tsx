@@ -9,7 +9,7 @@ import {
 } from "./StyledProcessComponents";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
-import data from "../../../data/data.json";
+import data from "../../../public/data/data.json";
 
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);

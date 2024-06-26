@@ -11,7 +11,7 @@ import StyledHeaderDiv from "../../ui/StyledHeader";
 import StyledImg from "../../ui/StyledImg";
 import NavBar from "../NavBar/NavBar";
 import Caroussel from "../Carousel/Carousel";
-import data from "../../../data/data.json";
+import data from "../../../public/data/data.json";
 
 const Project = () => {
   const projects = data.projects as ProjectsState;

@@ -2,7 +2,7 @@ import ContactRow from "../ContactRow/ContactRow";
 import { useLocation } from "react-router-dom";
 import { ArchitectState } from "../../@types/types";
 import { StyledFooter, FooterRow, FooterText } from "./StyledFooterComponents";
-import data from "../../../data/data.json";
+import data from "../../../public/data/data.json";
 
 const Footer = () => {
   const location = useLocation();

@@ -3,7 +3,7 @@ import StyledImg from "../../ui/StyledImg";
 import { StyledText } from "./StyledContactComponents";
 import ContactRow from "../ContactRow/ContactRow";
 import { ArchitectState, ContactState } from "../../@types/types";
-import data from "../../../data/data.json";
+import data from "../../../public/data/data.json";
 
 const Contact = () => {
   const contactData = data.contact as ContactState;

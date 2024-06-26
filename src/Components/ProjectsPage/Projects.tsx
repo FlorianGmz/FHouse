@@ -5,7 +5,7 @@ import ProjectCard from "../ProjectCard/ProjectCard";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
 
-import data from "../../../data/data.json";
+import data from "../../../public/data/data.json";
 
 const Projects = () => {
   const { introduction, items } = data.projects as ProjectsState;
