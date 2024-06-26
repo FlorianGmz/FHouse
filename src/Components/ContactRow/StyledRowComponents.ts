@@ -16,12 +16,7 @@ export const Row = styled.div<{ $page: string }>`
   ${(props) =>
     props?.$page === "contact" &&
     css`
-      width: 80vw;
-      float: right;
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-      margin-top: 25vh;
-      margin-bottom: 100px;
+      width: 80vw100px;
       @media only screen and (max-width: 770px) {
         float: none;
         padding-left: 50px;
