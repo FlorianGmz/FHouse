@@ -10,49 +10,33 @@ import Process from "./Components/ProcessPage/Process";
 import About from "./Components/AboutPage/About";
 import Contact from "./Components/ContactPage/Contact";
 
-import {
-  aboutLoader,
-  homeLoader,
-  processLoader,
-  projectsLoader,
-  contactLoader,
-  footerLoader,
-} from "./services/loaders";
-
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    loader: footerLoader,
     children: [
       {
         path: "/",
         element: <Home />,
-        loader: homeLoader,
       },
       {
         path: "projects",
         element: <Projects />,
-        loader: projectsLoader,
       },
       {
         path: "projects/:id",
         element: <Project />,
-        loader: projectsLoader,
       },
       {
         path: "process",
         element: <Process />,
-        loader: processLoader,
       },
       {
         path: "about",
         element: <About />,
-        loader: aboutLoader,
       },
       {
         path: "contact",
         element: <Contact />,
-        loader: contactLoader,
       },
     ],
   },

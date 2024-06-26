@@ -2,12 +2,12 @@ import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import { StyledText } from "./StyledContactComponents";
 import ContactRow from "../ContactRow/ContactRow";
-import { useLoaderData } from "react-router-dom";
-import { ContactDataState } from "../../@types/types";
+import { ArchitectState, ContactState } from "../../@types/types";
+import data from "../../../data/data.json";
 
 const Contact = () => {
-  const { contactData, architectsData } = useLoaderData() as ContactDataState;
-
+  const contactData = data.contact as ContactState;
+  const architectsData = data.architects as ArchitectState["architect"][];
   const { introduction, location, mainImage } = contactData;
 
   return (

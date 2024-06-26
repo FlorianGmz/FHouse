@@ -1,12 +1,13 @@
 import ContactRow from "../ContactRow/ContactRow";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ArchitectState } from "../../@types/types";
 import { StyledFooter, FooterRow, FooterText } from "./StyledFooterComponents";
+import data from "../../../data/data.json";
 
 const Footer = () => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
-  const architectsData = useLoaderData() as ArchitectState["architect"][];
+  const architectsData = data.architects as ArchitectState["architect"][];
   return (
     <StyledFooter $isContactPage={isContactPage}>
       {!isContactPage && (

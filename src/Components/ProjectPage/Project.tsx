@@ -1,7 +1,6 @@
 import { ProjectState, ProjectsState } from "../../@types/types";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import {
   MainSection,
   ProjectDetails,
@@ -12,9 +11,10 @@ import StyledHeaderDiv from "../../ui/StyledHeader";
 import StyledImg from "../../ui/StyledImg";
 import NavBar from "../NavBar/NavBar";
 import Caroussel from "../Carousel/Carousel";
+import data from "../../../data/data.json";
 
 const Project = () => {
-  const projects = useLoaderData() as ProjectsState;
+  const projects = data.projects as ProjectsState;
   const { id } = useParams<{ id: string }>();
   const [currentProject, setCurrentProject] = useState<ProjectState["project"]>(
     {

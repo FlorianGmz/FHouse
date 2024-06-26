@@ -1,16 +1,14 @@
-import { HomeDataState } from "../../@types/types";
-import { useLoaderData } from "react-router-dom";
 import { StyledTitle, StyledText } from "./StyledHomeComponents";
 import Slideshow from "../Slideshow/Slideshow";
 import Caroussel from "../Carousel/Carousel";
 import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
+import data from "../../../data/data.json";
 
 const Home = () => {
-  const data = useLoaderData() as HomeDataState;
-  const { introduction, firstText, secondText, slideshow } = data.homeData;
-  const projects = data.projectsData.items;
+  const { introduction, firstText, secondText, slideshow } = data.home;
+  const projects = data.projects.items;
   return (
     <>
       <StyledHeaderDiv $page="home" data-aos="fade-up" data-aos-duration="1000">

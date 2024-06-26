@@ -1,6 +1,5 @@
 import { ProcessState } from "../../@types/types";
 import { useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
 import {
   ProcessTableContent,
   ProcessTableItem,
@@ -10,11 +9,12 @@ import {
 } from "./StyledProcessComponents";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
+import data from "../../../data/data.json";
 
 const Process = () => {
   const [tableFixed, setTableFixed] = useState(false);
 
-  const { introduction, items } = useLoaderData() as ProcessState;
+  const { introduction, items } = data.process as ProcessState;
 
   const processTitles = items.map((process) => process.title);
 

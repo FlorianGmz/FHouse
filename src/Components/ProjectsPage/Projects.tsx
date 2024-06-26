@@ -1,13 +1,14 @@
 import { ProjectState, ProjectsState } from "../../@types/types";
-import { useLoaderData } from "react-router-dom";
 
 import { ProjectsContainer } from "./StyledProjectsComponents";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
 
+import data from "../../../data/data.json";
+
 const Projects = () => {
-  const { introduction, items } = useLoaderData() as ProjectsState;
+  const { introduction, items } = data.projects as ProjectsState;
 
   return (
     <>
