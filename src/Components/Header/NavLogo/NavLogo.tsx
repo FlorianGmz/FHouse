@@ -15,7 +15,7 @@ interface NavLogoProps {
 const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
-  const [$scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +31,7 @@ const NavLogo: React.FC<NavLogoProps> = ({ navIsOpen }) => {
   return (
     <StyledLink reloadDocument to={"/"}>
       <Logo
-        $scrolled={$scrolled}
+        $scrolled={scrolled}
         className={isContactPage ? "contact-page" : ""}
       >
         <StyledFLogo className={navIsOpen ? "clicked" : ""}>
