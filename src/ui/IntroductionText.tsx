@@ -59,7 +59,7 @@ const pages = {
       width: auto;
       letter-spacing: 0.1rem;
       font-size: 2.7rem;
-      padding: 300px 50px 15px;
+      padding: 250px 50px 15px;
     }
   `,
 };
