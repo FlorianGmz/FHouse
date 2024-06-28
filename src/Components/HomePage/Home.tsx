@@ -4,7 +4,7 @@ import Caroussel from "../Carousel/Carousel";
 import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
-import data from "../../../public/data/data.json";
+import data from "../../../src/data/data.json";
 
 const Home = () => {
   const { introduction, firstText, secondText, slideshow } = data.home;

@@ -3,7 +3,7 @@ import "react-slideshow-image/dist/styles.css";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 import { StyledDiv, StyledText } from "./StyledAboutComponents";
-import data from "../../../public/data/data.json";
+import data from "../../../src/data/data.json";
 
 const About = () => {
   const {
