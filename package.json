@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://floriangmz.github.io/FHouse/",
+  "homepage": "https://floriangmz.github.io/FHouse/src/main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
