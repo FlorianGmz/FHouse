@@ -628,7 +628,7 @@ with nature.`,items:[{id:1,name:"Jefferson",city:"Cassis",surface:300,descriptio
   ${cl}:hover & {
     width: 0;
   }
-`,nc=({position:e,children:t})=>j.jsxs(cl,{className:e,children:[j.jsxs("div",{style:{display:"flex",flexDirection:"column",height:"30px",overflow:"hidden"},children:[j.jsx(Ah,{to:"projects",children:t}),j.jsx(Ah,{className:"hidden",to:"projects",children:t})]}),j.jsx(Ok,{})]}),Tk={home:Fe`
+`,nc=({position:e,children:t})=>j.jsxs(cl,{className:e,children:[j.jsxs("div",{style:{display:"flex",flexDirection:"column",height:"30px",overflow:"hidden"},children:[j.jsx(Ah,{to:"/projects",children:t}),j.jsx(Ah,{className:"hidden",to:"/projects",children:t})]}),j.jsx(Ok,{})]}),Tk={home:Fe`
     padding: 400px 100px 50px;
     text-align: left;
     font-weight: 500;
