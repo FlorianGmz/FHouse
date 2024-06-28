@@ -20,8 +20,8 @@ const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
           overflow: "hidden",
         }}
       >
-        <StyledNavLink to="projects">{children}</StyledNavLink>
-        <StyledNavLink className="hidden" to="projects">
+        <StyledNavLink to="/projects">{children}</StyledNavLink>
+        <StyledNavLink className="hidden" to="/projects">
           {children}
         </StyledNavLink>
       </div>
