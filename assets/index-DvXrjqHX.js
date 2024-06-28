@@ -98,7 +98,7 @@ Error generating stack: `+o.message+`
     font-size: 0.8rem;
   }
   ${e=>(e==null?void 0:e.$page)==="contact"&&Fe`
-      padding: 50px 20vw;
+      padding: 350px 20vw 100px;
       @media only screen and (max-width: 770px) {
         float: none;
         padding: 200px 50px 25px;
