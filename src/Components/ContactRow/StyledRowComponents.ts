@@ -16,7 +16,7 @@ export const Row = styled.div<{ $page: string }>`
   ${(props) =>
     props?.$page === "contact" &&
     css`
-      padding: 50px 20vw;
+      padding: 350px 20vw 100px;
       @media only screen and (max-width: 770px) {
         float: none;
         padding: 200px 50px 25px;
