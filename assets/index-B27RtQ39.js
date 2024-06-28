@@ -98,12 +98,12 @@ Error generating stack: `+o.message+`
     font-size: 0.8rem;
   }
   ${e=>(e==null?void 0:e.$page)==="contact"&&Fe`
-      width: 80vw100px;
+      padding: 50px 20vw;
       @media only screen and (max-width: 770px) {
         float: none;
-        padding-left: 50px;
-        margin-top: 200px;
-        margin-bottom: 50px;
+        padding: 200px 50px 25px;
+        /* margin-top: 200px; */
+        /* margin-bottom: 50px; */
         gap: 20px;
         flex-direction: column;
         align-items: flex-start;
@@ -682,7 +682,7 @@ with nature.`,items:[{id:1,name:"Jefferson",city:"Cassis",surface:300,descriptio
       width: auto;
       letter-spacing: 0.1rem;
       font-size: 2.7rem;
-      padding: 300px 50px 15px;
+      padding: 250px 50px 15px;
     }
   `},jo=ee.h2`
   ${e=>Tk[e==null?void 0:e.$page]}
