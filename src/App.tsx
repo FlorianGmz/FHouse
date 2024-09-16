@@ -30,27 +30,27 @@ const router = createBrowserRouter([
         loader: homeLoader,
       },
       {
-        path: "projects",
+        path: "/projects",
         element: <Projects />,
         loader: projectsLoader,
       },
       {
-        path: "projects/:id",
+        path: "/projects/:id",
         element: <Project />,
         loader: projectsLoader,
       },
       {
-        path: "process",
+        path: "/process",
         element: <Process />,
         loader: processLoader,
       },
       {
-        path: "about",
+        path: "/about",
         element: <About />,
         loader: aboutLoader,
       },
       {
-        path: "contact",
+        path: "/contact",
         element: <Contact />,
         loader: contactLoader,
       },
