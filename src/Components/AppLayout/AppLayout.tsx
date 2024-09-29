@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { StyledMainContainer } from "./StyledAppComponents";
 import Footer from "../Footer/Footer";
@@ -7,7 +7,11 @@ import NavLogo from "../Header/NavLogo/NavLogo";
 import NavIcon from "../Header/NavIcon/NavIcon";
 import NavList from "../Header/NavList/NavList";
 
-const AppLayout = () => {
+interface AppLayoutProps {
+  children?: React.ReactNode;
+}
+
+const AppLayout: React.FC<AppLayoutProps> = () => {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
   const [navIsOpen, setNavIsOpen] = useState(false);

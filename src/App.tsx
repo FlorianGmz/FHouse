@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "aos/dist/aos.css";
 
 import AppLayout from "./Components/AppLayout/AppLayout";
@@ -10,43 +10,23 @@ import Process from "./Components/ProcessPage/Process";
 import About from "./Components/AboutPage/About";
 import Contact from "./Components/ContactPage/Contact";
 
-const router = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/projects",
-        element: <Projects />,
-      },
-      {
-        path: "/projects/:id",
-        element: <Project />,
-      },
-      {
-        path: "/process",
-        element: <Process />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-    ],
-  },
-]);
-
 function App() {
+  // We define an HashRouter to be able to host a SPA application with GitHub pages
   return (
     <>
       <GlobalStyles />
-      <RouterProvider router={router} />
+      <HashRouter>
+        <AppLayout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<Project />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </AppLayout>
+      </HashRouter>
     </>
   );
 }
