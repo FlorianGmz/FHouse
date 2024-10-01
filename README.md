@@ -1,4 +1,4 @@
-# FHouse Project
+# FHouse Project | no API version (local data only)
 
 ## Overview
 
@@ -12,15 +12,13 @@ This repository contains my first personal project, a simple yet beautiful websi
 - **React Slick** for carousel/slider components
 - **React AOS** for scroll animations
 - **React Slideshow** for slideshow components
-- **React Router DOM** for routing and data fetching
-- **JSON Server** for creating a fake backend server with API endpoints from a simple `data.json` file
+- **React Router DOM** for routing
 
 ## Project Highlights
 
 - **Design & Styling**: Utilized Styled Components to create a visually appealing and consistent design throughout the website.
 - **Animations**: Implemented smooth animations using React AOS, React Slick, and React Slideshow to enhance the user experience.
-- **Routing & Data Fetching**: Used React Router DOM for seamless navigation and data fetching.
-- **Fake Backend**: Set up a JSON Server to simulate API endpoints and serve data from a `data.json` file.
+- **Routing & Data Fetching**: Used React Router DOM for seamless navigation.
 
 ## Getting Started
 
@@ -40,15 +38,7 @@ This repository contains my first personal project, a simple yet beautiful websi
    ```sh
    npm install
    ```
-3. **Start the JSON server**:
-
-   ```sh
-   npm run server
-   ```
-
-   This will start a fake backend server at http://localhost:9000.
-
-4. **Start the development server**:
+3. **Start the development server**:
    ```sh
    npm run dev
    ```
@@ -57,8 +47,7 @@ This repository contains my first personal project, a simple yet beautiful websi
 ## Project Structure
 
 ```
-     📁data
-        └── data.json                               # Fake data for JSON server
+
      📁src
         └── 📁@types                                # Types declaration
         └── main.tsx                                # React components
@@ -86,10 +75,8 @@ This repository contains my first personal project, a simple yet beautiful websi
             └── 📁ProjectPage
             └── 📁ProjectsPage
             └── 📁Slideshow
-        └── 📁assets
-        └── 📁services
-            └── apiFaliHouse.ts                     # Utility functions for data fetching
-            └── loaders.ts                          # Loader for React-Router
+        └── 📁data
+            └── data.json                           # Fake data
         └── 📁styles
             └── GlobalStyles.ts                     # Global css value used with StyledComponents
         └── 📁ui                                    # Reusable StyledComponents
@@ -113,7 +100,6 @@ This project was a fantastic learning opportunity where I:
 - **Gained hands-on experience with Styled Components for the first time.**
 - **Learned to use lightweight libraries like React AOS, React Slick, and React Slideshow to enhance the user interface.**
 - **Improved my understanding of React Router DOM for efficient routing and data fetching.**
-- **Explored how to create a fake backend with JSON Server.**
 
 ## Conclusion
 
