@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLinkCursor, StyledNavLink } from "./StyledItemtComponents";
+import { NavLinkCursor, StyledNavLink } from "./StyledLinkComponents";
 
 interface ListItemProps {
   to: string;
   children: React.ReactNode;
+  onClick: () => void;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ to, children }) => {
+const PageLink: React.FC<ListItemProps> = ({ to, children, onClick }) => {
   return (
-    <li>
+    <li onClick={onClick}>
       <StyledNavLink reloadDocument to={to}>
         {children}
         <NavLinkCursor />
@@ -17,4 +18,4 @@ const ListItem: React.FC<ListItemProps> = ({ to, children }) => {
   );
 };
 
-export default ListItem;
+export default PageLink;

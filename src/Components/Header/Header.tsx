@@ -12,7 +12,7 @@ const Header = () => {
         <NavLogo navIsOpen={navIsOpen} />
         <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
       </StyledHeader>
-      <NavList navIsOpen={navIsOpen} />
+      <NavList navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
     </>
   );
 };

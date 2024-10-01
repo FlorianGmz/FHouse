@@ -23,7 +23,9 @@ const AppLayout: React.FC<AppLayoutProps> = () => {
     <div>
       <NavLogo navIsOpen={navIsOpen} />
       <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
-      {navIsOpen && <NavList navIsOpen={navIsOpen} />}
+      {navIsOpen && (
+        <NavList navIsOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
+      )}
       <StyledMainContainer className={isContactPage ? "contact-page" : ""}>
         <Outlet />
       </StyledMainContainer>
