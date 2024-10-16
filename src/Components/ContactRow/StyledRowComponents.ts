@@ -16,12 +16,13 @@ export const Row = styled.div<{ $page: string }>`
   ${(props) =>
     props?.$page === "contact" &&
     css`
-      padding: 350px 20vw 100px;
+      width: 80vw;
+      margin-left: 20vw;
+      padding: 300px 0 110px 0;
       @media only screen and (max-width: 770px) {
         float: none;
-        padding: 200px 50px 25px;
-        /* margin-top: 200px; */
-        /* margin-bottom: 50px; */
+        margin-left: 5px;
+        padding: 200px 0 50px 50px;
         gap: 20px;
         flex-direction: column;
         align-items: flex-start;

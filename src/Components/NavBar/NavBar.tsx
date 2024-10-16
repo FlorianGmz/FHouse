@@ -16,7 +16,7 @@ const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          height: "30px",
+          height: "50px",
           overflow: "hidden",
         }}
       >

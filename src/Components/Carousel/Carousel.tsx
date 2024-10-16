@@ -4,7 +4,13 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import { ProjectState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
+import {
+  CarousselContainer,
+  CarousselSpan,
+  CarousselTitle,
+  SliderDiv,
+  TitleDiv,
+} from "./StyledCarouselComponents";
 
 interface CarousselProps {
   items: ProjectState["project"][];
@@ -48,12 +54,21 @@ const Caroussel = ({ items }: CarousselProps) => {
 
   return (
     <CarousselContainer data-aos="fade-left" data-aos-duration="1000">
-      <CarousselTitle>Select Projects</CarousselTitle>
-      <Slider {...settings}>
-        {items.map((project) => (
-          <ProjectCard key={project.id} project={project} element="carousel" />
-        ))}
-      </Slider>
+      <TitleDiv>
+        <CarousselSpan />
+        <CarousselTitle>Select Projects</CarousselTitle>
+      </TitleDiv>
+      <SliderDiv>
+        <Slider {...settings}>
+          {items.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              element="carousel"
+            />
+          ))}
+        </Slider>
+      </SliderDiv>
     </CarousselContainer>
   );
 };

@@ -4,7 +4,7 @@ export const StyledTitle = styled.h3`
   padding: 13rem 20vw 3rem;
   line-height: 5rem;
   font-size: 3.5rem;
-  font-weight: 400;
+  font-weight: 500;
   @media only screen and (max-width: 770px) {
     width: auto;
     line-height: 3rem;
@@ -18,8 +18,8 @@ export const StyledText = styled.h4`
   max-width: 1400px;
   padding: 0rem 20vw 13rem;
   line-height: 3rem;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.7rem;
+  font-weight: 500;
   @media only screen and (max-width: 770px) {
     width: auto;
     line-height: 2rem;

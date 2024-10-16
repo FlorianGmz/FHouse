@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const pages = {
   home: css`
-    padding: 400px 100px 50px;
+    padding: 500px 100px 50px;
     text-align: left;
     font-weight: 500;
     font-size: 4.5rem;
@@ -15,20 +15,18 @@ const pages = {
   process: css`
     width: 60vw;
     height: 90vh;
-    padding-left: 100px;
-    padding-top: 45vh;
     font-weight: 500;
+    padding: 550px 0 0 100px;
     font-size: 4.75rem;
     @media only screen and (max-width: 770px) {
       font-size: 1.5rem;
       height: 80vh;
-      padding-left: 50px;
+      padding: 400px 0 0 50px;
     }
   `,
   projects: css`
     width: 60vw;
-    padding-left: 100px;
-    padding-top: 35vh;
+    padding: 500px 0 0 100px;
     font-weight: 500;
     font-size: 6.5rem;
     @media only screen and (max-width: 770px) {
