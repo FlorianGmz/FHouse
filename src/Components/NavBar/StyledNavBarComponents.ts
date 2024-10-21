@@ -21,8 +21,11 @@ export const StyledNavBar = styled.div`
   &.bottom {
     width: fit-content;
     margin: 100px auto 200px;
+    height: 25px;
+    font-size: 1rem;
     @media only screen and (max-width: 770px) {
       margin-bottom: 100px;
+      font-size: 0.9rem;
     }
   }
   &.right {

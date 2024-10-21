@@ -19,11 +19,12 @@ export const TitleDiv = styled.div`
   margin-left: 100px;
   padding-bottom: 100px;
   @media only screen and (max-width: 770px) {
+    gap: 15px;
     margin: 0;
     width: 100vw;
     height: 100px;
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 `;
 
@@ -32,7 +33,7 @@ export const CarousselSpan = styled.span`
   width: 90px;
   background-color: #8b8b8b;
   @media only screen and (max-width: 770px) {
-    padding: 0 50px;
+    width: 40px;
     margin-bottom: 0;
   }
 `;
@@ -43,7 +44,6 @@ export const CarousselTitle = styled.h4`
   font-weight: 500;
   @media only screen and (max-width: 770px) {
     font-size: 1.2rem;
-    padding-bottom: 50px;
   }
 `;
 
