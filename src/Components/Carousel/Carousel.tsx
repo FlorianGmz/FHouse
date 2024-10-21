@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
@@ -23,6 +24,7 @@ const Caroussel = ({ items }: CarousselProps) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     swipe: true,
+    arrows: false,
     initialSlide: 0,
     responsive: [
       {

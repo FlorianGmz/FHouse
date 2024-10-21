@@ -7,8 +7,10 @@ const pages = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
-      object-position: top;
-      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: fill;
     }
   `,
   contact: css`

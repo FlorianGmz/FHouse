@@ -40,7 +40,7 @@ export const StyledLink = styled(Link)`
   left: 100px;
   z-index: 10;
   @media only screen and (max-width: 770px) {
-    left: 50px;
+    left: 25px;
   }
 `;
 export const Logo = styled.div<{ $scrolled: boolean }>`

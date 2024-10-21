@@ -8,7 +8,7 @@ const pages = {
     font-size: 4.5rem;
     @media only screen and (max-width: 770px) {
       letter-spacing: 0.1rem;
-      padding: 350px 50px 30px;
+      padding: 350px 25px 30px;
       font-size: 1.8rem;
     }
   `,

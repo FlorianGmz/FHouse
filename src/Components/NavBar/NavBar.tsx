@@ -3,6 +3,7 @@ import {
   StyledNavLink,
   StyledUnderline,
 } from "./StyledNavBarComponents";
+import React from "react";
 
 interface NavBarProps {
   position: string;
@@ -17,7 +18,7 @@ const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
           display: "flex",
           flexDirection: "column",
           height: "50px",
-          overflow: "hidden",
+           overflow: "hidden",
         }}
       >
         <StyledNavLink to="/projects">{children}</StyledNavLink>

@@ -15,7 +15,7 @@ export const NavIconDiv = styled.div`
   gap: 10px;
   cursor: pointer;
   @media only screen and (max-width: 770px) {
-    right: 50px;
+    right: 25px;
   }
 `;
 

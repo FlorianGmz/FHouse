@@ -6,8 +6,9 @@ export const SlideDiv = styled.div`
   float: right;
   position: relative;
   @media only screen and (max-width: 770px) {
-    float: left;
-    padding-left: 50px;
-    height: 50vh;
+    margin-top: 230px;
+    padding-left: 25px;
+    width: 100vw;
+    height: 250px;
   }
 `;

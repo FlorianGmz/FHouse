@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledNavLink = styled(Link)`
-  font-size: 4rem;
+  font-size: 3.7rem;
   transition: transform 0.5s ease-out;
   display: list-item;
   color: white;

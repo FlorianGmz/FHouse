@@ -17,7 +17,8 @@ export const CardContainer = styled(Link)`
     height: 35rem;
     margin-bottom: 50px;
     @media only screen and (max-width: 770px) {
-      margin-bottom: 50px;
+      width: 23rem;
+      margin-bottom: 20px;
     }
   }
 `;

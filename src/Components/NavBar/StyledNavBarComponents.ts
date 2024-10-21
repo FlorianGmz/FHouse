@@ -15,8 +15,7 @@ export const StyledNavBar = styled.div`
   &.top {
     margin: 0px 100px 4rem;
     @media only screen and (max-width: 770px) {
-      margin-left: 50px;
-      margin-bottom: 1rem;
+      margin-left: 25px;
     }
   }
   &.bottom {

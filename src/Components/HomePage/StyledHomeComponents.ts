@@ -6,11 +6,11 @@ export const StyledTitle = styled.h3`
   font-size: 3.5rem;
   font-weight: 500;
   @media only screen and (max-width: 770px) {
-    width: auto;
+    width: 90%;
     line-height: 3rem;
     font-size: 1.6rem;
     font-weight: 500;
-    padding: 100px 50px 50px;
+    padding: 100px 25px 35px;
   }
 `;
 
@@ -24,6 +24,6 @@ export const StyledText = styled.h4`
     width: auto;
     line-height: 2rem;
     font-size: 1.2rem;
-    padding: 0 50px 100px;
+    padding: 0 25px 100px;
   }
 `;
