@@ -7,7 +7,7 @@ export const StyledContact = styled.div<{ $page: string }>`
   font-size: 1.2rem;
   @media only screen and (max-width: 770px) {
     align-items: flex-start;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   ${(props) =>
     props?.$page === "contact" &&

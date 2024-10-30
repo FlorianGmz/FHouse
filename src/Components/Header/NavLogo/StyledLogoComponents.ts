@@ -82,7 +82,6 @@ export const StyledFLogo = styled.div`
 export const StyledHLogo = styled.div`
   $letter-spacing: 0.1rem;
   transition: 1s;
-  /* animation: 1s ${logoFadeOut} ease-out; */
   &.clicked {
     color: white;
     animation: 1s ${logoFadeIn} ease-out;

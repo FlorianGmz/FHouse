@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 const backgroundFadeIn = keyframes`
   from{
-    background-color:#101010f4;
+    background-color:#101010f8;
   }
   to{
     background-color: transparent;
@@ -14,7 +14,7 @@ const backgroundFadeOut = keyframes`
     background-color: transparent ;
   }
   to{
-    background-color: #101010f4;
+    background-color: #101010f8;
   }
 `;
 

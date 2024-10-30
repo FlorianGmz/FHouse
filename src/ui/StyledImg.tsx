@@ -22,7 +22,7 @@ const pages = {
     @media only screen and (max-width: 770px) {
       float: none;
       width: 100%;
-      padding-left: 50px;
+      padding-left: 25px;
     }
   `,
   project: css`
@@ -77,6 +77,8 @@ const pages = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
+      object-fit: contain;
+
       margin-bottom: 0;
       width: 100vw;
       height: 40vh;

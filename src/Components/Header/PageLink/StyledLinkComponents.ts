@@ -2,7 +2,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledNavLink = styled(Link)`
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
   font-size: 3.7rem;
+  animation: fadeIn 1s ease-out;
   transition: transform 0.5s ease-out;
   display: list-item;
   color: white;
