@@ -44,7 +44,7 @@ const pages = {
     @media only screen and (max-width: 770px) {
       width: 100vw;
       height: 40vh;
-      padding: 0 50px;
+      padding: 0 25px;
     }
   `,
   about: css`
@@ -55,7 +55,7 @@ const pages = {
     object-position: center;
     @media only screen and (max-width: 770px) {
       width: 100vw;
-      padding-left: 50px;
+      padding-left: 25px;
       height: 40vh;
     }
   `,
@@ -66,7 +66,7 @@ const pages = {
     object-position: center;
     @media only screen and (max-width: 770px) {
       width: 100vw;
-      padding-right: 50px;
+      padding-right: 25px;
       height: 40vh;
     }
   `,
