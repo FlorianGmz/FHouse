@@ -1,4 +1,4 @@
-# FHouse Project | no API version (local data only)
+# FHouse Project | locale data version
 
 ## Overview
 
