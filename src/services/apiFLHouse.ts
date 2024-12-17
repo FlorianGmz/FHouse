@@ -1,18 +1,20 @@
-import { supabaseUrl } from "./supabase.js";
+import supabase, { supabaseUrl } from "./supabase.js";
 
 // TODO: Change the fetch function by the Supabase API one
 
 export async function getProjects() {
-  const res = await fetch(`${supabaseUrl}/projects`);
-  if (!res.ok) throw Error("Failed getting projects data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("project").select("*");
+  if (error) {
+    throw new Error("Projects could not be loaded");
+  }
   return data;
 }
 
 export async function getHome() {
-  const res = await fetch(`${supabaseUrl}/home`);
-  if (!res.ok) throw Error("Failed getting home data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("homepage").select("*");
+  if (error) {
+    throw new Error("Home could not be loaded");
+  }
   return data;
 }
 
@@ -31,9 +33,10 @@ export async function getContact() {
 }
 
 export async function getArchitects() {
-  const res = await fetch(`${supabaseUrl}/architects`);
-  if (!res.ok) throw Error("Failed getting architects data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("architect").select("*");
+  if (error) {
+    throw new Error("Architect could not be loaded");
+  }
   return data;
 }
 

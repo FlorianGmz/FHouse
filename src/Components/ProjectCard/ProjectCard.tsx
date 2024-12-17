@@ -1,6 +1,7 @@
 import { ProjectState } from "../../@types/types";
 import {
   CardContainer,
+  CardFrame,
   CardImg,
   CardName,
   StyledUnderline,
@@ -16,18 +17,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, element }) => {
   return (
     <CardContainer to={`/projects/${id}`} className={element}>
       <CardImg src={image} alt="home" />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          gap: "5px",
-          maxWidth: "fit-content",
-        }}
-      >
+      <CardFrame>
         <CardName>{name}</CardName>
         <StyledUnderline />
-      </div>
+      </CardFrame>
     </CardContainer>
   );
 };

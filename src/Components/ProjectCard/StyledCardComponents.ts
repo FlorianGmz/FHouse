@@ -22,6 +22,14 @@ export const CardContainer = styled(Link)`
   }
 `;
 
+export const CardFrame = styled.div`
+  display: "flex";
+  flex-direction: "column";
+  justify-content: "flex-start";
+  gap: "5px";
+  max-width: "fit-content";
+`;
+
 export const CardImg = styled.img`
   width: 120%;
   height: 80%;

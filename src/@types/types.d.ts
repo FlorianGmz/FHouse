@@ -4,21 +4,20 @@ export interface HomeDataState {
 }
 export interface HomeState {
   introduction: string;
-  firstText: string;
-  secondText: string;
+  mainText: string;
+  conclusion: string;
   slideshow: string[];
 }
 
 export interface ProjectsState {
-  introduction: string;
-  items: ProjectState["project"][];
+  projects: ProjectState["project"][];
 }
 
 export interface ProjectState {
   project: {
     id: number;
     name: string;
-    surface: number;
+    floorSpace: number;
     city: string;
     image: string;
     description: string;
