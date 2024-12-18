@@ -2,15 +2,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import { ProjectState, ProjectsState } from "../../@types/types";
+import { ProjectsState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
 
 interface CarousselProps {
-  projects: ProjectsState;
+  projects: ProjectsState["projects"];
 }
-
-// TODO: clean the styling issue
 
 const Caroussel = ({ projects }: CarousselProps) => {
   const settings = {
@@ -52,7 +50,7 @@ const Caroussel = ({ projects }: CarousselProps) => {
     <CarousselContainer data-aos="fade-left" data-aos-duration="1000">
       <CarousselTitle>Select Projects</CarousselTitle>
       <Slider {...settings}>
-        {projects.map((project: ProjectState) => (
+        {projects.map((project) => (
           <ProjectCard key={project.id} project={project} element="carousel" />
         ))}
       </Slider>
