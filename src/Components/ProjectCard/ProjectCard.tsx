@@ -9,13 +9,13 @@ import {
 
 interface ProjectCardProps {
   project: ProjectState["project"];
-  element: string;
+  className: string;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, element }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
   const { image, name, id } = project;
   return (
-    <CardContainer to={`/projects/${id}`} className={element}>
+    <CardContainer to={`/projects/${id}`} className={className}>
       <CardImg src={image} alt="home" />
       <CardFrame>
         <CardName>{name}</CardName>

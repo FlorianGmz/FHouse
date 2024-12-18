@@ -7,7 +7,7 @@ import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Projects = () => {
-  const projectsData = useLoaderData() as ProjectsState["projects"];
+  const projectsData = useLoaderData() as ProjectsState;
 
   return (
     <>
@@ -26,7 +26,11 @@ const Projects = () => {
         data-aos-once="true"
       >
         {projectsData.map((project: ProjectState["project"]) => (
-          <ProjectCard key={project.id} project={project} element="projects" />
+          <ProjectCard
+            key={project.id}
+            project={project}
+            className="projects"
+          />
         ))}
       </ProjectsContainer>
     </>

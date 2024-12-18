@@ -1,5 +1,5 @@
 export interface HomeDataState {
-  homeData: HomeState;
+  homeData: HomeState[];
   projectsData: ProjectsState;
 }
 export interface HomeState {
@@ -9,9 +9,7 @@ export interface HomeState {
   slideshow: string[];
 }
 
-export interface ProjectsState {
-  projects: ProjectState["project"][];
-}
+export type ProjectsState = ProjectState["project"][];
 
 export interface ProjectState {
   project: {
