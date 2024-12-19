@@ -41,8 +41,9 @@ export async function getArchitects() {
 }
 
 export async function getProcess() {
-  const res = await fetch(`${supabaseUrl}/process`);
-  if (!res.ok) throw Error("Failed getting process data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("process").select("*");
+  if (error) {
+    throw new Error("Process could not be loaded");
+  }
   return data;
 }

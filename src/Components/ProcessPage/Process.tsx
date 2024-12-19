@@ -12,7 +12,7 @@ import IntroductionText from "../../ui/IntroductionText";
 import StyledImg from "../../ui/StyledImg";
 
 const Process = () => {
-  const [tableFixed, setTableFixed] = useState(false);
+  const [tableIsFixed, setTableIsFixed] = useState(false);
 
   const { introduction, items } = useLoaderData() as ProcessState;
 
