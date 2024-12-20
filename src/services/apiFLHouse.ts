@@ -1,10 +1,13 @@
 import supabase, { supabaseUrl } from "./supabase.js";
 
 // TODO: Change the fetch function by the Supabase API one
-// TODO:
 
 export async function getProjects() {
   const { data, error } = await supabase.from("project").select("*");
+  const test = await supabase
+    .from("introduction")
+    .select("project_id" === "id");
+  console.log(test);
   if (error) {
     throw new Error("Projects could not be loaded");
   }
