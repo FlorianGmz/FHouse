@@ -14,9 +14,9 @@ import StyledImg from "../../ui/StyledImg";
 const Process = () => {
   const [tableIsFixed, setTableIsFixed] = useState(false);
 
-  const { introduction, items } = useLoaderData() as ProcessState;
+  const processData = useLoaderData() as ProcessState;
 
-  const processTitles = items.map((process) => process.title);
+  const processTitles = processData.map((process) => process.title);
 
   const [currentIdentifier, setCurrentIdentifier] = useState(processTitles[0]);
 
@@ -33,9 +33,9 @@ const Process = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
 
-      setTableFixed(scrollTop > windowHeight * 0.8);
+      setTableIsFixed(scrollTop > windowHeight * 0.8);
 
-      items.forEach((process) => {
+      processData.forEach((process) => {
         const element = document.getElementById(process.title);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -50,7 +50,7 @@ const Process = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [items]);
+  }, [processData]);
 
   return (
     <>
@@ -59,13 +59,13 @@ const Process = () => {
         data-aos-duration="1000"
         $page="process"
       >
-        <pre>{introduction}</pre>
+        <p>A CHANGER</p>
       </IntroductionText>
       <ProcessTableContent
         data-aos="fade"
         data-aos-duration="1000"
         data-aos-offset="-500"
-        className={tableFixed ? "fixed" : ""}
+        className={tableIsFixed ? "fixed" : ""}
       >
         {processTitles.map((title) => (
           <ProcessTableItem
@@ -80,7 +80,7 @@ const Process = () => {
         ))}
       </ProcessTableContent>
       <ProcessItemSection>
-        {items.map((process) => (
+        {processData.map((process) => (
           <ProcessItem key={process.id} id={process.title}>
             <StyledImg
               $page="process"

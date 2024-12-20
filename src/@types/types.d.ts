@@ -22,10 +22,8 @@ export interface ProjectState {
   };
 }
 
-export interface ProcessState {
-  introduction: string;
-  items: ProcessItemsState["item"][];
-}
+export type ProcessState = ProcessItemState["item"][];
+
 interface ProcessItemState {
   item: {
     id: number;
