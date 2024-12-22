@@ -5,7 +5,7 @@ import {
   getHome,
   getProcess,
   getProjects,
-} from "./apiFLHouse";
+} from "./apiFHouse";
 
 export async function aboutLoader() {
   const aboutData = await getAbout();
