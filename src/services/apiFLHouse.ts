@@ -3,12 +3,17 @@ import supabase from "./supabase.js";
 // TODO: Change the fetch function by the Supabase API one
 
 export async function getProjects() {
-  const { data, error } = await supabase.from("project").select(`
+  const { data, error } = await supabase
+    .from("project")
+    .select(
+      `
     *,
     introduction (
       text
     )
-  `);
+  `,
+    )
+    .order("id", { ascending: true });
   if (error) {
     throw new Error("Projects could not be loaded");
   }
@@ -46,7 +51,10 @@ export async function getContact() {
 }
 
 export async function getArchitects() {
-  const { data, error } = await supabase.from("architect").select(`*`);
+  const { data, error } = await supabase
+    .from("architect")
+    .select(`*`)
+    .order("id", { ascending: true });
   if (error) {
     throw new Error("Architect could not be loaded");
   }
@@ -56,7 +64,8 @@ export async function getArchitects() {
 export async function getProcess() {
   const { data, error } = await supabase
     .from("process")
-    .select(`*, introduction(text)`);
+    .select(`*, introduction(text)`)
+    .order("id", { ascending: true });
   if (error) {
     throw new Error("Process could not be loaded");
   }

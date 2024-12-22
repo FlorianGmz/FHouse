@@ -15,6 +15,7 @@ const Process = () => {
   const [tableIsFixed, setTableIsFixed] = useState(false);
 
   const processData = useLoaderData() as ProcessState;
+  console.log(processData);
   const processIntroduction = processData[0].introduction.text;
 
   const processTitles = processData.map((process) => process.title);
