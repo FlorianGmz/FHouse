@@ -6,16 +6,9 @@ import StyledImg from "../../ui/StyledImg";
 import { StyledDiv, StyledText } from "./StyledAboutComponents";
 
 const About = () => {
-  const {
-    introduction,
-    firstText,
-    secondText,
-    thirdText,
-    conclusionText,
-    firstImage,
-    mainImage,
-    finalImage,
-  } = useLoaderData() as AboutState;
+  const aboutData = useLoaderData() as AboutState[];
+  const { image_1, image_2, image_3, text_1, text_2, text_3, text_4, text_5 } =
+    aboutData[0];
 
   return (
     <div data-aos-once="true">
@@ -25,7 +18,7 @@ const About = () => {
           data-aos-duration="1000"
           $page="about"
         >
-          <pre>{introduction}</pre>
+          <p>{text_1}</p>
         </IntroductionText>
         <div
           data-aos="fade-left"
@@ -33,16 +26,16 @@ const About = () => {
           data-aos-delay="350"
           data-aos-offset="-500"
         >
-          <StyledImg $page="about" src={firstImage} />
+          <StyledImg $page="about" src={image_1} alt="terrace on the beach" />
         </div>
       </section>
       <section>
         <StyledDiv data-aos="fade-up" data-aos-duration="1000">
-          <StyledText className="first">{firstText}</StyledText>
-          <StyledText className="second">{secondText}</StyledText>
+          <StyledText className="first">{text_2}</StyledText>
+          <StyledText className="second">{text_3}</StyledText>
         </StyledDiv>
         <div data-aos="fade-up" data-aos-duration="1000">
-          <StyledImg $page="aboutMain" src={mainImage} />
+          <StyledImg $page="aboutMain" src={image_2} alt="architect house" />
         </div>
       </section>
       <section>
@@ -51,17 +44,21 @@ const About = () => {
           data-aos-duration="1000"
           className="third"
         >
-          {thirdText}
+          {text_4}
         </StyledText>
         <StyledText
           data-aos="fade-up"
           data-aos-duration="1000"
           className="conclusion"
         >
-          {conclusionText}
+          {text_5}
         </StyledText>
         <div data-aos="fade-up" data-aos-duration="1000">
-          <StyledImg $page="aboutFinal" src={finalImage} />
+          <StyledImg
+            $page="aboutFinal"
+            src={image_3}
+            alt="a group of people smiling"
+          />
         </div>
       </section>
     </div>

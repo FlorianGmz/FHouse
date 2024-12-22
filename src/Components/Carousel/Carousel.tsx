@@ -2,15 +2,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import { ProjectState } from "../../@types/types";
+import { ProjectsState, ProjectState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
 
 interface CarousselProps {
-  items: ProjectState["project"][];
+  projects: ProjectsState;
 }
 
-const Caroussel = ({ items }: CarousselProps) => {
+const Caroussel = ({ projects }: CarousselProps) => {
   const settings = {
     infinite: true,
     dots: true,
@@ -50,8 +50,12 @@ const Caroussel = ({ items }: CarousselProps) => {
     <CarousselContainer data-aos="fade-left" data-aos-duration="1000">
       <CarousselTitle>Select Projects</CarousselTitle>
       <Slider {...settings}>
-        {items.map((project) => (
-          <ProjectCard key={project.id} project={project} element="carousel" />
+        {projects.map((project: ProjectState["project"]) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+            className="carousel"
+          />
         ))}
       </Slider>
     </CarousselContainer>

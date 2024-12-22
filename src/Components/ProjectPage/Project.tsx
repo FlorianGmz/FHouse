@@ -21,22 +21,22 @@ const Project = () => {
       id: 0,
       name: "",
       city: "",
-      surface: 0,
+      floorSpace: 0,
       description: "",
       image: "",
-    }
+    },
   );
 
   useEffect(() => {
-    const foundProject = projects.items.find(
-      (project) => Number(project.id) === Number(id)
+    const foundProject = projects.find(
+      (project) => Number(project.id) === Number(id),
     );
     if (foundProject) {
       setCurrentProject(foundProject);
     }
   }, [projects, id]);
 
-  const { name, city, surface, description, image } = currentProject;
+  const { name, city, floorSpace, description, image } = currentProject;
   return (
     <>
       <StyledHeaderDiv
@@ -48,7 +48,7 @@ const Project = () => {
         <ProjectDetails>
           <span>{city}</span>
           <span> | </span>
-          <span>{surface} sq. ft.</span>
+          <span>{floorSpace} sq. ft.</span>
         </ProjectDetails>
       </StyledHeaderDiv>
       <MainSection data-aos="fade-up" data-aos-duration="1000">
@@ -58,7 +58,7 @@ const Project = () => {
           Back to Projects
         </NavBar>
       </MainSection>
-      <Caroussel items={projects.items} />
+      <Caroussel projects={projects} />
     </>
   );
 };

@@ -9,13 +9,14 @@ import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Home = () => {
   const data = useLoaderData() as HomeDataState;
-  const { introduction, firstText, secondText, slideshow } = data.homeData;
-  const projects = data.projectsData.items;
+  const { introduction, mainText, conclusion, slideshow } = data.homeData[0];
+  const projects = data.projectsData;
+
   return (
     <>
       <StyledHeaderDiv $page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText $page="home">
-          <pre>{introduction}</pre>
+          <p>{introduction}</p>
         </IntroductionText>
         <NavBar position="top">Projects</NavBar>
       </StyledHeaderDiv>
@@ -28,10 +29,10 @@ const Home = () => {
         <Slideshow slideshow={slideshow} />
       </div>
       <div data-aos="fade-up" data-aos-duration="1000">
-        <StyledTitle>{firstText}</StyledTitle>
-        <StyledText>{secondText}</StyledText>
+        <StyledTitle>{mainText}</StyledTitle>
+        <StyledText>{conclusion}</StyledText>
       </div>
-      <Caroussel items={projects} />
+      <Caroussel projects={projects} />
       <NavBar position="bottom">Projects</NavBar>
     </>
   );
