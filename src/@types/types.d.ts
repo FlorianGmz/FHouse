@@ -48,14 +48,14 @@ export interface AboutState {
 }
 
 export interface ContactDataState {
-  contactData: ContactState;
+  contactData: ContactState[];
   architectsData: ArchitectState["architect"][];
 }
 
 export interface ContactState {
-  introduction: string;
+  text: string;
   location: string;
-  mainImage: string;
+  image: string;
 }
 export interface ArchitectState {
   architect: {
