@@ -30,6 +30,7 @@ interface ProcessItemState {
     id: number;
     title: string;
     image: string;
+    image_alt: string;
     text: string;
     introduction: { text: string };
   };

@@ -22,7 +22,12 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
     <Fade {...slideProperties}>
       {slideshow.map((slide, index) => (
         <SlideDiv key={index}>
-          <StyledImg key={slide} $page="slideshow" src={slide} />
+          <StyledImg
+            key={slide}
+            $page="slideshow"
+            src={slide}
+            alt="architect house"
+          />
         </SlideDiv>
       ))}
     </Fade>
