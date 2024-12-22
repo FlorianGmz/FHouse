@@ -1,13 +1,14 @@
-import supabase, { supabaseUrl } from "./supabase.js";
+import supabase from "./supabase.js";
 
 // TODO: Change the fetch function by the Supabase API one
 
 export async function getProjects() {
-  const { data, error } = await supabase.from("project").select("*");
-  const test = await supabase
-    .from("introduction")
-    .select("project_id" === "id");
-  console.log(test);
+  const { data, error } = await supabase.from("project").select(`
+    *,
+    introduction (
+      text
+    )
+  `);
   if (error) {
     throw new Error("Projects could not be loaded");
   }
@@ -15,7 +16,9 @@ export async function getProjects() {
 }
 
 export async function getHome() {
-  const { data, error } = await supabase.from("homepage").select("*");
+  const { data, error } = await supabase.from("homepage")
+    .select(`*, introduction(text)
+`);
   if (error) {
     throw new Error("Home could not be loaded");
   }
@@ -23,21 +26,27 @@ export async function getHome() {
 }
 
 export async function getAbout() {
-  const res = await fetch(`${supabaseUrl}/about`);
-  if (!res.ok) throw Error("Failed getting about data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("aboutpage")
+    .select(`*, introduction(text)
+`);
+  if (error) {
+    throw new Error("About data could not be loaded");
+  }
   return data;
 }
 
 export async function getContact() {
-  const res = await fetch(`${supabaseUrl}/contact`);
-  if (!res.ok) throw Error("Failed getting contact data");
-  const data = await res.json();
+  const { data, error } = await supabase.from("contactpage")
+    .select(`*, introduction(text)
+`);
+  if (error) {
+    throw new Error("Contact data could not be loaded");
+  }
   return data;
 }
 
 export async function getArchitects() {
-  const { data, error } = await supabase.from("architect").select("*");
+  const { data, error } = await supabase.from("architect").select(`*`);
   if (error) {
     throw new Error("Architect could not be loaded");
   }
@@ -45,7 +54,9 @@ export async function getArchitects() {
 }
 
 export async function getProcess() {
-  const { data, error } = await supabase.from("process").select("*");
+  const { data, error } = await supabase
+    .from("process")
+    .select(`*, introduction(text)`);
   if (error) {
     throw new Error("Process could not be loaded");
   }

@@ -8,6 +8,7 @@ import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Projects = () => {
   const projectsData = useLoaderData() as ProjectsState;
+  const introduction = projectsData[0].introduction.text;
 
   return (
     <>
@@ -17,7 +18,7 @@ const Projects = () => {
         data-aos-duration="1000"
       >
         <IntroductionText $page="projects">
-          <pre>A CHANGER</pre>
+          <p>{introduction}</p>
         </IntroductionText>
       </StyledHeaderDiv>
       <ProjectsContainer

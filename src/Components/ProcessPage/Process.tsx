@@ -15,6 +15,7 @@ const Process = () => {
   const [tableIsFixed, setTableIsFixed] = useState(false);
 
   const processData = useLoaderData() as ProcessState;
+  const processIntroduction = processData[0].introduction.text;
 
   const processTitles = processData.map((process) => process.title);
 
@@ -59,7 +60,7 @@ const Process = () => {
         data-aos-duration="1000"
         $page="process"
       >
-        <p>A CHANGER</p>
+        <p>{processIntroduction}</p>
       </IntroductionText>
       <ProcessTableContent
         data-aos="fade"

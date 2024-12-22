@@ -19,6 +19,7 @@ export interface ProjectState {
     city: string;
     image: string;
     description: string;
+    introduction: { text: string };
   };
 }
 
@@ -30,18 +31,19 @@ interface ProcessItemState {
     title: string;
     image: string;
     text: string;
+    introduction: { text: string };
   };
 }
 
 export interface AboutState {
-  introduction: string;
-  firstText: string;
-  secondText: string;
-  thirdText: string;
-  conclusionText: string;
-  firstImage: string;
-  mainImage: string;
-  finalImage: string;
+  text_1: string;
+  text_2: string;
+  text_3: string;
+  text_4: string;
+  text_5: string;
+  image_1: string;
+  image_2: string;
+  image_3: string;
 }
 
 export interface ContactDataState {
