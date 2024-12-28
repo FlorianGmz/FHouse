@@ -9,6 +9,7 @@ import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Home = () => {
   const data = useLoaderData() as HomeDataState;
+
   const { introduction, mainText, conclusion, slideshow } = data.homeData[0];
   const projects = data.projectsData;
 
@@ -16,7 +17,7 @@ const Home = () => {
     <>
       <StyledHeaderDiv $page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText $page="home">
-          <p>{introduction}</p>
+          <p>{introduction.text}</p>
         </IntroductionText>
         <NavBar position="top">Projects</NavBar>
       </StyledHeaderDiv>

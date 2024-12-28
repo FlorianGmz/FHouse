@@ -23,7 +23,7 @@ const Slideshow: React.FC<SlideShowProps> = ({ slideshow }) => {
       {slideshow.map((slide, index) => (
         <SlideDiv key={index}>
           <StyledImg
-            key={slide}
+            key={index}
             $page="slideshow"
             src={slide}
             alt="architect house"
