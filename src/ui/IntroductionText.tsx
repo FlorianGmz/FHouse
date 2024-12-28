@@ -8,20 +8,21 @@ const pages = {
     font-size: 4.5rem;
     @media only screen and (max-width: 770px) {
       letter-spacing: 0.1rem;
-      padding: 350px 50px 30px;
+      padding: 350px 25px 30px;
       font-size: 1.8rem;
     }
   `,
   process: css`
     width: 60vw;
     height: 90vh;
-    padding: 550px 0 0 100px;
     font-weight: 500;
+    padding: 550px 0 0 100px;
     font-size: 4.75rem;
     @media only screen and (max-width: 770px) {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      width: 60vw;
       height: 80vh;
-      padding: 400px 0 0 50px;
+      padding: 400px 0 0 25px;
     }
   `,
   projects: css`
@@ -43,8 +44,8 @@ const pages = {
     font-size: 5rem;
     font-weight: 500;
     @media only screen and (max-width: 770px) {
-      font-size: 1.6rem;
-      padding: 300px 50px 300px;
+      font-size: 1.8rem;
+      padding: 45vh 25px 50vh;
     }
   `,
   contact: css`
@@ -57,7 +58,7 @@ const pages = {
       width: auto;
       letter-spacing: 0.1rem;
       font-size: 2.7rem;
-      padding: 300px 50px 15px;
+      padding: 35vh 25px 20px;
     }
   `,
 };

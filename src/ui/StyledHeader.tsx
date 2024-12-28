@@ -19,16 +19,12 @@ const pages = {
   `,
   project: css`
     padding-left: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     gap: 2rem;
-    height: 80vh;
+    height: 85vh;
     @media only screen and (max-width: 770px) {
-      padding-left: 50px;
+      padding-left: 25px;
       gap: 0.5rem;
-      height: 60vh;
+      height: 80vh;
     }
   `,
 };
