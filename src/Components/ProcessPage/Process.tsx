@@ -36,7 +36,7 @@ const Process = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
-      setTableIsFixed(scrollTop > windowHeight * 0.7);
+      setTableIsFixed(scrollTop > windowHeight * 0.8);
 
       processTitles.forEach((title) => {
         const element = document.getElementById(title);

@@ -6,7 +6,7 @@ export const ProcessTableContent = styled.section`
   top: 90vh;
   &.fixed {
     position: fixed;
-    top: 11vh;
+    top: 5vh;
   }
 `;
 export const ProcessTableItem = styled.div`
