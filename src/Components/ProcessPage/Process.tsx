@@ -15,7 +15,7 @@ const Process = () => {
   const [tableIsFixed, setTableIsFixed] = useState(false);
 
   const processData = useLoaderData() as ProcessState;
-  console.log(processData);
+
   const processIntroduction = processData[0].introduction.text;
 
   const processTitles = processData.map((process) => process.title);
@@ -30,19 +30,25 @@ const Process = () => {
     }
   };
 
+  console.log("Window Height:", window.innerHeight);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
+      setTableIsFixed(scrollTop > windowHeight * 0.7);
 
-      setTableIsFixed(scrollTop > windowHeight * 0.8);
-
-      processData.forEach((process) => {
-        const element = document.getElementById(process.title);
+      processTitles.forEach((title) => {
+        const element = document.getElementById(title);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top >= 0 && rect.top <= windowHeight / 10) {
-            setCurrentIdentifier(process.title);
+          const offset = windowHeight / 5;
+
+          if (rect.top >= 0 && rect.top <= offset) {
+            setCurrentIdentifier(title);
+          }
+          if (rect.top < 0 && rect.bottom > offset) {
+            setCurrentIdentifier(title);
           }
         }
       });
@@ -52,7 +58,7 @@ const Process = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [processData]);
+  }, [processTitles]);
 
   return (
     <>
