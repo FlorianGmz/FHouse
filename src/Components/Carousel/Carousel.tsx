@@ -2,11 +2,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import { ProjectsState, ProjectState } from "../../@types/types";
+import { ProjectsState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import { CarouselContainer, CarouselTitle } from "./StyledCarouselComponents";
-
-// TODO: check the difference between the carousel of no api version
+import {
+  CarouselContainer,
+  CarouselSpan,
+  CarouselTitle,
+  SliderDiv,
+  TitleDiv,
+} from "./StyledCarouselComponents";
 
 interface CarouselProps {
   projects: ProjectsState;
@@ -50,18 +54,22 @@ const Carousel = ({ projects }: CarouselProps) => {
 
   return (
     <CarouselContainer data-aos="fade-left" data-aos-duration="1000">
-      <CarouselTitle>Select Projects</CarouselTitle>
-      <Slider {...settings}>
-        {projects.map((project: ProjectState["project"]) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            className="carousel"
-          />
-        ))}
-      </Slider>
+      <TitleDiv>
+        <CarouselSpan />
+        <CarouselTitle>Select Projects</CarouselTitle>
+      </TitleDiv>
+      <SliderDiv>
+        <Slider {...settings}>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              className="carousel"
+            />
+          ))}
+        </Slider>
+      </SliderDiv>
     </CarouselContainer>
   );
 };
-
 export default Carousel;

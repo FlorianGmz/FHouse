@@ -30,8 +30,6 @@ const Process = () => {
     }
   };
 
-  console.log("Window Height:", window.innerHeight);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
