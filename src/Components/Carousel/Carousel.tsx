@@ -4,13 +4,15 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import { ProjectsState, ProjectState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
+import { CarouselContainer, CarouselTitle } from "./StyledCarouselComponents";
 
-interface CarousselProps {
+// TODO: check the difference between the carousel of no api version
+
+interface CarouselProps {
   projects: ProjectsState;
 }
 
-const Caroussel = ({ projects }: CarousselProps) => {
+const Carousel = ({ projects }: CarouselProps) => {
   const settings = {
     infinite: true,
     dots: true,
@@ -47,8 +49,8 @@ const Caroussel = ({ projects }: CarousselProps) => {
   };
 
   return (
-    <CarousselContainer data-aos="fade-left" data-aos-duration="1000">
-      <CarousselTitle>Select Projects</CarousselTitle>
+    <CarouselContainer data-aos="fade-left" data-aos-duration="1000">
+      <CarouselTitle>Select Projects</CarouselTitle>
       <Slider {...settings}>
         {projects.map((project: ProjectState["project"]) => (
           <ProjectCard
@@ -58,8 +60,8 @@ const Caroussel = ({ projects }: CarousselProps) => {
           />
         ))}
       </Slider>
-    </CarousselContainer>
+    </CarouselContainer>
   );
 };
 
-export default Caroussel;
+export default Carousel;

@@ -2,7 +2,7 @@ import { HomeDataState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
 import { StyledTitle, StyledText } from "./StyledHomeComponents";
 import Slideshow from "../Slideshow/Slideshow";
-import Caroussel from "../Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
@@ -32,7 +32,7 @@ const Home = () => {
         <StyledTitle>{mainText}</StyledTitle>
         <StyledText>{conclusion}</StyledText>
       </div>
-      <Caroussel projects={projects} />
+      <Carousel projects={projects} />
       <NavBar position="bottom">Projects</NavBar>
     </>
   );
