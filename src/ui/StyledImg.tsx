@@ -7,8 +7,10 @@ const pages = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
-      object-position: top;
-      object-fit: scale-down;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: fill;
     }
   `,
   contact: css`
@@ -20,7 +22,7 @@ const pages = {
     @media only screen and (max-width: 770px) {
       float: none;
       width: 100%;
-      padding-left: 50px;
+      padding-left: 25px;
     }
   `,
   project: css`
@@ -31,7 +33,7 @@ const pages = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
-      padding: 0;
+      padding: 0 25px;
     }
   `,
   process: css`
@@ -42,7 +44,7 @@ const pages = {
     @media only screen and (max-width: 770px) {
       width: 100vw;
       height: 40vh;
-      padding: 0 50px;
+      padding: 0 25px;
     }
   `,
   about: css`
@@ -53,7 +55,7 @@ const pages = {
     object-position: center;
     @media only screen and (max-width: 770px) {
       width: 100vw;
-      padding-left: 50px;
+      padding-left: 25px;
       height: 40vh;
     }
   `,
@@ -64,7 +66,7 @@ const pages = {
     object-position: center;
     @media only screen and (max-width: 770px) {
       width: 100vw;
-      padding-right: 50px;
+      padding-right: 25px;
       height: 40vh;
     }
   `,
@@ -75,6 +77,8 @@ const pages = {
     object-fit: cover;
     object-position: center;
     @media only screen and (max-width: 770px) {
+      object-fit: contain;
+
       margin-bottom: 0;
       width: 100vw;
       height: 40vh;

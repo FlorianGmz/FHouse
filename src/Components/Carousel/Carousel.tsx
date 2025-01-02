@@ -2,20 +2,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import { ProjectsState, ProjectState } from "../../@types/types";
+import { ProjectsState } from "../../@types/types";
 import ProjectCard from "../ProjectCard/ProjectCard";
-import { CarousselContainer, CarousselTitle } from "./StyledCarouselComponents";
+import {
+  CarouselContainer,
+  CarouselSpan,
+  CarouselTitle,
+  SliderDiv,
+  TitleDiv,
+} from "./StyledCarouselComponents";
 
-interface CarousselProps {
+interface CarouselProps {
   projects: ProjectsState;
 }
 
-const Caroussel = ({ projects }: CarousselProps) => {
+const Carousel = ({ projects }: CarouselProps) => {
   const settings = {
     infinite: true,
     dots: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     swipe: true,
     initialSlide: 0,
     responsive: [
@@ -47,19 +54,23 @@ const Caroussel = ({ projects }: CarousselProps) => {
   };
 
   return (
-    <CarousselContainer data-aos="fade-left" data-aos-duration="1000">
-      <CarousselTitle>Select Projects</CarousselTitle>
-      <Slider {...settings}>
-        {projects.map((project: ProjectState["project"]) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            className="carousel"
-          />
-        ))}
-      </Slider>
-    </CarousselContainer>
+    <CarouselContainer data-aos="fade-left" data-aos-duration="1000">
+      <TitleDiv>
+        <CarouselSpan />
+        <CarouselTitle>Select Projects</CarouselTitle>
+      </TitleDiv>
+      <SliderDiv>
+        <Slider {...settings}>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              className="carousel"
+            />
+          ))}
+        </Slider>
+      </SliderDiv>
+    </CarouselContainer>
   );
 };
-
-export default Caroussel;
+export default Carousel;

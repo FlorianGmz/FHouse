@@ -40,15 +40,7 @@ This repository contains my first personal project, a simple yet beautiful websi
    ```sh
    npm install
    ```
-3. **Start the JSON server**:
-
-   ```sh
-   npm run server
-   ```
-
-   This will start a fake backend server at http://localhost:9000.
-
-4. **Start the development server**:
+3. **Start the development server**:
    ```sh
    npm run dev
    ```
@@ -57,8 +49,6 @@ This repository contains my first personal project, a simple yet beautiful websi
 ## Project Structure
 
 ```
-     📁data
-        └── data.json                               # Fake data for JSON server
      📁src
         └── 📁@types                                # Types declaration
         └── main.tsx                                # React components
@@ -88,7 +78,8 @@ This repository contains my first personal project, a simple yet beautiful websi
             └── 📁Slideshow
         └── 📁assets
         └── 📁services
-            └── apiFaliHouse.ts                     # Utility functions for data fetching
+            └── apiFHouse.ts                     # Utility functions for data fetching
+            └── supabase.ts                         # Supabase settings
             └── loaders.ts                          # Loader for React-Router
         └── 📁styles
             └── GlobalStyles.ts                     # Global css value used with StyledComponents

@@ -22,7 +22,7 @@ export const Row = styled.div<{ $page: string }>`
       @media only screen and (max-width: 770px) {
         float: none;
         margin-left: 5px;
-        padding: 200px 0 50px 50px;
+        padding: 200px 0 50px 25px;
         gap: 20px;
         flex-direction: column;
         align-items: flex-start;

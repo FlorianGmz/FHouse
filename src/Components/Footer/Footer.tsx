@@ -22,7 +22,7 @@ const Footer = () => {
       )}
       <FooterRow className="bottom">
         <FooterText className="copyright">
-          © Copyright 2024 FAROhouse.
+          © Copyright 2024 FLhouse.
         </FooterText>
         <FooterText className="copyright">All rights reserved.</FooterText>
       </FooterRow>

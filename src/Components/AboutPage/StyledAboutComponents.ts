@@ -7,7 +7,7 @@ export const StyledDiv = styled.div`
   gap: 100px;
   padding: 250px 20vw;
   @media only screen and (max-width: 770px) {
-    padding: 50px;
+    padding: 25px;
     gap: 30px;
   }
 `;
@@ -44,7 +44,7 @@ export const StyledText = styled.h4`
     @media only screen and (max-width: 770px) {
       width: 100%;
       margin-left: 0;
-      padding: 50px;
+      padding: 25px 25px 0 25px;
       font-size: 1.1rem;
       line-height: 2rem;
     }
@@ -58,11 +58,11 @@ export const StyledText = styled.h4`
     font-size: 3.3rem;
     @media only screen and (max-width: 770px) {
       width: 100%;
-      font-size: 1.5rem;
+      font-size: 1.7rem;
       text-align: left;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 2.2rem;
-      padding: 70px 50px 50px;
+      padding: 60px 25px 60px;
     }
   }
 `;

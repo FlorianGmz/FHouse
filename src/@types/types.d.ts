@@ -3,7 +3,8 @@ export interface HomeDataState {
   projectsData: ProjectsState;
 }
 export interface HomeState {
-  introduction: string;
+  id: number;
+  introduction: { text: string };
   mainText: string;
   conclusion: string;
   slideshow: string[];
