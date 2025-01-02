@@ -1,4 +1,5 @@
 import {
+  StyledLinkDiv,
   StyledNavBar,
   StyledNavLink,
   StyledUnderline,
@@ -12,19 +13,12 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ position, children }) => {
   return (
     <StyledNavBar className={position}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          height: "30px",
-          overflow: "hidden",
-        }}
-      >
+      <StyledLinkDiv>
         <StyledNavLink to="projects">{children}</StyledNavLink>
         <StyledNavLink className="hidden" to="projects">
           {children}
         </StyledNavLink>
-      </div>
+      </StyledLinkDiv>
       <StyledUnderline />
     </StyledNavBar>
   );

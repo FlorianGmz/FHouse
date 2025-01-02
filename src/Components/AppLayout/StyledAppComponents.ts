@@ -19,3 +19,11 @@ export const StyledMainContainer = styled.main`
     }
   }
 `;
+
+export const DisclaimerMessage = styled.h1`
+  position: relative;
+  top: 0;
+  color: black;
+  font-size: 1rem;
+  z-index: 1000;
+`;

@@ -33,6 +33,16 @@ export const StyledNavBar = styled.div`
   }
 `;
 
+export const StyledLinkDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  overflow: hidden;
+  @media only screen and (max-width: 770px) {
+    height: 25px;
+  }
+`;
+
 export const StyledNavLink = styled(NavLink)`
   transition: ease-out 0.4s;
 

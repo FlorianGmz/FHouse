@@ -1,7 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-import { StyledMainContainer } from "./StyledAppComponents";
+import { DisclaimerMessage, StyledMainContainer } from "./StyledAppComponents";
 import Footer from "../Footer/Footer";
 import NavLogo from "../Header/NavLogo/NavLogo";
 import NavIcon from "../Header/NavIcon/NavIcon";
@@ -17,13 +16,20 @@ const AppLayout = () => {
   }, [location]);
   return (
     <div>
-      <NavLogo navIsOpen={navIsOpen} />
-      <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
-      {navIsOpen && <NavList navIsOpen={navIsOpen} />}
-      <StyledMainContainer className={isContactPage ? "contact-page" : ""}>
-        <Outlet />
-      </StyledMainContainer>
-      <Footer />
+      <DisclaimerMessage>
+        This website is for demonstration purposes only. All content, including
+        images, is copyright-free and used for illustrative purposes. This site
+        does not represent a real business or service.
+      </DisclaimerMessage>
+      <div>
+        <NavLogo navIsOpen={navIsOpen} />
+        <NavIcon isOpen={navIsOpen} setNavIsOpen={setNavIsOpen} />
+        {navIsOpen && <NavList navIsOpen={navIsOpen} />}
+        <StyledMainContainer className={isContactPage ? "contact-page" : ""}>
+          <Outlet />
+        </StyledMainContainer>
+        <Footer />
+      </div>
     </div>
   );
 };
