@@ -17,9 +17,9 @@ const AppLayout = () => {
   return (
     <div>
       <DisclaimerMessage>
-        This website is for demonstration purposes only. All content, including
-        images, is copyright-free and used for illustrative purposes. This site
-        does not represent a real business or service.
+        ⚠️ Disclaimer: This website is for demonstration purposes only. All
+        content, including images, is copyright-free and used for illustrative
+        purposes. This site does not represent a real business or service.
       </DisclaimerMessage>
       <div>
         <NavLogo navIsOpen={navIsOpen} />

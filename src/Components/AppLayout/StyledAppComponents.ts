@@ -21,9 +21,15 @@ export const StyledMainContainer = styled.main`
 `;
 
 export const DisclaimerMessage = styled.h1`
-  position: relative;
+  position: absolute;
   top: 0;
-  color: black;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  width: 100vw;
   font-size: 1rem;
   z-index: 1000;
+  @media only screen and (max-width: 770px) {
+    font-size: 0.7rem;
+  }
 `;
