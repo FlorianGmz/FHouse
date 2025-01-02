@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains my first personal project, a simple yet beautiful website for a fictional architect agency. The project showcases my skills in design, styling, and animation while providing a great user experience with a minimal amount of libraries.
+This repository contains my first personal project, a simple yet beautiful website for a fictional architect agency.
 
 ## Tech Stack
 
@@ -13,14 +13,13 @@ This repository contains my first personal project, a simple yet beautiful websi
 - **React AOS** for scroll animations
 - **React Slideshow** for slideshow components
 - **React Router DOM** for routing and data fetching
-- **JSON Server** for creating a fake backend server with API endpoints from a simple `data.json` file
+- **Supabase** for database
 
 ## Project Highlights
 
 - **Design & Styling**: Utilized Styled Components to create a visually appealing and consistent design throughout the website.
 - **Animations**: Implemented smooth animations using React AOS, React Slick, and React Slideshow to enhance the user experience.
-- **Routing & Data Fetching**: Used React Router DOM for seamless navigation and data fetching.
-- **Fake Backend**: Set up a JSON Server to simulate API endpoints and serve data from a `data.json` file.
+- **Routing & Data Fetching**: Used React Router DOM for seamless navigation and data fetching to Supabase database.
 
 ## Getting Started
 
@@ -78,7 +77,7 @@ This repository contains my first personal project, a simple yet beautiful websi
             └── 📁Slideshow
         └── 📁assets
         └── 📁services
-            └── apiFHouse.ts                     # Utility functions for data fetching
+            └── apiFHouse.ts                        # Utility functions for data fetching
             └── supabase.ts                         # Supabase settings
             └── loaders.ts                          # Loader for React-Router
         └── 📁styles
@@ -104,11 +103,10 @@ This project was a fantastic learning opportunity where I:
 - **Gained hands-on experience with Styled Components for the first time.**
 - **Learned to use lightweight libraries like React AOS, React Slick, and React Slideshow to enhance the user interface.**
 - **Improved my understanding of React Router DOM for efficient routing and data fetching.**
-- **Explored how to create a fake backend with JSON Server.**
 
 ## Conclusion
 
-I had a great time working on this project and learned a lot along the way. The project showcases my ability to create a stylish, functional, and user-friendly website with a focus on design and animation. I hope you enjoy exploring the FHouse Project as much as I enjoyed building it.
+I had a great time working on this project. The project showcases my ability to create a stylish, functional, and user-friendly website with a focus on design and animation. I hope you enjoy exploring the FHouse Project as much as I enjoyed building it.
 
 Feel free to reach out if you have any questions or feedback!
 
