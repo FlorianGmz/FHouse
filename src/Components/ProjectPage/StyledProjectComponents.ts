@@ -30,7 +30,7 @@ export const MainSection = styled.section`
 
 export const StyledText = styled.p`
   margin: 80px 100px 200px;
-  padding: 0 300px;
+  padding: 0 100px;
   font-size: 1.8rem;
   line-height: 3rem;
   @media only screen and (max-width: 770px) {
