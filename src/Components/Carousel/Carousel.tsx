@@ -22,6 +22,7 @@ const Carousel = ({ projects }: CarouselProps) => {
     dots: true,
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     swipe: true,
     initialSlide: 0,
     responsive: [

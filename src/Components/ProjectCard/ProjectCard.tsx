@@ -14,6 +14,7 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
   const { image, name, id } = project;
+
   return (
     <CardContainer to={`/projects/${id}`} className={className}>
       <CardImg src={image} alt="home" />
