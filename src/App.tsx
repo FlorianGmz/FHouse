@@ -18,7 +18,6 @@ import {
   contactLoader,
   footerLoader,
 } from "./services/loaders";
-import { Analytics } from "@vercel/analytics/next";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +63,6 @@ function App() {
     <>
       <GlobalStyles />
       <RouterProvider router={router} />
-      <Analytics />
     </>
   );
 }
