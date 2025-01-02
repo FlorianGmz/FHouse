@@ -1,7 +1,5 @@
 import supabase from "./supabase.js";
 
-// TODO: Change the fetch function by the Supabase API one
-
 export async function getProjects() {
   const { data, error } = await supabase
     .from("project")

@@ -15,7 +15,7 @@ export const StyledFooter = styled.footer<{ $isContactPage: boolean }>`
   padding: 100px 100px;
   @media only screen and (max-width: 770px) {
     flex-direction: column;
-    padding: 50px;
+    padding: 25px;
     height: ${({ $isContactPage }) => ($isContactPage ? "150px" : "468px")};
     gap: 50px;
   }

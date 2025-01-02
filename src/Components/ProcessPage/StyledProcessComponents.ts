@@ -6,7 +6,7 @@ export const ProcessTableContent = styled.section`
   top: 90vh;
   &.fixed {
     position: fixed;
-    top: 10vh;
+    top: 5vh;
   }
 `;
 export const ProcessTableItem = styled.div`
@@ -55,7 +55,7 @@ export const ProcessText = styled.div`
   text-indent: 4rem;
   @media only screen and (max-width: 770px) {
     width: 100vw;
-    padding: 30px 50px;
+    padding: 30px 25px;
     font-size: 1.1rem;
     line-height: 2rem;
     text-indent: 2rem;

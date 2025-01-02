@@ -2,13 +2,14 @@ import { HomeDataState } from "../../@types/types";
 import { useLoaderData } from "react-router-dom";
 import { StyledTitle, StyledText } from "./StyledHomeComponents";
 import Slideshow from "../Slideshow/Slideshow";
-import Caroussel from "../Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import NavBar from "../NavBar/NavBar";
 import IntroductionText from "../../ui/IntroductionText";
 import StyledHeaderDiv from "../../ui/StyledHeader";
 
 const Home = () => {
   const data = useLoaderData() as HomeDataState;
+
   const { introduction, mainText, conclusion, slideshow } = data.homeData[0];
   const projects = data.projectsData;
 
@@ -16,7 +17,7 @@ const Home = () => {
     <>
       <StyledHeaderDiv $page="home" data-aos="fade-up" data-aos-duration="1000">
         <IntroductionText $page="home">
-          <p>{introduction}</p>
+          <p>{introduction.text}</p>
         </IntroductionText>
         <NavBar position="top">Projects</NavBar>
       </StyledHeaderDiv>
@@ -32,7 +33,7 @@ const Home = () => {
         <StyledTitle>{mainText}</StyledTitle>
         <StyledText>{conclusion}</StyledText>
       </div>
-      <Caroussel projects={projects} />
+      <Carousel projects={projects} />
       <NavBar position="bottom">Projects</NavBar>
     </>
   );

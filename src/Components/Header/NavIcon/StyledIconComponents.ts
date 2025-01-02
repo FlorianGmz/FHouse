@@ -15,7 +15,7 @@ export const NavIconDiv = styled.div`
   gap: 10px;
   cursor: pointer;
   @media only screen and (max-width: 770px) {
-    right: 50px;
+    right: 25px;
   }
 `;
 
@@ -30,8 +30,8 @@ export const Icon = styled.div<{
       background-color: ${props.$currentPathname === "/contact"
         ? "white"
         : props?.$navOpen
-        ? "white"
-        : "black"};
+          ? "white"
+          : "black"};
       width: 3rem;
       height: 0.2rem;
       border-radius: 0.2rem;
@@ -54,8 +54,8 @@ export const Icon = styled.div<{
         props.$currentPathname === "/contact"
           ? "white"
           : props?.$navOpen
-          ? "white"
-          : "black"
+            ? "white"
+            : "black"
       };
       width: 1.5rem;
       height: 0.2rem;

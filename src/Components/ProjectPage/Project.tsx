@@ -24,6 +24,7 @@ const Project = () => {
       floorSpace: 0,
       description: "",
       image: "",
+      introduction: { text: "" },
     },
   );
 
