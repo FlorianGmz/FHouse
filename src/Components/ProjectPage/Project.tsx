@@ -15,7 +15,9 @@ import Caroussel from "../Carousel/Carousel";
 
 const Project = () => {
   const projects = useLoaderData() as ProjectsState;
-  const { id } = useParams<{ id: string }>();
+  const param = useParams<{ name: string }>();
+  const paramProject = param.name;
+
   const [currentProject, setCurrentProject] = useState<ProjectState["project"]>(
     {
       id: 0,
@@ -30,14 +32,15 @@ const Project = () => {
 
   useEffect(() => {
     const foundProject = projects.find(
-      (project) => Number(project.id) === Number(id),
+      (project) => project.name === paramProject,
     );
     if (foundProject) {
       setCurrentProject(foundProject);
     }
-  }, [projects, id]);
+  }, [projects, paramProject]);
 
   const { name, city, floorSpace, description, image } = currentProject;
+
   return (
     <>
       <StyledHeaderDiv

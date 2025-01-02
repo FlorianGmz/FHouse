@@ -13,10 +13,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) => {
-  const { image, name, id } = project;
+  const { image, name } = project;
 
   return (
-    <CardContainer to={`/projects/${id}`} className={className}>
+    <CardContainer to={`/projects/${name.toString()}`} className={className}>
       <CardImg src={image} alt="home" />
       <CardFrame>
         <CardName>{name}</CardName>
