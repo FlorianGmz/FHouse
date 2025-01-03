@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CarouselContainer = styled.div`
   width: 100vw;
-  overflow: visible;
+  // overflow: visible;
   margin-bottom: 80px;
   @media only screen and (max-width: 770px) {
     padding: 0 25px;
