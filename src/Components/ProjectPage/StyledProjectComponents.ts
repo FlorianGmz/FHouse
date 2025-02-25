@@ -33,11 +33,14 @@ export const StyledText = styled.p`
   padding: 0 100px;
   font-size: 1.8rem;
   line-height: 3rem;
+  text-align: justify;
+  text-indent: 3rem;
   @media only screen and (max-width: 770px) {
     font-size: 1rem;
     padding: 0 25px;
     line-height: 1.7rem;
     margin: 80px 0 0px;
     text-indent: 1rem;
+    text-align: justify;
   }
 `;

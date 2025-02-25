@@ -27,12 +27,12 @@ const Project = () => {
       description: "",
       image: "",
       introduction: { text: "" },
-    },
+    }
   );
 
   useEffect(() => {
     const foundProject = projects.find(
-      (project) => project.name === paramProject,
+      (project) => project.name === paramProject
     );
     if (foundProject) {
       setCurrentProject(foundProject);
